@@ -1,0 +1,88 @@
+site_name: Lenguajes de Marcas — Apuntes
+site_description: Apuntes y proyectos del módulo Lenguajes de Marcas y Sistemas de Gestión de la Información (DAW)
+site_author: Alejandro Carmona Martos — IES Rafael Alberti
+# site_url: https://<tu-usuario>.github.io/<tu-repo>/   # descomenta y ajusta antes de publicar
+repo_url: https://github.com/envasador/LMSGI
+repo_name: envasador/LMSGI
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: es
+  logo: assets/sello-rafael-alberti-imago-blanco.svg
+  favicon: assets/sello-rafael-alberti-imago-blanco.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Cambiar a modo claro
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - header.autohide
+    - content.code.copy
+    - content.action.edit
+
+extra_css:
+  - stylesheet/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: es
+
+nav:
+  - Inicio: index.md
+  - Apuntes:
+      - 1. Introducción a los lenguajes de marcas: apuntes/ud1.md
+      - 2. HTML5: apuntes/ud2-1.md
+      - 3. CSS3: apuntes/ud3.md
+      - 4. Introducción a JavaScript: apuntes/ud4.md
+      - 4.1 Manipulación del DOM y eventos: apuntes/ud4-1.md
+      - 5. Definición de esquemas y vocabularios: apuntes/ud5.md
+      - 5.1 JSON Schema y herramientas de validación: apuntes/ud5-1.md
+      - 5.2 Callbacks y asincronía en JavaScript: apuntes/ud5-2.md
+      - 5.3 Fetch y APIs: apuntes/ud5-3.md
+      - 5.4 Persistencia, caché y almacenamiento en la nube: apuntes/ud5-4.md
+      - 5.5 Transformación de documentos con JavaScript: apuntes/ud5-5.md
+  - Proyectos:
+      - Proyecto 1 · Aplicación web: proyectos/proyecto1.md
+      - Proyecto 2 · Funcionalidades con JavaScript: proyectos/proyecto2.md
+      - Proyecto 2 · Recuperación P1: proyectos/proyecto2-recuperacion.md
+      - Proyecto 3 · Asincronía: proyectos/proyecto3.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/envasador/LMSGI
+      name: Repositorio del módulo
+
+copyright: Contenido generado por Alejandro Carmona Martos — IES Rafael Alberti · CC BY-SA 4.0
