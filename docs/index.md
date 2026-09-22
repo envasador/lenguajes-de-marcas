@@ -16,33 +16,33 @@ Este curso está diseñado para que adquieras las habilidades necesarias en el m
 
 ### Introducción
 
-* [Unidad 1: Introducción a los lenguajes de marcas](apuntes/ud1.md)
+* [Unidad 1: Introducción a los lenguajes de marcas](apuntes/introduccion-lenguajes-marcas.md)
 
 ### HTML y CSS
 
-* [Unidad 2: HTML5](apuntes/ud2-1.md)
-* [Unidad 3: CSS3](apuntes/ud3.md)
+* [Unidad 2: HTML5](apuntes/html5.md)
+* [Unidad 3: CSS3](apuntes/css3.md)
 
 ### JavaScript (DOM y eventos)
 
-* [Unidad 4: Introducción a JavaScript](apuntes/ud4.md)
-* [Unidad 4.1: Manipulación del DOM y eventos](apuntes/ud4-1.md)
+* [Unidad 4: Introducción a JavaScript](apuntes/introduccion-javascript.md)
+* [Unidad 4.1: Manipulación del DOM y eventos](apuntes/dom-y-eventos.md)
 
 ### XML, JSON y asincronía
 
-* [Unidad 5: Definición de esquemas y vocabularios](apuntes/ud5.md)
-* [Unidad 5.1: JSON Schema y herramientas de validación](apuntes/ud5-1.md)
-* [Unidad 5.2: Callbacks y asincronía en JavaScript](apuntes/ud5-2.md)
-* [Unidad 5.3: Fetch y APIs](apuntes/ud5-3.md)
-* [Unidad 5.4: Persistencia, caché y almacenamiento en la nube](apuntes/ud5-4.md)
-* [Unidad 5.5: Transformación de documentos con JavaScript](apuntes/ud5-5.md)
+* [Unidad 5: Definición de esquemas y vocabularios](apuntes/esquemas-y-vocabularios.md)
+* [Unidad 5.1: JSON Schema y herramientas de validación](apuntes/json-schema.md)
+* [Unidad 5.2: Callbacks y asincronía en JavaScript](apuntes/callbacks-asincronia.md)
+* [Unidad 5.3: Fetch y APIs](apuntes/fetch-apis.md)
+* [Unidad 5.4: Persistencia, caché y almacenamiento en la nube](apuntes/persistencia-almacenamiento.md)
+* [Unidad 5.5: Transformación de documentos con JavaScript](apuntes/transformacion-documentos.md)
 
 ### Proyectos
 
-* [Proyecto 1: Desarrollo de una aplicación web](proyectos/proyecto1.md)
-* [Proyecto 2: Funcionalidades interactivas con JavaScript](proyectos/proyecto2.md)
-* [Proyecto 2 · Recuperación del Proyecto 1](proyectos/proyecto2-recuperacion.md)
-* [Proyecto 3: Asincronía](proyectos/proyecto3.md)
+* [Proyecto 1: Desarrollo de una aplicación web](proyectos/aplicacion-web.md)
+* [Proyecto 2: Funcionalidades interactivas con JavaScript](proyectos/funcionalidades-interactivas-js.md)
+* [Proyecto 2 · Recuperación del Proyecto 1](proyectos/recuperacion-aplicacion-web.md)
+* [Proyecto 3: Asincronía](proyectos/asincronia.md)
 
 ## Referencias web generales
 
