@@ -19,7 +19,7 @@ Este curso está diseñado para que adquieras las habilidades necesarias en el m
     <p style="margin:0 0 8px 0; color:#FFB8DE; font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Primer día de clase</p>
     <p style="margin:0; color:#FBFBF8; font-size:1.15rem; font-weight:600;">Diapositivas de presentación del módulo: calendario, evaluación, herramientas y primeros pasos.</p>
   </div>
-  <a href="https://claude.ai/artifact/KoRNMKTBCBXrznqV6RhKAR" target="_blank" rel="noopener" style="background:#FFB8DE; color:#1F0318; border:3px solid #1F0318; box-shadow:4px 4px 0 #1F0318; padding:14px 28px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-decoration:none; white-space:nowrap;">Ver presentación →</a>
+  <a href="assets/presentacion-modulo.pdf" target="_blank" rel="noopener" style="background:#FFB8DE; color:#1F0318; border:3px solid #1F0318; box-shadow:4px 4px 0 #1F0318; padding:14px 28px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-decoration:none; white-space:nowrap;">Descargar presentación →</a>
 </div>
 
 ## Tabla de contenido
