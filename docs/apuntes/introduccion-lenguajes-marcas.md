@@ -5,6 +5,14 @@ hide:
 
 # UT1 Introducción a los Lenguajes de Marcas
 
+<div style="background:#382A40; border:4px solid #1F0318; box-shadow:8px 8px 0 #1F0318; padding:32px 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; margin:32px 0;">
+  <div>
+    <p style="margin:0 0 8px 0; color:#FFB8DE; font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Diapositivas de la unidad</p>
+    <p style="margin:0; color:#FBFBF8; font-size:1.15rem; font-weight:600;">Presentación de la UT1: qué es un lenguaje de marcas, árboles, historia y validación.</p>
+  </div>
+  <a href="../../assets/ut1-introduccion-lenguajes-marcas.pdf" target="_blank" rel="noopener" style="background:#FFB8DE; color:#1F0318; border:3px solid #1F0318; box-shadow:4px 4px 0 #1F0318; padding:14px 28px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-decoration:none; white-space:nowrap;">Descargar presentación →</a>
+</div>
+
 Antes de escribir la primera línea de HTML del curso, conviene entender qué es exactamente un lenguaje de marcas y por qué existen. Va mucho más allá de "un tipo de código que usan las páginas web": se trata de una familia de lenguajes con una idea común detrás, que lleva más de sesenta años resolviendo el mismo problema de fondo (cómo describir la estructura de un documento sin mezclarla con su significado o su presentación). Entender esa idea te va a servir durante todo el módulo, porque HTML, XML, JSON y hasta Markdown son variaciones sobre el mismo tema.
 
 ## ¿Qué es un lenguaje de marcas y para qué sirve?
