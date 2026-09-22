@@ -9,7 +9,7 @@ Antes de escribir la primera línea de HTML del curso, conviene entender qué es
 
 ## ¿Qué es un lenguaje de marcas y para qué sirve?
 
-Un **lenguaje de marcas** es un sistema que usa etiquetas — las **marcas** — para señalar qué es cada parte de un documento: esto es un título, esto es una lista, esto es el precio de un producto. Las marcas no aparecen en el resultado final que ve la persona usuaria (nadie ve las etiquetas `<h1>` en una web renderizada, ni las llaves de un JSON en la respuesta de una app); están ahí para que un programa sepa cómo tratar cada trozo de contenido.
+Un **lenguaje de marcas** es un sistema que usa etiquetas (las **marcas**) para señalar qué es cada parte de un documento: esto es un título, esto es una lista, esto es el precio de un producto. Las marcas no aparecen en el resultado final que ve la persona usuaria (nadie ve las etiquetas `<h1>` en una web renderizada, ni las llaves de un JSON en la respuesta de una app); están ahí para que un programa sepa cómo tratar cada trozo de contenido.
 
 Esto tiene una consecuencia importante: un lenguaje de marcas **separa el contenido de su estructura y de su presentación**. El contenido es la información en sí ("Lenguajes de Marcas"); la estructura es cómo se organiza esa información (es un título de nivel 1, dentro de una sección); la presentación es cómo se ve (en negrita, tamaño 24px, color azul). HTML se ocupa sobre todo de la estructura; CSS, que verás en la próxima unidad, se ocupa de la presentación. Esta separación es la razón por la que puedes cambiar el diseño completo de una web sin tocar ni una palabra del contenido, o por la que la misma respuesta JSON de una API puede alimentar tanto una app móvil como una web sin que el formato de los datos tenga que cambiar.
 
