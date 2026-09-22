@@ -20,29 +20,29 @@ Este curso está diseñado para que adquieras las habilidades necesarias en el m
 
 ### HTML y CSS
 
-* [Unidad 2: HTML5](apuntes/html5.md)
-* [Unidad 3: CSS3](apuntes/css3.md)
+* [Unidad 2: HTML5]()
+* [Unidad 3: CSS3]()
 
 ### JavaScript (DOM y eventos)
 
-* [Unidad 4: Introducción a JavaScript](apuntes/introduccion-javascript.md)
-* [Unidad 4.1: Manipulación del DOM y eventos](apuntes/dom-y-eventos.md)
+* [Unidad 4: Introducción a JavaScript]()
+* [Unidad 4.1: Manipulación del DOM y eventos]()
 
 ### XML, JSON y asincronía
 
-* [Unidad 5: Definición de esquemas y vocabularios](apuntes/esquemas-y-vocabularios.md)
-* [Unidad 5.1: JSON Schema y herramientas de validación](apuntes/json-schema.md)
-* [Unidad 5.2: Callbacks y asincronía en JavaScript](apuntes/callbacks-asincronia.md)
-* [Unidad 5.3: Fetch y APIs](apuntes/fetch-apis.md)
-* [Unidad 5.4: Persistencia, caché y almacenamiento en la nube](apuntes/persistencia-almacenamiento.md)
-* [Unidad 5.5: Transformación de documentos con JavaScript](apuntes/transformacion-documentos.md)
+* [Unidad 5: Definición de esquemas y vocabularios]()
+* [Unidad 5.1: JSON Schema y herramientas de validación]()
+* [Unidad 5.2: Callbacks y asincronía en JavaScript]()
+* [Unidad 5.3: Fetch y APIs]()
+* [Unidad 5.4: Persistencia, caché y almacenamiento en la nube]()
+* [Unidad 5.5: Transformación de documentos con JavaScript]()
 
 ### Proyectos
 
-* [Proyecto 1: Desarrollo de una aplicación web](proyectos/aplicacion-web.md)
-* [Proyecto 2: Funcionalidades interactivas con JavaScript](proyectos/funcionalidades-interactivas-js.md)
-* [Proyecto 2 · Recuperación del Proyecto 1](proyectos/recuperacion-aplicacion-web.md)
-* [Proyecto 3: Asincronía](proyectos/asincronia.md)
+* [Proyecto 1: Desarrollo de una aplicación web]()
+* [Proyecto 2: Funcionalidades interactivas con JavaScript]()
+* [Proyecto 2 · Recuperación del Proyecto 1]()
+* [Proyecto 3: Asincronía]()
 
 ## Referencias web generales
 
