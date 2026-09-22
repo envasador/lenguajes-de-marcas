@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# **Proyecto 2 — Funcionalidades Interactivas con JavaScript**
+# **Proyecto 2 (Funcionalidades Interactivas con JavaScript)**
 
 **RA3 · JavaScript y Manipulación del DOM**
 
@@ -81,11 +81,11 @@ Actualizar el repositorio de GitHub con las siguientes incorporaciones:
 | **README.md actualizado** | Documentación de las decisiones técnicas tomadas y ejemplos de manipulación del DOM implementados. |
 | **GitHub Pages** | Demo funcional y accesible desde el navegador a través de GitHub Pages o servidor equivalente. |
 
-### **Evaluación — RA3**
+### **Evaluación (RA3)**
 
 #### **(RA3) Accede y manipula documentos web utilizando lenguajes de script de cliente.**
 
-##### **Criterio 3.a — Se han identificado y clasificado los lenguajes de script de cliente relacionados con la web y sus diferentes versiones y estándares.**
+##### **Criterio 3.a (Se han identificado y clasificado los lenguajes de script de cliente relacionados con la web y sus diferentes versiones y estándares).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -106,7 +106,7 @@ Actualizar el repositorio de GitHub con las siguientes incorporaciones:
 
 * Uso de ejemplos concretos del propio proyecto para ilustrar la clasificación.
 
-##### **Criterio 3.b — Se ha identificado la sintaxis básica de los lenguajes de script de cliente.**
+##### **Criterio 3.b (Se ha identificado la sintaxis básica de los lenguajes de script de cliente).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -127,7 +127,7 @@ Actualizar el repositorio de GitHub con las siguientes incorporaciones:
 
 * Código indentado, con nombres de variables descriptivos y comentarios cuando sea necesario.
 
-##### **Criterio 3.c — Se han utilizado métodos para la selección y acceso de los diferentes elementos de un documento web.**
+##### **Criterio 3.c (Se han utilizado métodos para la selección y acceso de los diferentes elementos de un documento web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -148,7 +148,7 @@ Actualizar el repositorio de GitHub con las siguientes incorporaciones:
 
 * Relación clara y coherente entre los selectores CSS usados en el HTML y los usados en JavaScript.
 
-##### **Criterio 3.d — Se han creado y modificado elementos de documentos web.**
+##### **Criterio 3.d (Se han creado y modificado elementos de documentos web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -169,7 +169,7 @@ Actualizar el repositorio de GitHub con las siguientes incorporaciones:
 
 * Uso de innerHTML o template literals de forma segura para construir la estructura del elemento.
 
-##### **Criterio 3.e — Se han eliminado elementos de documentos web.**
+##### **Criterio 3.e (Se han eliminado elementos de documentos web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -190,7 +190,7 @@ Actualizar el repositorio de GitHub con las siguientes incorporaciones:
 
 * Feedback visual opcional al eliminar (animación, mensaje de confirmación...).
 
-##### **Criterio 3.f — Se han realizado modificaciones sobre los estilos de un documento web.**
+##### **Criterio 3.f (Se han realizado modificaciones sobre los estilos de un documento web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |

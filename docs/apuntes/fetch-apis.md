@@ -4,7 +4,7 @@ hide:
 ---
 
 
-# 5.3 — Fetch y APIs
+# 5.3 (Fetch y APIs)
 
 ## 1. De la teoría a la práctica
 
@@ -25,7 +25,7 @@ fetch('https://una-api.com/datos')
     .catch(error => console.error('Error:', error));
 ```
 
-Hay dos `.then()` encadenados. El primero recibe el objeto `response`, que es la respuesta HTTP en bruto — con cabeceras, código de estado, etc., pero sin los datos todavía. Para extraer el cuerpo como JSON llamamos a `response.json()`, que devuelve otra Promise. El segundo ya recibe los datos parseados, listos para usar.
+Hay dos `.then()` encadenados. El primero recibe el objeto `response`, que es la respuesta HTTP en bruto (con cabeceras, código de estado, etc., pero sin los datos todavía). Para extraer el cuerpo como JSON llamamos a `response.json()`, que devuelve otra Promise. El segundo ya recibe los datos parseados, listos para usar.
 
 ### Códigos de estado HTTP
 
@@ -33,13 +33,13 @@ Cuando un servidor responde a tu petición, siempre incluye un **código de esta
 
 | Código | Significado |
 |--------|-------------|
-| `200` | OK — todo fue bien |
-| `201` | Created — el recurso se creó correctamente |
-| `400` | Bad Request — la petición está mal formada |
-| `401` | Unauthorized — necesitas autenticarte |
-| `403` | Forbidden — autenticado pero sin permiso |
-| `404` | Not Found — el recurso no existe |
-| `500` | Internal Server Error — el servidor ha petado |
+| `200` | OK (todo fue bien) |
+| `201` | Created (el recurso se creó correctamente) |
+| `400` | Bad Request (la petición está mal formada) |
+| `401` | Unauthorized (necesitas autenticarte) |
+| `403` | Forbidden (autenticado pero sin permiso) |
+| `404` | Not Found (el recurso no existe) |
+| `500` | Internal Server Error (el servidor ha petado) |
 
 `response.ok` es `true` cuando el código está entre `200` y `299`, y `false` para todo lo demás. `response.status` te da el número exacto por si necesitas distinguir entre un `401` y un `404`.
 
@@ -60,7 +60,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/pikachuu')
     .catch(error => console.error(error.message));
 ```
 
-`throw` no es exclusivo de `fetch` — puedes usarlo en cualquier función para señalar que algo no debería haber ocurrido:
+`throw` no es exclusivo de `fetch` (puedes usarlo en cualquier función para señalar que algo no debería haber ocurrido):
 
 ```javascript
 function calcularDescuento(precio, porcentaje) {
@@ -130,7 +130,7 @@ Pruébalo en la consola del navegador ahora mismo. Si todo va bien deberías ver
 
 ## Varias peticiones a la vez: Promise.all
 
-A veces necesitas hacer varias peticiones simultáneas y esperar a que todas terminen. Hacerlo en secuencia con varios `await` es innecesariamente lento — cada petición esperaría a que termine la anterior:
+A veces necesitas hacer varias peticiones simultáneas y esperar a que todas terminen. Hacerlo en secuencia con varios `await` es innecesariamente lento (cada petición esperaría a que termine la anterior):
 
 ```javascript
 // Lento — secuencial
@@ -180,7 +180,7 @@ resultados.forEach(resultado => {
 });
 ```
 
-`Promise.allSettled` siempre espera a todas y te devuelve el estado de cada una — sin que el fallo de una afecte a las demás.
+`Promise.allSettled` siempre espera a todas y te devuelve el estado de cada una (sin que el fallo de una afecte a las demás).
 
 ## POST: enviar datos a un servidor
 
@@ -219,11 +219,11 @@ crearPost('Mi primer post', 'Contenido del post');
 
 Fíjate en las tres diferencias respecto a un `fetch` normal:
 
-**`method: 'POST'`** — por defecto `fetch` hace GET. Para cualquier otro método tienes que indicarlo.
+**`method: 'POST'`** (por defecto `fetch` hace GET). Para cualquier otro método tienes que indicarlo.
 
-**`headers`** — le dice al servidor que el cuerpo está en formato JSON. Sin esto el servidor puede no saber cómo interpretar los datos.
+**`headers`** (le dice al servidor que el cuerpo está en formato JSON). Sin esto el servidor puede no saber cómo interpretar los datos.
 
-**`body`** — el contenido que envías, convertido a string con `JSON.stringify`. `fetch` solo puede enviar texto.
+**`body`** (el contenido que envías, convertido a string con `JSON.stringify`). `fetch` solo puede enviar texto.
 
 ## Axios: cuando fetch se queda corto
 
@@ -321,7 +321,7 @@ btnBuscar.addEventListener('click', buscar);
 input.addEventListener('keydown', e => e.key === 'Enter' && buscar());
 ```
 
-Usamos `querySelector` en lugar de `getElementById` porque funciona con cualquier selector CSS — una sola forma de seleccionar elementos para todo.
+Usamos `querySelector` en lugar de `getElementById` porque funciona con cualquier selector CSS (una sola forma de seleccionar elementos para todo).
 
 ### Para ir más lejos
 

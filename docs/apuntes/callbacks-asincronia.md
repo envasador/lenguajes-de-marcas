@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# 5.2.0 — Callbacks y asincronía en JavaScript
+# 5.2.0 (Callbacks y asincronía en JavaScript)
 
 ## JavaScript hace una cosa a la vez
 
@@ -21,7 +21,7 @@ JavaScript ejecuta la primera línea, la termina, ejecuta la segunda, la termina
 
 El problema llega cuando una de esas operaciones tarda mucho. Si JavaScript tiene que esperar a que un servidor responda antes de pasar a la siguiente línea, la página entera se congela durante ese tiempo. El usuario no puede hacer clic en nada, el scroll no responde, todo se bloquea. Eso es inaceptable en una aplicación web.
 
-La solución es la **asincronía**: una forma de decirle a JavaScript *"empieza esta operación, y cuando termine ya me avisas — mientras tanto sigo con lo demás"*.
+La solución es la **asincronía**: una forma de decirle a JavaScript *"empieza esta operación, y cuando termine ya me avisas (mientras tanto sigo con lo demás)"*.
 
 Para entender cómo funciona eso, primero hay que entender el **Event Loop**.
 
@@ -29,10 +29,10 @@ Para entender cómo funciona eso, primero hay que entender el **Event Loop**.
 
 Aunque JavaScript es single-threaded, el navegador no lo es. El navegador tiene varios mecanismos que trabajan en paralelo con JavaScript:
 
-- **La pila de llamadas (Call Stack)** — donde se ejecuta el código JavaScript, una función a la vez.
-- **Las Web APIs** — funciones que el navegador ejecuta por su cuenta: temporizadores, peticiones de red, eventos del DOM...
-- **La cola de tareas (Task Queue)** — donde esperan los callbacks listos para ejecutarse.
-- **El Event Loop** — el mecanismo que mueve callbacks de la cola a la pila cuando la pila está vacía.
+- **La pila de llamadas (Call Stack)** (donde se ejecuta el código JavaScript, una función a la vez).
+- **Las Web APIs** (funciones que el navegador ejecuta por su cuenta: temporizadores, peticiones de red, eventos del DOM...)
+- **La cola de tareas (Task Queue)** (donde esperan los callbacks listos para ejecutarse).
+- **El Event Loop** (el mecanismo que mueve callbacks de la cola a la pila cuando la pila está vacía).
 
 Veámoslo con un ejemplo simple usando `setTimeout`, que es la forma más básica de asincronía:
 
@@ -103,7 +103,7 @@ setTimeout(() => {
 }, 2000);
 ```
 
-En todos estos casos estás pasando una función como argumento. Esa función no se ejecuta ahora — se ejecuta después, cuando ocurre algo: un clic, cada iteración del array, el paso del tiempo.
+En todos estos casos estás pasando una función como argumento. Esa función no se ejecuta ahora (se ejecuta después, cuando ocurre algo: un clic, cada iteración del array, el paso del tiempo).
 
 ### Callbacks en operaciones asíncronas
 
@@ -167,11 +167,11 @@ Plano, lineal, un solo `.catch()` para todos los errores. Mucho más manejable.
 
 ### Cómo funciona una Promise por dentro
 
-Una Promise es un objeto que representa un valor que todavía no existe pero existirá en el futuro — o fallará. Tiene tres estados:
+Una Promise es un objeto que representa un valor que todavía no existe pero existirá en el futuro (o fallará). Tiene tres estados:
 
-- **Pending** — esperando resultado.
-- **Fulfilled** — completada con éxito.
-- **Rejected** — falló.
+- **Pending** (esperando resultado).
+- **Fulfilled** (completada con éxito).
+- **Rejected** (falló).
 
 Una vez que pasa de *pending* a cualquiera de los otros dos, **no puede volver atrás ni cambiar de estado**.
 
@@ -222,7 +222,7 @@ esperar(1)
 
 ## async / await: Promises con orden.
 
-`async/await` es la evolución final. Por debajo sigue siendo Promises — el navegador las convierte automáticamente — pero la sintaxis se parece a código síncrono normal, lo que hace el código mucho más fácil de leer y de depurar.
+`async/await` es la evolución final. Por debajo sigue siendo Promises (el navegador las convierte automáticamente) pero la sintaxis se parece a código síncrono normal, lo que hace el código mucho más fácil de leer y de depurar.
 
 ```javascript
 // Con Promises y .then()
@@ -246,7 +246,7 @@ async function cargarDatos() {
 }
 ```
 
-`await` pausa la ejecución de la función `async` en ese punto y espera a que la Promise se resuelva. La función no bloquea el hilo principal — otras cosas pueden seguir ejecutándose mientras espera. Solo esa función está pausada.
+`await` pausa la ejecución de la función `async` en ese punto y espera a que la Promise se resuelva. La función no bloquea el hilo principal (otras cosas pueden seguir ejecutándose mientras espera). Solo esa función está pausada.
 
 ### Las funciones async siempre devuelven una Promise
 
@@ -297,7 +297,7 @@ async function cargar() {
 
 Ahora que tienes el contexto completo, tiene sentido ver la evolución resumida:
 
-**1. Callbacks** — el origen. Simples pero se vuelven inmanejables cuando se anidan.
+**1. Callbacks** (el origen). Simples pero se vuelven inmanejables cuando se anidan.
 
 ```javascript
 obtenerUsuario(1, usuario => {
@@ -307,7 +307,7 @@ obtenerUsuario(1, usuario => {
 });
 ```
 
-**2. Promises** — resuelven el anidamiento con cadenas planas y un `.catch()` centralizado.
+**2. Promises** (resuelven el anidamiento con cadenas planas y un `.catch()` centralizado).
 
 ```javascript
 obtenerUsuario(1)
@@ -316,7 +316,7 @@ obtenerUsuario(1)
     .catch(error => console.error(error));
 ```
 
-**3. async/await** — la misma lógica con la legibilidad del código síncrono.
+**3. async/await** (la misma lógica con la legibilidad del código síncrono).
 
 ```javascript
 async function cargar() {
@@ -330,19 +330,19 @@ async function cargar() {
 }
 ```
 
-Los tres mecanismos conviven en el código real. Los callbacks no han desaparecido — `addEventListener`, `forEach`, `setTimeout` los siguen usando. Las Promises aparecen constantemente en librerías. Y `async/await` es lo que escribes tú cuando creas código nuevo.
+Los tres mecanismos conviven en el código real. Los callbacks no han desaparecido (`addEventListener`, `forEach`, `setTimeout` los siguen usando). Las Promises aparecen constantemente en librerías. Y `async/await` es lo que escribes tú cuando creas código nuevo.
 
 ## Ejercicios
 
 Practica con `setTimeout` para sentirte con mayor comodidad con la asincronía antes de añadir la complejidad de la red. En la siguiente unidad usarás todo esto con `fetch` y APIs reales.
 
-**Ejercicio 1 — callbacks:**
+**Ejercicio 1 (callbacks):**
 Escribe una función `esperar(tiempo, callback)` que llame al callback después de `tiempo` milisegundos. Úsala para encadenar tres mensajes con un segundo de diferencia entre cada uno.
 
-**Ejercicio 2 — Promises:**
+**Ejercicio 2 (Promises):**
 Convierte la función anterior para que devuelva una Promise en lugar de aceptar un callback. Encadena tres `esperar()` con `.then()`.
 
-**Ejercicio 3 — async/await:**
+**Ejercicio 3 (async/await):**
 Reescribe el ejercicio 2 usando `async/await` y `try/catch`. ¿Cuántas líneas menos necesitas?
 
 Cuando los tres ejercicios funcionen y entiendas por qué cada uno funciona como funciona, estás listo para la siguiente unidad.

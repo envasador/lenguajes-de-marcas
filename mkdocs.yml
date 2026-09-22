@@ -2,8 +2,8 @@ site_name: Lenguajes de Marcas — Apuntes
 site_description: Apuntes y proyectos del módulo Lenguajes de Marcas y Sistemas de Gestión de la Información (DAW)
 site_author: Alejandro Carmona Martos — IES Rafael Alberti
 # site_url: https://<tu-usuario>.github.io/<tu-repo>/   # descomenta y ajusta antes de publicar
-repo_url: https://github.com/envasador/LMSGI
-repo_name: envasador/LMSGI
+repo_url: https://github.com/envasador/lenguajes-de-marcas
+repo_name: envasador/lenguajes-de-marcas
 edit_uri: edit/main/docs/
 
 theme:
@@ -67,7 +67,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/envasador/LMSGI
+      link: https://github.com/envasador/lenguajes-de-marcas
       name: Repositorio del módulo
 
 copyright: Contenido generado por Alejandro Carmona Martos — IES Rafael Alberti · CC BY-SA 4.0

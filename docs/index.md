@@ -12,6 +12,16 @@ hide:
 
 Este curso está diseñado para que adquieras las habilidades necesarias en el manejo de lenguajes de marcas y sistemas de gestión de información, los cuales son fundamentales en el desarrollo de aplicaciones web modernas. A lo largo del módulo, aprenderás cómo estructurar, transmitir y presentar información utilizando tecnologías clave como **HTML, CSS, JSON**, y **JavaScript**.
 
+## Presentación del módulo
+
+<div style="background:#382A40; border:4px solid #1F0318; box-shadow:8px 8px 0 #1F0318; padding:32px 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; margin:32px 0;">
+  <div>
+    <p style="margin:0 0 8px 0; color:#FFB8DE; font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Primer día de clase</p>
+    <p style="margin:0; color:#FBFBF8; font-size:1.15rem; font-weight:600;">Diapositivas de presentación del módulo: calendario, evaluación, herramientas y primeros pasos.</p>
+  </div>
+  <a href="https://claude.ai/artifact/KoRNMKTBCBXrznqV6RhKAR" target="_blank" rel="noopener" style="background:#FFB8DE; color:#1F0318; border:3px solid #1F0318; box-shadow:4px 4px 0 #1F0318; padding:14px 28px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-decoration:none; white-space:nowrap;">Ver presentación →</a>
+</div>
+
 ## Tabla de contenido
 
 ### Introducción

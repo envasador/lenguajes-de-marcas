@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# **Proyecto 2 Integrado Recuperación — HTML5, CSS3 y JavaScript**
+# **Proyecto 2 Integrado Recuperación (HTML5, CSS3 y JavaScript)**
 
 **RA2 (Recuperación) \+ RA3**
 
@@ -26,7 +26,7 @@ El proyecto se divide en tres fases. Cada fase debe completarse antes de pasar a
 | **Fase 2** | **RA2** | Presentación visual con CSS3, Flexbox/Grid y diseño responsive. |
 | **Fase 3** | **RA3** | Funcionalidades interactivas con JavaScript y manipulación del DOM. |
 
-## **Fase 1 — Estructura y Semántica HTML5**
+## **Fase 1 (Estructura y Semántica HTML5)**
 
 En esta primera fase te centrarás exclusivamente en la estructura y el contenido de tu sitio web. Sin estilos, sin colores, sin JavaScript. El objetivo es construir una base sólida con HTML5 semántico, accesible y validado.
 
@@ -40,17 +40,17 @@ Crear un sitio web de seis páginas con estructura HTML5 correcta, contenido bie
 
 Seis páginas HTML conectadas entre sí:
 
-* index.html — Página principal (Home).
+* index.html (página principal, Home).
 
-* servicios.html — Servicios o productos.
+* servicios.html (servicios o productos).
 
-* about.html — Sobre el negocio o proyecto.
+* about.html (sobre el negocio o proyecto).
 
-* blog.html — Blog o sección de noticias.
+* blog.html (blog o sección de noticias).
 
-* contacto.html — Formulario de contacto.
+* contacto.html (formulario de contacto).
 
-* \[tu elección\].html — Página adicional (galería, FAQ, testimonios, portfolio...).
+* \[tu elección\].html (página adicional: galería, FAQ, testimonios, portfolio...).
 
 Cada página debe tener al menos tres secciones de contenido diferenciadas y una estructura única (no una simple plantilla repetida).
 
@@ -86,7 +86,7 @@ Cada página debe tener al menos tres secciones de contenido diferenciadas y una
 
 Incluye al menos una tabla de datos con estructura semántica (thead, tbody, th con scope) en la página que sea más apropiada.
 
-#### **6\. Validación W3C — Fase 1**
+#### **6\. Validación W3C (Fase 1)**
 
 El HTML de todas las páginas debe validar con 0 errores en validator.w3.org. Incluye captura de pantalla de la validación exitosa para cada página en el README.md.
 
@@ -98,7 +98,7 @@ El HTML de todas las páginas debe validar con 0 errores en validator.w3.org. In
 
 * README.md con descripción del proyecto y decisiones tomadas.
 
-## **Fase 2 — Presentación y Diseño con CSS3**
+## **Fase 2 (Presentación y Diseño con CSS3)**
 
 Con la estructura HTML ya construida y validada, es el momento de darle vida visual. En esta fase aplicarás CSS3 moderno: variables, Flexbox o Grid y diseño responsive. El HTML no debe modificarse para adaptarlo al CSS; si necesitas cambios estructurales, soluciónalo con CSS.
 
@@ -160,7 +160,7 @@ Aplicar una hoja de estilo CSS3 externa, organizada y moderna, que presente el c
 
 * Uso de unidades relativas (rem, %, vw, vh).
 
-#### **7\. Validación W3C — Fase 2**
+#### **7\. Validación W3C (Fase 2)**
 
 El archivo CSS debe validar con 0 errores en jigsaw.w3.org/css-validator. Incluye captura de pantalla en el README con enlace directo al resultado.
 
@@ -172,7 +172,7 @@ El archivo CSS debe validar con 0 errores en jigsaw.w3.org/css-validator. Incluy
 
 * Demo visible en GitHub Pages o similar.
 
-## **Fase 3 — Funcionalidades Interactivas con JavaScript**
+## **Fase 3 (Funcionalidades Interactivas con JavaScript)**
 
 El cliente ha quedado satisfecho con el diseño. Ahora quiere que la web sea dinámica. En esta fase añadirás JavaScript moderno (ES6+) para manipular el DOM y ofrecer al usuario una experiencia interactiva.
 
@@ -230,11 +230,11 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Demo funcional accesible en GitHub Pages o similar.
 
-## **Evaluación — RA2**
+## **Evaluación (RA2)**
 
 ### **(RA2) Utiliza lenguajes de marcas para la transmisión y presentación de información a través de la web.**
 
-#### **Criterio 2.b — Se ha analizado la estructura de un documento HTML e identificado las secciones que lo componen.**
+#### **Criterio 2.b (Se ha analizado la estructura de un documento HTML e identificado las secciones que lo componen).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -257,7 +257,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Validación: código que pase las validaciones del W3C sin errores.
 
-#### **Criterio 2.c — Se ha reconocido la funcionalidad de las principales etiquetas y los atributos del lenguaje HTML.**
+#### **Criterio 2.c (Se ha reconocido la funcionalidad de las principales etiquetas y los atributos del lenguaje HTML).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -280,7 +280,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Atributos multimedia: dimensiones en imágenes, controles en video/audio, fuentes alternativas.
 
-#### **Criterio 2.d — Se han establecido las semejanzas y diferencias entre las diferentes versiones de HTML.**
+#### **Criterio 2.d (Se han establecido las semejanzas y diferencias entre las diferentes versiones de HTML).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -301,7 +301,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Atributos modernos: uso de atributos HTML5 y tipos de input modernos.
 
-#### **Criterio 2.e — Se han utilizado herramientas en la creación de documentos web.**
+#### **Criterio 2.e (Se han utilizado herramientas en la creación de documentos web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -324,7 +324,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Herramientas de desarrollo: uso efectivo del navegador y sus DevTools para depuración y testing responsive.
 
-#### **Criterio 2.f — Se han identificado las ventajas que aporta la utilización de hojas de estilo.**
+#### **Criterio 2.f (Se han identificado las ventajas que aporta la utilización de hojas de estilo).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -347,7 +347,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Documentación de ventajas: README que explica las ventajas conseguidas (separación de responsabilidades, consistencia visual, facilidad de cambios globales, etc.).
 
-#### **Criterio 2.g — Se han aplicado hojas de estilo.**
+#### **Criterio 2.g (Se han aplicado hojas de estilo).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -372,7 +372,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Jerarquía tipográfica: fuentes web apropiadas con jerarquía visual clara, contraste adecuado y legibilidad optimizada.
 
-#### **Criterio 2.h — Se han validado documentos HTML y CSS.**
+#### **Criterio 2.h (Se han validado documentos HTML y CSS).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -395,11 +395,11 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Corrección de advertencias: advertencias justificadas o corregidas cuando sea posible.
 
-## **Evaluación — RA3**
+## **Evaluación (RA3)**
 
 ### **(RA3) Accede y manipula documentos web utilizando lenguajes de script de cliente.**
 
-#### **Criterio 3.a — Se han identificado y clasificado los lenguajes de script de cliente relacionados con la web y sus diferentes versiones y estándares.**
+#### **Criterio 3.a (Se han identificado y clasificado los lenguajes de script de cliente relacionados con la web y sus diferentes versiones y estándares).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -420,7 +420,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Uso de ejemplos concretos del propio proyecto para ilustrar la clasificación.
 
-#### **Criterio 3.b — Se ha identificado la sintaxis básica de los lenguajes de script de cliente.**
+#### **Criterio 3.b (Se ha identificado la sintaxis básica de los lenguajes de script de cliente).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -441,7 +441,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Código indentado, con nombres de variables descriptivos y comentarios cuando sea necesario.
 
-#### **Criterio 3.c — Se han utilizado métodos para la selección y acceso de los diferentes elementos de un documento web.**
+#### **Criterio 3.c (Se han utilizado métodos para la selección y acceso de los diferentes elementos de un documento web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -462,7 +462,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Relación clara y coherente entre los selectores CSS usados en el HTML y los usados en JavaScript.
 
-#### **Criterio 3.d — Se han creado y modificado elementos de documentos web.**
+#### **Criterio 3.d (Se han creado y modificado elementos de documentos web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -483,7 +483,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Uso de innerHTML o template literals de forma segura para construir la estructura del elemento.
 
-#### **Criterio 3.e — Se han eliminado elementos de documentos web.**
+#### **Criterio 3.e (Se han eliminado elementos de documentos web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |
@@ -504,7 +504,7 @@ Las tres mecánicas DOM integradas en esta funcionalidad:
 
 * Feedback visual opcional al eliminar (animación, mensaje de confirmación...).
 
-#### **Criterio 3.f — Se han realizado modificaciones sobre los estilos de un documento web.**
+#### **Criterio 3.f (Se han realizado modificaciones sobre los estilos de un documento web).**
 
 | Nota | Descripción | Indicador |
 | :---: | ----- | ----- |

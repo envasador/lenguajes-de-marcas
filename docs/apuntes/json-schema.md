@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# 5.1 — JSON Schema y herramientas de validación
+# 5.1 JSON Schema y herramientas de validación
 
 ## El problema de confiar ciegamente en los datos
 
@@ -113,7 +113,7 @@ Puedes anidar todo lo que necesites. Cada nivel tiene sus propias reglas indepen
 
 ### Arrays de objetos
 
-Si tienes una lista de elementos —los productos de un pedido, los comentarios de un post— usas `items` para describir cómo debe ser cada elemento:
+Si tienes una lista de elementos (los productos de un pedido, los comentarios de un post) usas `items` para describir cómo debe ser cada elemento:
 
 ```json
 {
@@ -152,7 +152,7 @@ Cuando el mismo subesquema aparece en varios sitios (por ejemplo, la estructura 
 }
 ```
 
-Fíjate en `additionalProperties: false` al final. Eso significa que si alguien manda un campo extra que no está en `properties` —como `"descuento"` o `"color"`— la validación también falla. Es opcional, pero en entornos donde quieres control total sobre los datos que recibes es muy útil.
+Fíjate en `additionalProperties: false` al final. Eso significa que si alguien manda un campo extra que no está en `properties` (como `"descuento"` o `"color"`) la validación también falla. Es opcional, pero en entornos donde quieres control total sobre los datos que recibes es muy útil.
 
 ## Actividad: ponlo en práctica con WebStorm
 

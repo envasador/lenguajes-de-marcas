@@ -212,7 +212,7 @@ Cuando el navegador encuentra `debugger`, abre las DevTools y te permite ver el 
 
 Existen varias formas de añadir código JavaScript a una página web. Vamos a verlas ordenadas de **menos recomendable** a **más recomendable**.
 
-### 4.1. JavaScript en línea (inline) — ❌ Evitar siempre
+### 4.1. JavaScript en línea (inline) (❌ Evitar siempre)
 
 La forma más directa (pero peor) es escribir JavaScript directamente en los atributos HTML:
 
@@ -227,7 +227,7 @@ La forma más directa (pero peor) es escribir JavaScript directamente en los atr
 3. **Difícil de depurar**: Los errores son más difíciles de encontrar.
 4. **Problemas de seguridad**: Facilita ataques XSS.
 
-### 4.2. JavaScript interno — ⚠️ Solo para pruebas rápidas
+### 4.2. JavaScript interno (⚠️ Solo para pruebas rápidas)
 
 Podemos incluir código JavaScript dentro de etiquetas `<script>` en el propio documento HTML:
 
@@ -250,7 +250,7 @@ Podemos incluir código JavaScript dentro de etiquetas `<script>` en el propio d
 
 Esta forma está bien para hacer pruebas rápidas mientras aprendes, pero no es ideal para proyectos reales porque el código JavaScript queda mezclado con el HTML.
 
-### 4.3. JavaScript externo — ✅ Siempre recomendado
+### 4.3. JavaScript externo (✅ Siempre recomendado)
 
 La mejor práctica es separar el JavaScript en archivos `.js` independientes:
 

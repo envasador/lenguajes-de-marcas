@@ -4,7 +4,7 @@ hide:
 ---
 
 
-# 5.5 — Transformación de documentos con JavaScript
+# 5.5 (Transformación de documentos con JavaScript)
 
 ## Los sistemas no hablan el mismo idioma
 
@@ -14,11 +14,11 @@ Imagina que una empresa lleva 15 años guardando su catálogo de productos en XM
 
 ¿Tiras el catálogo y lo reescribes a mano en JSON? No. Lo **transformas** automáticamente.
 
-Eso es lo que aprenderás aquí: convertir datos entre formatos distintos usando JavaScript. No porque sea un ejercicio académico, sino porque en el mundo real los sistemas no siempre se ponen de acuerdo en cómo guardan la información.
+Eso es lo que aprenderás aquí: convertir datos entre formatos distintos usando JavaScript. Y no es un ejercicio académico: en el mundo real los sistemas no siempre se ponen de acuerdo en cómo guardan la información.
 
 ## Los tres formatos que vas a ver toda tu carrera
 
-### JSON — el que ya conoces
+### JSON (el que ya conoces)
 
 ```json
 {
@@ -30,7 +30,7 @@ Eso es lo que aprenderás aquí: convertir datos entre formatos distintos usando
 
 JSON es el formato nativo de JavaScript. Es ligero, fácil de leer y prácticamente todas las APIs modernas lo usan. Soporta estructuras anidadas: objetos dentro de objetos, listas de objetos, lo que necesites. Ya lo has usado extensamente en las unidades anteriores.
 
-### XML — el que encuentras en sistemas antiguos
+### XML (el que encuentras en sistemas antiguos)
 
 ```xml
 <alumno>
@@ -39,9 +39,9 @@ JSON es el formato nativo de JavaScript. Es ligero, fácil de leer y prácticame
 </alumno>
 ```
 
-XML fue el estándar dominante durante años y todavía aparece en muchos sistemas empresariales, servicios de la administración pública y APIs heredadas. Es más verboso que JSON — cada dato necesita una etiqueta de apertura y una de cierre — pero también más formal y estructurado. No lo vas a elegir si partes de cero, pero sí lo vas a encontrar y tendrás que saber manejarlo.
+XML fue el estándar dominante durante años y todavía aparece en muchos sistemas empresariales, servicios de la administración pública y APIs heredadas. Es más verboso que JSON (cada dato necesita una etiqueta de apertura y una de cierre), pero también más formal y estructurado. No lo vas a elegir si partes de cero, pero sí lo vas a encontrar y tendrás que saber manejarlo.
 
-### CSV — el que todo el mundo entiende
+### CSV (el que todo el mundo entiende)
 
 ```csv
 nombre,edad
@@ -122,7 +122,7 @@ console.log(csvToJson(csv));
 // [ { nombre: "Lucía", edad: "22" }, { nombre: "Pedro", edad: "21" } ]
 ```
 
-Un detalle importante: todos los valores llegan como strings. Si `edad` tiene que ser un número, tendrás que convertirlo: `Number(valores[i])` o `parseInt(valores[i])`. Esta función también falla si algún campo contiene una coma dentro del valor — para esos casos existe `PapaParse`.
+Un detalle importante: todos los valores llegan como strings. Si `edad` tiene que ser un número, tendrás que convertirlo: `Number(valores[i])` o `parseInt(valores[i])`. Esta función también falla si algún campo contiene una coma dentro del valor (para esos casos existe `PapaParse`).
 
 ### De JSON a CSV
 
@@ -152,7 +152,7 @@ Las funciones anteriores funcionan para casos simples. En un proyecto real el CS
 
 La regla práctica es la misma que siempre: para aprender, escribe el código tú. Para producción, usa la librería.
 
-### `xml2js` — XML serio en Node.js
+### `xml2js` (XML serio en Node.js)
 
 `xml2js` convierte XML en JSON automáticamente, manejando atributos, nodos anidados y listas sin que tengas que escribir funciones personalizadas.
 
@@ -178,7 +178,7 @@ xml2js.parseString(xml, (err, result) => {
 
 `fs.readFileSync` lee el archivo del disco. `parseString` hace la conversión y te devuelve el resultado en el callback. A partir de ahí tienes un objeto JavaScript normal.
 
-### `PapaParse` — CSV sin dolores de cabeza
+### `PapaParse` (CSV sin dolores de cabeza)
 
 Las funciones CSV que escribimos antes fallan en cuanto aparece un campo que contiene comas, saltos de línea o comillas. `PapaParse` maneja todo eso correctamente y además puede leer archivos reales que el usuario sube desde su ordenador.
 

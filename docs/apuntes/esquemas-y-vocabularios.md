@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# UT5 — Esquemas y vocabularios en lenguajes de marcas
+# UT5 Esquemas y vocabularios en lenguajes de marcas
 
 ## ¿Qué vamos a aprender aquí?
 
@@ -121,7 +121,7 @@ JSON es el formato más usado hoy en día para intercambiar datos en aplicacione
 
 **JSON Schema** hace exactamente lo mismo que XSD pero para JSON. Te permite definir qué propiedades debe tener el objeto, de qué tipo son, cuáles son obligatorias y qué valores están permitidos.
 
-Una diferencia importante respecto a XML: en JSON no hay forma de enlazar el esquema directamente desde el documento. El esquema vive en un archivo separado —por ejemplo `videojuego_schema.json`— y la validación se hace desde herramientas externas o desde tu editor de código.
+Una diferencia importante respecto a XML: en JSON no hay forma de enlazar el esquema directamente desde el documento. El esquema vive en un archivo separado (por ejemplo `videojuego_schema.json`) y la validación se hace desde herramientas externas o desde tu editor de código.
 
 El esquema para el JSON de arriba quedaría así:
 
