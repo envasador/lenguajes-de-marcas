@@ -7,7 +7,7 @@ hide:
 
 ## ¿Qué vamos a aprender aquí?
 
-En esta unidad vamos a entender qué son los esquemas y los vocabularios, para qué sirven y cómo se usan en la práctica. No se trata solo de conocer la teoría: al final de este tema serás capaz de crear tus propios esquemas y validar documentos XML y JSON con ellos.
+En esta unidad vamos a entender qué son los esquemas y los vocabularios, para qué sirven y cómo se usan en la práctica. Vamos más allá de la teoría: al final de este tema serás capaz de crear tus propios esquemas y validar documentos XML y JSON con ellos.
 
 ## 1. El problema que resuelven los esquemas
 

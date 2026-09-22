@@ -14,7 +14,7 @@ Imagina que una empresa lleva 15 años guardando su catálogo de productos en XM
 
 ¿Tiras el catálogo y lo reescribes a mano en JSON? No. Lo **transformas** automáticamente.
 
-Eso es lo que aprenderás aquí: convertir datos entre formatos distintos usando JavaScript. Y no es un ejercicio académico: en el mundo real los sistemas no siempre se ponen de acuerdo en cómo guardan la información.
+Eso es lo que aprenderás aquí: convertir datos entre formatos distintos usando JavaScript. Y tiene aplicación directa en el mundo real, porque los sistemas no siempre se ponen de acuerdo en cómo guardan la información.
 
 ## Los tres formatos que vas a ver toda tu carrera
 

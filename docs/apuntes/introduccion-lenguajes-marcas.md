@@ -5,7 +5,7 @@ hide:
 
 # UT1 Introducción a los Lenguajes de Marcas
 
-Antes de escribir la primera línea de HTML del curso, conviene entender qué es exactamente un lenguaje de marcas y por qué existen. No es solo "un tipo de código que usan las páginas web": es una familia de lenguajes con una idea común detrás, que lleva más de sesenta años resolviendo el mismo problema de fondo (cómo describir la estructura de un documento sin mezclarla con su significado o su presentación). Entender esa idea te va a servir durante todo el módulo, porque HTML, XML, JSON y hasta Markdown son variaciones sobre el mismo tema.
+Antes de escribir la primera línea de HTML del curso, conviene entender qué es exactamente un lenguaje de marcas y por qué existen. Va mucho más allá de "un tipo de código que usan las páginas web": se trata de una familia de lenguajes con una idea común detrás, que lleva más de sesenta años resolviendo el mismo problema de fondo (cómo describir la estructura de un documento sin mezclarla con su significado o su presentación). Entender esa idea te va a servir durante todo el módulo, porque HTML, XML, JSON y hasta Markdown son variaciones sobre el mismo tema.
 
 ## ¿Qué es un lenguaje de marcas y para qué sirve?
 
@@ -17,11 +17,11 @@ Hay una segunda idea, más sutil, que conviene dejar clara desde ya: **un lengua
 
 ## Documentos como árboles: la estructura jerárquica
 
-Casi todos los lenguajes de marcas que vas a usar en este módulo comparten un mismo modelo de organización: el **árbol**. Un documento marcado no es una lista plana de elementos, es una jerarquía: hay un elemento raíz que contiene a otros elementos, que a su vez pueden contener otros, y así sucesivamente.
+Casi todos los lenguajes de marcas que vas a usar en este módulo comparten un mismo modelo de organización: el **árbol**. Un documento marcado se organiza como una jerarquía, no como una lista plana de elementos: hay un elemento raíz que contiene a otros elementos, que a su vez pueden contener otros, y así sucesivamente.
 
 Piénsalo como el índice de un libro: el libro es la raíz, contiene capítulos, cada capítulo contiene secciones, cada sección contiene párrafos. En HTML, la raíz es `<html>`, que contiene `<head>` y `<body>`; dentro de `<body>` puede haber un `<article>` que contenga un `<h1>` y varios `<p>`. En XML pasa exactamente lo mismo, pero con las etiquetas que tú definas. Esta estructura en árbol es la que luego, en JavaScript, vas a poder recorrer y modificar a través del **DOM** (*Document Object Model*: cuando en la Unidad 4 hagas `document.querySelector()`, en realidad estás pidiéndole al navegador que busque un nodo concreto dentro de ese árbol).
 
-Que un documento tenga esta forma no es casualidad: los árboles son fáciles de procesar mecánicamente (un programa puede recorrerlos nodo a nodo), fáciles de validar (puedes comprobar que cada nodo está donde le corresponde) y fáciles de transformar de un formato a otro, que es exactamente lo que harás en la UT5 cuando conviertas datos entre XML y JSON.
+Que un documento tenga esta forma responde a razones prácticas: los árboles son fáciles de procesar mecánicamente (un programa puede recorrerlos nodo a nodo), fáciles de validar (puedes comprobar que cada nodo está donde le corresponde) y fáciles de transformar de un formato a otro, que es exactamente lo que harás en la UT5 cuando conviertas datos entre XML y JSON.
 
 ## Un poco de historia: de las imprentas a las APIs
 
@@ -34,7 +34,7 @@ La necesidad de marcar documentos no nació con la Web. Nació en la industria e
 This is a paragraph in GML.
 ```
 
-En 1986 esa idea se formalizó como estándar internacional con el **SGML** (*Standard Generalized Markup Language*). SGML era un **metalenguaje**: un conjunto de reglas para poder crear otros lenguajes de marcas a medida, definiendo tus propias etiquetas según lo que necesitaras describir. Esa flexibilidad tenía un precio (SGML es complejo de implementar y de aprender), así que en la práctica casi nadie lo usaba directamente. Lo importante de SGML no es que vayas a usarlo (no lo harás): sentó las reglas de sintaxis (etiquetas de apertura y cierre, atributos, anidamiento) de las que heredan tanto HTML como XML.
+En 1986 esa idea se formalizó como estándar internacional con el **SGML** (*Standard Generalized Markup Language*). SGML era un **metalenguaje**: un conjunto de reglas para poder crear otros lenguajes de marcas a medida, definiendo tus propias etiquetas según lo que necesitaras describir. Esa flexibilidad tenía un precio (SGML es complejo de implementar y de aprender), así que en la práctica casi nadie lo usaba directamente. Nunca vas a usarlo directamente, pero lo importante de SGML es que sentó las reglas de sintaxis (etiquetas de apertura y cierre, atributos, anidamiento) de las que heredan tanto HTML como XML.
 
 ```html
 <!DOCTYPE example SYSTEM "example.dtd">
@@ -123,4 +123,4 @@ Un documento es **válido** cuando, además de estar bien formado, cumple una es
 
 ## Lo que te llevas de esta unidad
 
-Un lenguaje de marcas separa contenido, estructura y presentación, y no es un lenguaje de programación: describe, no calcula. La mayoría organiza el documento como un árbol jerárquico, la misma forma que luego manipularás con el DOM. Y aunque hoy convivan HTML, XML, Markdown y JSON, cada uno ha sobrevivido o ha sido desplazado según lo bien que resolviera un problema concreto (algo que conviene recordar la próxima vez que tengas que elegir un formato para tus propios datos).
+Un lenguaje de marcas separa contenido, estructura y presentación, y se limita a describir la información en lugar de procesarla, así que no es un lenguaje de programación. La mayoría organiza el documento como un árbol jerárquico, la misma forma que luego manipularás con el DOM. Y aunque hoy convivan HTML, XML, Markdown y JSON, cada uno ha sobrevivido o ha sido desplazado según lo bien que resolviera un problema concreto (algo que conviene recordar la próxima vez que tengas que elegir un formato para tus propios datos).

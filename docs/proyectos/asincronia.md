@@ -15,7 +15,7 @@ La aplicación usará **dos capas de almacenamiento** con propósitos distintos:
 - **localStorage** (para cachear los resultados de búsqueda y evitar peticiones repetidas a la API).
 - **Firebase Firestore** (para guardar los favoritos del usuario en la nube, persistentes entre dispositivos y sesiones).
 
-Esa distinción no es arbitraria: tiene que quedar explicada y justificada en el README.
+Esa distinción tiene una razón de ser, y debe quedar explicada y justificada en el README.
 
 ## Punto de partida
 

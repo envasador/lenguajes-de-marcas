@@ -73,7 +73,7 @@ localStorage resuelve bien la persistencia local, pero tiene un límite estructu
 
 Si el mismo usuario abre la aplicación desde su móvil, no verá los datos que guardó desde el ordenador. Si dos usuarios quieren acceder a la misma información, es imposible. Si el usuario limpia el caché del navegador o cambia de navegador, los datos desaparecen.
 
-Esas limitaciones no son fallos de diseño de localStorage (es exactamente lo que promete ser: almacenamiento local). El problema es cuando se intenta usar para casos de uso que necesitan algo más. Cuando los datos tienen que estar disponibles en cualquier dispositivo, en cualquier sesión, para cualquier usuario con acceso, el almacenamiento local ya no es la herramienta adecuada. Se necesita un servidor.
+Esas limitaciones son coherentes con lo que localStorage promete ser: almacenamiento local, ni más ni menos. El problema es cuando se intenta usar para casos de uso que necesitan algo más. Cuando los datos tienen que estar disponibles en cualquier dispositivo, en cualquier sesión, para cualquier usuario con acceso, el almacenamiento local ya no es la herramienta adecuada. Se necesita un servidor.
 
 ## Almacenamiento en la nube: bases de datos remotas
 
