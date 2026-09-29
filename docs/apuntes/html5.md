@@ -109,7 +109,28 @@ Cada una de estas etiquetas tiene un caso de uso concreto, no intercambiable:
 - **`<aside>`**: contenido relacionado con lo que le rodea pero no imprescindible para entenderlo: una barra lateral, una cita destacada extraída del texto principal, publicidad o una nota al margen.
 - **`<footer>`**: el pie de una página o de una sección. El de la página suele llevar el copyright y enlaces legales; el de un `<article>` puede llevar la biografía de quien lo escribió o la fecha de publicación.
 
-La confusión más habitual es `<article>` frente a `<section>`. La pregunta que resuelve la duda es: *¿este bloque tendría sentido si lo sacara de aquí y lo pusiera en otra página?* Si la respuesta es sí, es un `<article>`. Si solo tiene sentido como una parte de un todo mayor, es una `<section>`. Un `<article>` puede contener varias `<section>` (por ejemplo, un artículo largo dividido en apartados con su propio `<h2>` cada uno), y una `<section>` puede contener varios `<article>` (por ejemplo, la sección "Últimas noticias" de una portada, que agrupa varias noticias independientes).
+La confusión más habitual es `<article>` frente a `<section>`. La pregunta que resuelve la duda es: *¿este bloque tendría sentido si lo sacara de aquí y lo pusiera en otra página?* Si la respuesta es sí, es un `<article>`. Si solo tiene sentido como una parte de un todo mayor, es una `<section>`. Un `<article>` puede contener varias `<section>` (por ejemplo, un artículo largo dividido en apartados con su propio `<h2>` cada uno), y una `<section>` puede contener varios `<article>` (por ejemplo, la sección "Últimas noticias" de una portada, que agrupa varias noticias independientes). Los dos anidamientos son válidos porque `<section>` forma parte del contenido que `<article>` admite, y viceversa; de hecho pueden combinarse en la misma estructura, como en esta reseña de película con sus comentarios:
+
+```html
+<article class="resena-pelicula">
+  <h2>Jurassic Park</h2>
+
+  <section class="resena-principal">
+    <h3>Crítica</h3>
+    <p>Los dinosaurios estaban geniales.</p>
+  </section>
+
+  <section class="comentarios">
+    <h3>Comentarios de usuarios</h3>
+    <article class="comentario">
+      <h4>¡Demasiado terror!</h4>
+      <p>Me pareció excesivamente terrorífica.</p>
+    </article>
+  </section>
+</article>
+```
+
+Aquí el `<article>` principal (la reseña) contiene dos `<section>` (la crítica y el bloque de comentarios), y esa segunda `<section>` a su vez contiene un `<article>` (el comentario), porque un comentario de usuario tiene sentido por sí solo y podrías moverlo a otro sitio sin que perdiera significado.
 
 `<div>` no ha desaparecido: sigue siendo el contenedor genérico que usas cuando necesitas agrupar elementos solo por motivos de estilo o de JavaScript, sin que ese grupo tenga un significado propio. La regla práctica es sencilla: si existe una etiqueta semántica que describe lo que estás agrupando, úsala; si el agrupamiento no significa nada por sí mismo (es puro layout), usa `<div>`. Abusar de `<div>` cuando existe una etiqueta más precisa se conoce como *div soup*, y es uno de los errores de HTML más comunes en código de principiante.
 
@@ -253,6 +274,7 @@ HTML5 estructura el contenido con etiquetas semánticas que describen qué es ca
 - [HTML5 by Manz](https://lenguajehtml.com/html/)
 - [DOM by Manz](https://lenguajejs.com/dom/)
 - [Documentación de HTML (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/HTML)
+- [`<article>`: The Article Contents element (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/article)
 - [Validador HTML del W3C](https://validator.w3.org/)
 
 ## Material de refuerzo y ampliación
