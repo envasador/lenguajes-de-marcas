@@ -7,6 +7,37 @@ hide:
 
 En la UT1 viste que HTML es una de las muchas concreciones posibles de la idea de "lenguaje de marcas", con la particularidad de que su vocabulario de etiquetas está cerrado por el estándar. Ahora toca conocer ese vocabulario en profundidad, y la versión que vas a usar durante todo el módulo es **HTML5**, la que gobierna prácticamente toda la Web actual.
 
+## Qué hace el navegador con tu HTML
+
+Cuando escribes una URL, el navegador le pide al servidor un documento de texto. Ese texto, en la inmensa mayoría de los casos, está escrito en HTML: *HyperText Markup Language*, lenguaje de marcas de hipertexto. El navegador lee ese texto, reconoce las etiquetas y decide cómo mostrar cada trozo de contenido según la etiqueta que lo envuelve.
+
+Puedes comprobarlo tú mismo: en cualquier página web, pulsa `Ctrl+U` (o `Cmd+Option+U` en Mac) y verás el HTML tal cual lo recibió tu navegador, antes de que lo convierta en lo que ves en pantalla. Ese ejercicio, ver el código fuente de páginas que usas a diario, es una de las mejores formas de aprender HTML: te vas a encontrar patrones que ya conoces y otros que todavía no, y eso da pistas de qué te queda por aprender.
+
+## Anatomía de una etiqueta
+
+Toda la sintaxis de HTML gira en torno a la etiqueta, así que merece la pena diseccionar una:
+
+```html
+<p class="destacado">Este es el contenido.</p>
+```
+
+- **Etiqueta de apertura**: `<p class="destacado">`. El nombre (`p`) indica de qué tipo de elemento se trata; puede llevar uno o varios atributos.
+- **Contenido**: `Este es el contenido.`, todo lo que queda entre la apertura y el cierre.
+- **Etiqueta de cierre**: `</p>`, el mismo nombre que la de apertura, con una barra `/` delante.
+- **Atributo**: `class="destacado"`, un par nombre-valor que añade información extra a la etiqueta, siempre dentro de la etiqueta de apertura y con el valor entre comillas.
+
+No todas las etiquetas tienen contenido ni etiqueta de cierre. `<img src="foto.jpg" alt="...">` o `<br>` son **elementos vacíos** (*void elements*): no envuelven nada, así que no necesitan cerrarse. Y las etiquetas se pueden anidar unas dentro de otras (`<p>Un texto con <strong>una parte importante</strong>.</p>`), siempre que el orden de cierre respete el de apertura: la última etiqueta que abres es la primera que cierras.
+
+## Atributos comunes en HTML
+
+Hay un puñado de atributos que puedes usar en casi cualquier etiqueta, independientemente de cuál sea:
+
+- **`id`**: identifica un elemento de forma única dentro de todo el documento (no puede repetirse). Sirve como destino de un enlace interno (`<a href="#seccion-2">`) y como gancho para seleccionar ese elemento concreto desde CSS o JavaScript.
+- **`class`**: asigna una o varias etiquetas (separadas por espacios) a un elemento, a diferencia de `id`, puede repetirse en cuantos elementos quieras. Es el atributo que más vas a usar para dar estilo con CSS.
+- **`title`**: añade un texto informativo adicional que el navegador muestra como tooltip al pasar el cursor por encima. Útil para aclarar algo sin sobrecargar el contenido visible.
+- **`lang`**: indica el idioma de ese fragmento de texto, no solo el del documento entero (útil cuando citas una frase en otro idioma dentro de un párrafo).
+- **`data-*`**: cualquier atributo que empiece por `data-` (por ejemplo, `data-id-producto="42"`) es un atributo personalizado tuyo, pensado para guardar información que luego leerás desde JavaScript. El navegador lo ignora a efectos de renderizado; es solo para ti.
+
 ## De HTML a HTML5
 
 HTML nació con Tim Berners-Lee a principios de los 90 con un puñado de etiquetas: títulos, párrafos y poco más. Las versiones siguientes (HTML 3.2, HTML 4.01) fueron añadiendo tablas, formularios y estilos, pero seguían pensadas para documentos, no para aplicaciones. Cuando la Web empezó a necesitar vídeo, audio y contenido interactivo, la solución habitual era tirar de plugins como Flash, algo lento, poco accesible y dependiente de software de terceros.
@@ -40,7 +71,35 @@ Dentro de `<head>` no hay contenido visible, sino información sobre el document
 
 ## Etiquetas semánticas de estructura: usa la que describe la función
 
-Durante años, la forma de organizar una página era anidar `<div>` dentro de `<div>`, sin que el código dijera nada sobre qué era cada bloque. HTML5 introduce un conjunto de etiquetas de **landmark** (así las llaman las herramientas de accesibilidad) que sí lo dicen, y cada una tiene un caso de uso concreto, no intercambiable:
+Durante años, la forma de organizar una página era anidar `<div>` dentro de `<div>`, con clases que describían la función a base de nombres (`class="header"`, `class="nota-al-pie"`), pero sin que la propia etiqueta dijera nada. Así se veía una página típica antes de HTML5:
+
+```html
+<div class="articulo">
+  <div class="cabecera">
+    <h1>Título del artículo</h1>
+  </div>
+  <p>Contenido del artículo...</p>
+  <div class="pie">
+    <p>Publicado por Ana</p>
+  </div>
+</div>
+```
+
+El problema es que, para un navegador, un lector de pantalla o un buscador, todo son `<div>`: no hay forma de distinguir automáticamente la cabecera del contenido o del pie sin leer el nombre de la clase, que es solo una convención tuya, no algo que la etiqueta garantice. HTML5 sustituye esa convención por etiquetas de **landmark** (así las llaman las herramientas de accesibilidad) que llevan el significado incorporado:
+
+```html
+<article>
+  <header>
+    <h1>Título del artículo</h1>
+  </header>
+  <p>Contenido del artículo...</p>
+  <footer>
+    <p>Publicado por Ana</p>
+  </footer>
+</article>
+```
+
+Cada una de estas etiquetas tiene un caso de uso concreto, no intercambiable:
 
 - **`<header>`**: la cabecera de una página o de cualquier sección dentro de ella (no confundir con `<head>`, que va dentro de `<html>` y no se ve). Puede haber varios `<header>` en un mismo documento: el de la página entera, con el logo y la navegación principal, y el de cada `<article>`, con el título y la fecha de esa pieza concreta.
 - **`<nav>`**: agrupa los bloques de enlaces de navegación importantes, como el menú principal o la paginación de un listado. No todo grupo de enlaces necesita ser un `<nav>`: un puñado de enlaces sueltos en el pie de página no lo es; el menú principal del sitio, sí. Si usas más de un `<nav>` en la misma página (menú principal y migas de pan, por ejemplo), dales un `aria-label` distinto para que un lector de pantalla pueda diferenciarlos.
