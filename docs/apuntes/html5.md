@@ -265,10 +265,6 @@ Por eso escribir HTML bien anidado, bien estructurado y con la etiqueta semánti
 
 Un documento HTML puede tener errores de sintaxis (una etiqueta sin cerrar, un atributo mal escrito) y aun así el navegador lo va a mostrar, porque los navegadores son muy tolerantes con el código mal formado. Eso no significa que el documento esté bien: significa que el error está oculto. El [validador del W3C](https://validator.w3.org/) comprueba tu HTML contra la especificación oficial y señala exactamente dónde está el problema. Acostumbra a pasar tu código por él antes de darlo por terminado: en este módulo, la validación es un criterio que se evalúa, no un paso opcional.
 
-## Lo que te llevas de esta unidad
-
-HTML5 estructura el contenido con etiquetas semánticas que describen qué es cada bloque, no solo cómo se ve, y cada una de ellas tiene un caso de uso concreto que no es intercambiable con las demás. El navegador convierte ese HTML en el árbol DOM, la misma estructura que vas a dar estilo con CSS en la próxima unidad y que manipularás con JavaScript más adelante: cuanto más semántico y mejor estructurado sea tu HTML de partida, más fácil será todo lo que venga después.
-
 ## Recursos complementarios
 
 - [HTML5 by Manz](https://lenguajehtml.com/html/)
