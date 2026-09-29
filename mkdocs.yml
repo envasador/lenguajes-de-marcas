@@ -63,6 +63,7 @@ nav:
   - Inicio: index.md
   - Apuntes:
       - 1. Introducción a los lenguajes de marcas: apuntes/introduccion-lenguajes-marcas.md
+      - 2. Introducción a HTML5: apuntes/html5.md
 
 extra:
   social:

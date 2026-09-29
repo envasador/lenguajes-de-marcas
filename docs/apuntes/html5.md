@@ -3,174 +3,153 @@ hide:
   - navigation
 ---
 
-# **UT2.1 Introducción a HTML5**
+# UT2 Introducción a HTML5
 
-## **1. Historia de HTML y evolución hacia HTML5**
-   - **Origen de HTML (1990-1991)**: HTML (HyperText Markup Language) fue creado por Tim Berners-Lee, el padre de la World Wide Web. La primera versión fue muy básica, con un conjunto limitado de etiquetas que permitían estructurar contenido sencillo.
-   - **Evolución de HTML**: A lo largo de los años, HTML evolucionó para incluir nuevas funcionalidades como tablas, estilos, y formularios en HTML 3.2 y 4.01.
-   - **La necesidad de HTML5**:
-     - Con el auge de la web multimedia y las aplicaciones interactivas, HTML4 se quedó atrás.
-     - Se necesitaba un lenguaje estándar que soportara video, audio y gráficos sin necesidad de plugins como Flash.
-     - HTML5 fue desarrollado por el W3C e introducido en 2008, con la meta de crear una web más semántica, accesible y compatible con dispositivos móviles.
-   - **Características clave de HTML5**:
-     - Soporte multimedia nativo (audio y video).
-     - Nuevas APIs, como Canvas para gráficos 2D, Web Storage y Geolocation.
-     - Mayor énfasis en la semántica del contenido con nuevas etiquetas.
+En la UT1 viste que HTML es una de las muchas concreciones posibles de la idea de "lenguaje de marcas", con la particularidad de que su vocabulario de etiquetas está cerrado por el estándar. Ahora toca conocer ese vocabulario en profundidad, y la versión que vas a usar durante todo el módulo es **HTML5**, la que gobierna prácticamente toda la Web actual.
 
-## **2. Estructura básica de un documento HTML5**
-   - **DOCTYPE**: El documento HTML5 comienza con `<!DOCTYPE html>`, que le indica al navegador que debe interpretar el documento como HTML5.
-   - **Etiquetas principales**:
-     - `<html>`: Elemento raíz que envuelve todo el contenido.
-     - `<head>`: Contiene metadatos sobre el documento (como el título, enlaces a hojas de estilo, meta descripciones, etc.).
-     - `<meta charset="UTF-8">`: Para definir la codificación de caracteres del documento (UTF-8 es el estándar recomendado).
-     - `<title>`: Define el título que se muestra en la pestaña del navegador.
-     - `<body>`: Contiene el contenido visible para el usuario (texto, imágenes, videos, etc.).
+## De HTML a HTML5
+
+HTML nació con Tim Berners-Lee a principios de los 90 con un puñado de etiquetas: títulos, párrafos y poco más. Las versiones siguientes (HTML 3.2, HTML 4.01) fueron añadiendo tablas, formularios y estilos, pero seguían pensadas para documentos, no para aplicaciones. Cuando la Web empezó a necesitar vídeo, audio y contenido interactivo, la solución habitual era tirar de plugins como Flash, algo lento, poco accesible y dependiente de software de terceros.
+
+HTML5, desarrollado por el W3C y publicado como recomendación en 2014 (aunque en uso desde bastante antes), resuelve ese problema incorporando de forma nativa lo que antes requería un plugin: reproducción de audio y vídeo, dibujo con `<canvas>`, geolocalización, almacenamiento local... y, sobre todo, un conjunto de etiquetas semánticas que describen la función de cada bloque de contenido, no solo su aspecto. Esa combinación (multimedia nativo más semántica) es la que define a HTML5 frente a sus predecesores.
+
+## La estructura de un documento HTML5
+
+Todo documento HTML5 empieza con una declaración de tipo (`<!DOCTYPE html>`) que le dice al navegador "interpreta esto como HTML5, no como una versión antigua". A partir de ahí, el documento se organiza en dos grandes bloques: un `<head>` con información sobre el documento que no se muestra directamente, y un `<body>` con el contenido que sí ve la persona usuaria.
 
 ```html
 <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mi primer documento HTML5</title>
-    </head>
-    <body>
-        <h1>¡Hola, Mundo!</h1>
-        <p>Este es un documento básico en HTML5.</p>
-    </body>
-    </html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer documento HTML5</title>
+  </head>
+  <body>
+    <h1>¡Hola, mundo!</h1>
+    <p>Este es un documento básico en HTML5.</p>
+  </body>
+</html>
 ```
 
-## **3. Etiquetas básicas en HTML5**
+El atributo `lang="es"` en `<html>` no es decorativo: le dice a los lectores de pantalla en qué idioma pronunciar el contenido y ayuda a los buscadores a servir la página a la audiencia correcta.
 
-### **3.1. Etiquetas de encabezado y párrafo**
-  - **`<h1>` a `<h6>`**: Para definir títulos y subtítulos en el documento.
-    - `<h1>` es el nivel más importante y `<h6>` el menos importante.
-  - **`<p>`**: Para definir párrafos de texto.
+## La cabecera: metadatos que no se ven
 
-### **3.2. Etiquetas de contenido en bloque y en línea**
-  - **Contenido en bloque**:
-    - `<div>`: Un contenedor genérico para contenido en bloque.
-    - `<section>`: Agrupa contenido temático relacionado.
-    - `<article>`: Para contenido independiente que podría ser reutilizado, como una publicación de blog.
-    - `<header>`, `<footer>`, `<nav>`: Partes estructurales de una página web.
-  - **Contenido en línea**:
-    - `<span>`: Un contenedor genérico para contenido en línea.
-    - `<a href="#">`: Enlaces que permiten la navegación entre páginas.
-    - **Etiquetas de estilo en línea**: `<strong>`, `<em>`, `<mark>`, `<code>` para marcar texto con importancia, énfasis, resaltado o código fuente.
+Dentro de `<head>` no hay contenido visible, sino información sobre el documento. `<meta charset="UTF-8">` fija la codificación de caracteres (con eso te aseguras de que las tildes y la "ñ" se vean bien en cualquier navegador). `<meta name="viewport">` controla cómo se escala la página en pantallas pequeñas, y es imprescindible para que el diseño responsive que verás en la UT3 funcione. `<title>` define el texto que aparece en la pestaña del navegador y en los resultados de búsqueda. Y `<link rel="stylesheet" href="...">` es la forma habitual de conectar una hoja de estilos externa, algo que retomarás en cuanto empieces con CSS.
 
-### **3.3. Listas**
-  - **Listas ordenadas** (`<ol>`) y no ordenadas (`<ul>`) con elementos de lista (`<li>`).
+## Agrupar contenido: de `<div>` a las etiquetas semánticas
 
-### **3.4. Imágenes y multimedia**
-  -  **`<img src="ruta" alt="descripción">`**: Inserta una imagen.
-  - **`<video>` y `<audio>`**: Etiquetas para incorporar multimedia nativa, sin necesidad de plugins.
-      - Ejemplo de video:
+Durante años, la forma de organizar una página era anidar `<div>` dentro de `<div>`, sin que el código dijera nada sobre qué era cada bloque. HTML5 introduce etiquetas que sí lo dicen:
+
+- `<header>`: la cabecera de una página o de una sección (no confundir con `<head>`, que va dentro de `<html>` y no se ve).
+- `<nav>`: el bloque de navegación principal.
+- `<main>`: el contenido principal de la página (debería haber solo uno por documento).
+- `<article>`: contenido independiente y reutilizable, como una entrada de blog o una noticia.
+- `<section>`: un bloque temático dentro de un `<article>` o de la página, normalmente con su propio título.
+- `<aside>`: contenido relacionado pero secundario, como una barra lateral.
+- `<footer>`: el pie de una página o de una sección.
+
+`<div>` no ha desaparecido: sigue siendo el contenedor genérico que usas cuando necesitas agrupar elementos solo por motivos de estilo o de JavaScript, sin que ese grupo tenga un significado propio. La regla práctica es sencilla: si existe una etiqueta semántica que describe lo que estás agrupando, úsala; si no, usa `<div>`.
+
+Esto no es un capricho estético. Un lector de pantalla anuncia "navegación" al llegar a un `<nav>` y permite saltárselo, cosa que no puede hacer con un `<div class="nav">`. Y un buscador entiende mejor de qué trata tu página cuando el contenido relevante está dentro de un `<article>` en lugar de perdido entre `<div>` sin etiquetar.
+
+## Texto, enlaces y multimedia
+
+Para el texto normal usas `<h1>` a `<h6>` para títulos (en orden de importancia, sin saltarte niveles) y `<p>` para párrafos. Dentro de un párrafo, `<strong>` marca importancia real (no solo negrita visual) y `<em>` marca énfasis (no solo cursiva); si solo quieres cambiar el aspecto sin dar significado, están `<b>` e `<i>`, pero úsalas con moderación.
+
+Los enlaces se construyen con `<a href="...">`, y las imágenes con `<img src="..." alt="...">`. El atributo `alt` no es opcional: es lo que lee un lector de pantalla y lo que se muestra si la imagen no carga.
+
+HTML5 trajo también soporte nativo para audio y vídeo, sin depender de ningún plugin:
+
 ```html
-    <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta video.
-    </video>
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  Tu navegador no soporta la etiqueta video.
+</video>
 ```
 
-### **3.5. Formularios**
-  - El uso de formularios es esencial para la interacción del usuario.
-    - **`<form>`**: Contenedor del formulario.
-    - **`<input type="text">`, `<input type="email">`, `<input type="submit">`**: Campos de entrada de datos.
-    - **`<label>`**: Para etiquetar los campos de entrada.
+## Tablas: organizar datos, no maquetar
+
+Antes de que existiera CSS, era habitual usar tablas para maquetar páginas enteras. Hoy eso está desaconsejado: una tabla se reserva para datos tabulares reales, filas y columnas con una relación entre sí.
+
 ```html
-  <form action="/submit" method="POST">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre">
-      <input type="submit" value="Enviar">
-  </form>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Juan</td>
+      <td>25</td>
+      <td>Madrid</td>
+    </tr>
+    <tr>
+      <td>Ana</td>
+      <td>30</td>
+      <td>Barcelona</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
-### **3.6. Tablas en HTML5**
-Las tablas permiten organizar datos en filas y columnas. Aunque no se recomienda para la maquetación de páginas, siguen siendo útiles para mostrar datos tabulares.
+`<thead>` agrupa la cabecera y `<tbody>` el cuerpo; dentro de cada fila (`<tr>`), `<th>` marca una celda de encabezado y `<td>` una celda de datos. Cuando una celda necesita ocupar varias columnas o varias filas, se usan los atributos `colspan` y `rowspan`.
 
-  - **`<table>`**: Elemento contenedor de la tabla.
-  - **`<thead>`**: Agrupa el encabezado de la tabla.
-  - **`<tbody>`**: Agrupa el cuerpo de la tabla.
-  - **`<tr>`**: Define una fila en la tabla.
-  - **`<th>`**: Define una celda de encabezado (por defecto en negrita y centrada).
-  - **`<td>`**: Define una celda de datos en la tabla.
+## Formularios: la puerta de entrada de datos
 
-Ejemplo básico de tabla:
+Un formulario es la forma que tiene una página de recibir información de la persona usuaria. `<form>` es el contenedor; dentro van los campos, cada uno con su `<label>` asociado para que quede claro qué se está pidiendo:
+
 ```html
-   <table>
-       <thead>
-           <tr>
-               <th>Nombre</th>
-               <th>Edad</th>
-               <th>Ciudad</th>
-           </tr>
-       </thead>
-       <tbody>
-           <tr>
-               <td>Juan</td>
-               <td>25</td>
-               <td>Madrid</td>
-           </tr>
-           <tr>
-               <td>Ana</td>
-               <td>30</td>
-               <td>Barcelona</td>
-           </tr>
-       </tbody>
-   </table>
+<form action="/enviar" method="POST">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="email">Correo:</label>
+  <input type="email" id="email" name="email" required>
+
+  <button type="submit">Enviar</button>
+</form>
 ```
 
-- **Atributos importantes**:
-    - **`border`**: Define el grosor del borde de la tabla. (En HTML5 se recomienda usar CSS para manejar estilos).
-    - **`colspan`**: Hace que una celda se extienda por varias columnas.
-    - **`rowspan`**: Hace que una celda se extienda por varias filas.
+El atributo `type` de `<input>` cambia por completo el comportamiento del campo: `email` valida que el texto tenga forma de correo, `number` restringe a valores numéricos, `date` abre un selector de fecha. Esa validación básica (`required`, `type`, `pattern`) la hace el propio navegador, sin una sola línea de JavaScript, aunque en la UT3 verás cómo reforzarla con CSS y más adelante con JavaScript.
 
-Ejemplo con **`colspan`** y **`rowspan`**:
-```html
-   <table border="1">
-       <thead>
-           <tr>
-               <th>Producto</th>
-               <th>Precio</th>
-               <th>Cantidad</th>
-           </tr>
-       </thead>
-       <tbody>
-           <tr>
-               <td>Manzanas</td>
-               <td>1.00€</td>
-               <td rowspan="2">10</td>
-           </tr>
-           <tr>
-               <td>Peras</td>
-               <td>1.50€</td>
-           </tr>
-           <tr>
-               <td colspan="2">Total</td>
-               <td>20€</td>
-           </tr>
-       </tbody>
-   </table>
+## El árbol DOM: cómo ve el navegador tu HTML
+
+En la UT1 viste que los documentos marcados se organizan como árboles. Cuando el navegador carga un documento HTML, hace exactamente eso: lee las etiquetas y construye una estructura en memoria llamada **DOM** (*Document Object Model*), donde cada etiqueta se convierte en un nodo y las relaciones de anidamiento se convierten en relaciones de padre e hijo.
+
+```text
+html
+├── head
+│   ├── meta
+│   └── title
+└── body
+    ├── h1
+    └── p
 ```
 
-## **4. HTML5 Semántico: Un enfoque hacia la accesibilidad y SEO**
-  - La introducción de etiquetas semánticas en HTML5 mejora la accesibilidad para lectores de pantalla y optimiza el SEO.
-    - **`<article>`, `<section>`, `<aside>`, `<header>`, `<footer>`, `<nav>`**: Ayudan a estructurar mejor el contenido, proporcionando información clara sobre su función.
-  - **Beneficios de las etiquetas semánticas**:
-      - Mejoran la comprensión del contenido por parte de los motores de búsqueda.
-      - Facilitan la lectura del código por otros desarrolladores.
-      - Mejoran la accesibilidad para usuarios con discapacidades.
+Ese árbol no es solo una representación interna: es lo que ves renderizado en la pantalla, y es también la estructura que CSS recorre para decidir cómo pintar cada elemento y que JavaScript recorrerá y modificará a partir de la UT4, con métodos como `document.querySelector()`. Cuando en el futuro selecciones un elemento por su etiqueta, su clase o su id, en realidad le estarás pidiendo al navegador que busque un nodo concreto dentro de este mismo árbol.
 
-## **Recursos complementarios**
-  - [Documentación oficial de HTML5 (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/HTML)
-  - [W3C HTML5 Specification](https://www.w3.org/TR/html5/)
-  - [HTML5 by Manz](https://lenguajehtml.com/html/)
+Por eso escribir HTML bien anidado y bien estructurado no es solo una cuestión de estilo: cuanto más claro sea el árbol que generas, más fácil será seleccionar, dar estilo y manipular cada parte de tu página más adelante.
 
-Ejemplos y ejercicios prácticos: Crear una página HTML básica que incluya un formulario de contacto, un artículo con imágenes y videos, y una lista de tareas.
+## Validar tu HTML
+
+Un documento HTML puede tener errores de sintaxis (una etiqueta sin cerrar, un atributo mal escrito) y aun así el navegador lo va a mostrar, porque los navegadores son muy tolerantes con el código mal formado. Eso no significa que el documento esté bien: significa que el error está oculto. El [validador del W3C](https://validator.w3.org/) comprueba tu HTML contra la especificación oficial y señala exactamente dónde está el problema. Acostumbra a pasar tu código por él antes de darlo por terminado: en este módulo, la validación es un criterio que se evalúa, no un paso opcional.
+
+## Lo que te llevas de esta unidad
+
+HTML5 estructura el contenido con etiquetas semánticas que describen qué es cada bloque, no solo cómo se ve, y trae soporte nativo para multimedia y formularios sin depender de plugins. El navegador convierte ese HTML en el árbol DOM, la misma estructura que vas a dar estilo con CSS en la próxima unidad y que manipularás con JavaScript más adelante.
+
+## Recursos complementarios
+
+- [HTML5 by Manz](https://lenguajehtml.com/html/)
+- [DOM by Manz](https://lenguajejs.com/dom/)
+- [Documentación de HTML (MDN Web Docs)](https://developer.mozilla.org/es/docs/Web/HTML)
+- [Validador HTML del W3C](https://validator.w3.org/)
 
 ## Material de refuerzo y ampliación
 
-Se recomienda la realización de los siguientes cursos de la [Learn HTML by Building a Cat Photo App](https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1)  de freeCodeCamp.
-
-
+Se recomienda completar el curso [Learn HTML by Building a Cat Photo App](https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1) de freeCodeCamp.

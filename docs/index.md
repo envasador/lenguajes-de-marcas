@@ -30,7 +30,7 @@ Este curso está diseñado para que adquieras las habilidades necesarias en el m
 
 ### HTML y CSS
 
-* Unidad 2: HTML5 *(próximamente)*
+* [Unidad 2: HTML5](apuntes/html5.md)
 * Unidad 3: CSS3 *(próximamente)*
 
 ### JavaScript (DOM y eventos)
