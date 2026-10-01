@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # UT1 Introducción a los Lenguajes de Marcas
 
 <div style="background:#382A40; border:4px solid #1F0318; box-shadow:8px 8px 0 #1F0318; padding:32px 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; margin:32px 0;">

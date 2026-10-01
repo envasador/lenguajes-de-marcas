@@ -62,8 +62,8 @@ plugins:
 nav:
   - Inicio: index.md
   - Unidades:
-      - Introducción a los lenguajes de marcas: apuntes/introduccion-lenguajes-marcas.md
-      - HTML5: apuntes/html5.md
+      - UT1 · Introducción a los lenguajes de marcas: apuntes/introduccion-lenguajes-marcas.md
+      - UT2 · Introducción a HTML5: apuntes/html5.md
 
 extra:
   social:

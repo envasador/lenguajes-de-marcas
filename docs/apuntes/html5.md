@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # UT2 Introducción a HTML5
 
 En la UT1 viste que HTML es una de las muchas concreciones posibles de la idea de "lenguaje de marcas", con la particularidad de que su vocabulario de etiquetas está cerrado por el estándar. Ahora toca conocer ese vocabulario en profundidad, y la versión que vas a usar durante todo el módulo es **HTML5**, la que gobierna prácticamente toda la Web actual.
