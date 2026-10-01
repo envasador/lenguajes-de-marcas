@@ -1,0 +1,1180 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y proyectos del módulo Lenguajes de Marcas y Sistemas de Gestión de la Información (DAW)">
+      
+      
+        <meta name="author" content="Alejandro Carmona Martos — IES Rafael Alberti">
+      
+      
+      
+        <link rel="prev" href="../introduccion-lenguajes-marcas/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/sello-rafael-alberti-imago-blanco.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>UT2 · Introducción a HTML5 - Lenguajes de Marcas — Apuntes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheet/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ut2-introduccion-a-html5" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Lenguajes de Marcas — Apuntes" class="md-header__button md-logo" aria-label="Lenguajes de Marcas — Apuntes" data-md-component="logo">
+      
+  <img src="../../assets/sello-rafael-alberti-imago-blanco.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lenguajes de Marcas — Apuntes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UT2 · Introducción a HTML5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/envasador/lenguajes-de-marcas" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    envasador/lenguajes-de-marcas
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduccion-lenguajes-marcas/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Unidades
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lenguajes de Marcas — Apuntes" class="md-nav__button md-logo" aria-label="Lenguajes de Marcas — Apuntes" data-md-component="logo">
+      
+  <img src="../../assets/sello-rafael-alberti-imago-blanco.svg" alt="logo">
+
+    </a>
+    Lenguajes de Marcas — Apuntes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/envasador/lenguajes-de-marcas" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    envasador/lenguajes-de-marcas
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion-lenguajes-marcas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1 · Introducción a los lenguajes de marcas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2 · Introducción a HTML5
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2 · Introducción a HTML5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-hace-el-navegador-con-tu-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué hace el navegador con tu HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomia-de-una-etiqueta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomía de una etiqueta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-comunes-en-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos comunes en HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-html-a-html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De HTML a HTML5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-estructura-de-un-documento-html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La estructura de un documento HTML5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-cabecera-metadatos-que-no-se-ven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La cabecera: metadatos que no se ven
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-semanticas-de-estructura-usa-la-que-describe-la-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etiquetas semánticas de estructura: usa la que describe la función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-semanticas-de-texto-casos-de-uso-concretos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etiquetas semánticas de texto: casos de uso concretos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tablas-organizar-datos-no-maquetar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tablas: organizar datos, no maquetar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios-la-puerta-de-entrada-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formularios: la puerta de entrada de datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-arbol-dom-como-ve-el-navegador-tu-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El árbol DOM: cómo ve el navegador tu HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas-errores-que-conviene-evitar-desde-el-principio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas: errores que conviene evitar desde el principio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-tu-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar tu HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos complementarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-de-refuerzo-y-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material de refuerzo y ampliación
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-hace-el-navegador-con-tu-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué hace el navegador con tu HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomia-de-una-etiqueta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomía de una etiqueta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-comunes-en-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos comunes en HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-html-a-html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De HTML a HTML5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-estructura-de-un-documento-html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La estructura de un documento HTML5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-cabecera-metadatos-que-no-se-ven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La cabecera: metadatos que no se ven
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-semanticas-de-estructura-usa-la-que-describe-la-funcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etiquetas semánticas de estructura: usa la que describe la función
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas-semanticas-de-texto-casos-de-uso-concretos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etiquetas semánticas de texto: casos de uso concretos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tablas-organizar-datos-no-maquetar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tablas: organizar datos, no maquetar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios-la-puerta-de-entrada-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formularios: la puerta de entrada de datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-arbol-dom-como-ve-el-navegador-tu-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El árbol DOM: cómo ve el navegador tu HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buenas-practicas-errores-que-conviene-evitar-desde-el-principio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas: errores que conviene evitar desde el principio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-tu-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar tu HTML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos complementarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-de-refuerzo-y-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material de refuerzo y ampliación
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/envasador/lenguajes-de-marcas/edit/main/docs/apuntes/html5.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="ut2-introduccion-a-html5">UT2 Introducción a HTML5<a class="headerlink" href="#ut2-introduccion-a-html5" title="Permanent link">&para;</a></h1>
+<p>En la UT1 viste que HTML es una de las muchas concreciones posibles de la idea de "lenguaje de marcas", con la particularidad de que su vocabulario de etiquetas está cerrado por el estándar. Ahora toca conocer ese vocabulario en profundidad, y la versión que vas a usar durante todo el módulo es <strong>HTML5</strong>, la que gobierna prácticamente toda la Web actual.</p>
+<h2 id="que-hace-el-navegador-con-tu-html">Qué hace el navegador con tu HTML<a class="headerlink" href="#que-hace-el-navegador-con-tu-html" title="Permanent link">&para;</a></h2>
+<p>Cuando escribes una URL, el navegador le pide al servidor un documento de texto. Ese texto, en la inmensa mayoría de los casos, está escrito en HTML: <em>HyperText Markup Language</em>, lenguaje de marcas de hipertexto. El navegador lee ese texto, reconoce las etiquetas y decide cómo mostrar cada trozo de contenido según la etiqueta que lo envuelve.</p>
+<p>Puedes comprobarlo tú mismo: en cualquier página web, pulsa <code>Ctrl+U</code> (o <code>Cmd+Option+U</code> en Mac) y verás el HTML tal cual lo recibió tu navegador, antes de que lo convierta en lo que ves en pantalla. Ese ejercicio, ver el código fuente de páginas que usas a diario, es una de las mejores formas de aprender HTML: te vas a encontrar patrones que ya conoces y otros que todavía no, y eso da pistas de qué te queda por aprender.</p>
+<h2 id="anatomia-de-una-etiqueta">Anatomía de una etiqueta<a class="headerlink" href="#anatomia-de-una-etiqueta" title="Permanent link">&para;</a></h2>
+<p>Toda la sintaxis de HTML gira en torno a la etiqueta, así que merece la pena diseccionar una:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"destacado"</span><span class="p">&gt;</span>Este es el contenido.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li><strong>Etiqueta de apertura</strong>: <code>&lt;p class="destacado"&gt;</code>. El nombre (<code>p</code>) indica de qué tipo de elemento se trata; puede llevar uno o varios atributos.</li>
+<li><strong>Contenido</strong>: <code>Este es el contenido.</code>, todo lo que queda entre la apertura y el cierre.</li>
+<li><strong>Etiqueta de cierre</strong>: <code>&lt;/p&gt;</code>, el mismo nombre que la de apertura, con una barra <code>/</code> delante.</li>
+<li><strong>Atributo</strong>: <code>class="destacado"</code>, un par nombre-valor que añade información extra a la etiqueta, siempre dentro de la etiqueta de apertura y con el valor entre comillas.</li>
+</ul>
+<p>No todas las etiquetas tienen contenido ni etiqueta de cierre. <code>&lt;img src="foto.jpg" alt="..."&gt;</code> o <code>&lt;br&gt;</code> son <strong>elementos vacíos</strong> (<em>void elements</em>): no envuelven nada, así que no necesitan cerrarse. Y las etiquetas se pueden anidar unas dentro de otras (<code>&lt;p&gt;Un texto con &lt;strong&gt;una parte importante&lt;/strong&gt;.&lt;/p&gt;</code>), siempre que el orden de cierre respete el de apertura: la última etiqueta que abres es la primera que cierras.</p>
+<h2 id="atributos-comunes-en-html">Atributos comunes en HTML<a class="headerlink" href="#atributos-comunes-en-html" title="Permanent link">&para;</a></h2>
+<p>Hay un puñado de atributos que puedes usar en casi cualquier etiqueta, independientemente de cuál sea:</p>
+<ul>
+<li><strong><code>id</code></strong>: identifica un elemento de forma única dentro de todo el documento (no puede repetirse). Sirve como destino de un enlace interno (<code>&lt;a href="#seccion-2"&gt;</code>) y como gancho para seleccionar ese elemento concreto desde CSS o JavaScript.</li>
+<li><strong><code>class</code></strong>: asigna una o varias etiquetas (separadas por espacios) a un elemento, a diferencia de <code>id</code>, puede repetirse en cuantos elementos quieras. Es el atributo que más vas a usar para dar estilo con CSS.</li>
+<li><strong><code>title</code></strong>: añade un texto informativo adicional que el navegador muestra como tooltip al pasar el cursor por encima. Útil para aclarar algo sin sobrecargar el contenido visible.</li>
+<li><strong><code>lang</code></strong>: indica el idioma de ese fragmento de texto, no solo el del documento entero (útil cuando citas una frase en otro idioma dentro de un párrafo).</li>
+<li><strong><code>data-*</code></strong>: cualquier atributo que empiece por <code>data-</code> (por ejemplo, <code>data-id-producto="42"</code>) es un atributo personalizado tuyo, pensado para guardar información que luego leerás desde JavaScript. El navegador lo ignora a efectos de renderizado; es solo para ti.</li>
+</ul>
+<h2 id="de-html-a-html5">De HTML a HTML5<a class="headerlink" href="#de-html-a-html5" title="Permanent link">&para;</a></h2>
+<p>HTML nació con Tim Berners-Lee a principios de los 90 con un puñado de etiquetas: títulos, párrafos y poco más. Las versiones siguientes (HTML 3.2, HTML 4.01) fueron añadiendo tablas, formularios y estilos, pero seguían pensadas para documentos, no para aplicaciones. Cuando la Web empezó a necesitar vídeo, audio y contenido interactivo, la solución habitual era tirar de plugins como Flash, algo lento, poco accesible y dependiente de software de terceros.</p>
+<p>HTML5, desarrollado por el W3C y publicado como recomendación en 2014 (aunque en uso desde bastante antes), resuelve ese problema incorporando de forma nativa lo que antes requería un plugin: reproducción de audio y vídeo, dibujo con <code>&lt;canvas&gt;</code>, geolocalización, almacenamiento local... y, sobre todo, un conjunto de etiquetas semánticas que describen la función de cada bloque de contenido, no solo su aspecto. Esa combinación (multimedia nativo más semántica) es la que define a HTML5 frente a sus predecesores, y en la que vas a estar especialmente atento a lo largo de esta unidad: cada etiqueta que veas a partir de aquí, pregúntate qué significa, no solo qué aspecto tiene por defecto.</p>
+<h2 id="la-estructura-de-un-documento-html5">La estructura de un documento HTML5<a class="headerlink" href="#la-estructura-de-un-documento-html5" title="Permanent link">&para;</a></h2>
+<p>Todo documento HTML5 empieza con una declaración de tipo (<code>&lt;!DOCTYPE html&gt;</code>) que le dice al navegador "interpreta esto como HTML5, no como una versión antigua". A partir de ahí, el documento se organiza en dos grandes bloques: un <code>&lt;head&gt;</code> con información sobre el documento que no se muestra directamente, y un <code>&lt;body&gt;</code> con el contenido que sí ve la persona usuaria.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mi primer documento HTML5<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>¡Hola, mundo!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este es un documento básico en HTML5.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El atributo <code>lang="es"</code> en <code>&lt;html&gt;</code> no es decorativo: le dice a los lectores de pantalla en qué idioma pronunciar el contenido y ayuda a los buscadores a servir la página a la audiencia correcta.</p>
+<h2 id="la-cabecera-metadatos-que-no-se-ven">La cabecera: metadatos que no se ven<a class="headerlink" href="#la-cabecera-metadatos-que-no-se-ven" title="Permanent link">&para;</a></h2>
+<p>Dentro de <code>&lt;head&gt;</code> no hay contenido visible, sino información sobre el documento. <code>&lt;meta charset="UTF-8"&gt;</code> fija la codificación de caracteres (con eso te aseguras de que las tildes y la "ñ" se vean bien en cualquier navegador). <code>&lt;meta name="viewport"&gt;</code> controla cómo se escala la página en pantallas pequeñas, y es imprescindible para que el diseño responsive que verás en la UT3 funcione. <code>&lt;title&gt;</code> define el texto que aparece en la pestaña del navegador y en los resultados de búsqueda. Y <code>&lt;link rel="stylesheet" href="..."&gt;</code> es la forma habitual de conectar una hoja de estilos externa, algo que retomarás en cuanto empieces con CSS.</p>
+<h2 id="etiquetas-semanticas-de-estructura-usa-la-que-describe-la-funcion">Etiquetas semánticas de estructura: usa la que describe la función<a class="headerlink" href="#etiquetas-semanticas-de-estructura-usa-la-que-describe-la-funcion" title="Permanent link">&para;</a></h2>
+<p>Durante años, la forma de organizar una página era anidar <code>&lt;div&gt;</code> dentro de <code>&lt;div&gt;</code>, con clases que describían la función a base de nombres (<code>class="header"</code>, <code>class="nota-al-pie"</code>), pero sin que la propia etiqueta dijera nada. Así se veía una página típica antes de HTML5:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"articulo"</span><span class="p">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"cabecera"</span><span class="p">&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Título del artículo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contenido del artículo...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"pie"</span><span class="p">&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Publicado por Ana<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El problema es que, para un navegador, un lector de pantalla o un buscador, todo son <code>&lt;div&gt;</code>: no hay forma de distinguir automáticamente la cabecera del contenido o del pie sin leer el nombre de la clase, que es solo una convención tuya, no algo que la etiqueta garantice. HTML5 sustituye esa convención por etiquetas de <strong>landmark</strong> (así las llaman las herramientas de accesibilidad) que llevan el significado incorporado:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Título del artículo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contenido del artículo...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Publicado por Ana<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Cada una de estas etiquetas tiene un caso de uso concreto, no intercambiable:</p>
+<ul>
+<li><strong><code>&lt;header&gt;</code></strong>: la cabecera de una página o de cualquier sección dentro de ella (no confundir con <code>&lt;head&gt;</code>, que va dentro de <code>&lt;html&gt;</code> y no se ve). Puede haber varios <code>&lt;header&gt;</code> en un mismo documento: el de la página entera, con el logo y la navegación principal, y el de cada <code>&lt;article&gt;</code>, con el título y la fecha de esa pieza concreta.</li>
+<li><strong><code>&lt;nav&gt;</code></strong>: agrupa los bloques de enlaces de navegación importantes, como el menú principal o la paginación de un listado. No todo grupo de enlaces necesita ser un <code>&lt;nav&gt;</code>: un puñado de enlaces sueltos en el pie de página no lo es; el menú principal del sitio, sí. Si usas más de un <code>&lt;nav&gt;</code> en la misma página (menú principal y migas de pan, por ejemplo), dales un <code>aria-label</code> distinto para que un lector de pantalla pueda diferenciarlos.</li>
+<li><strong><code>&lt;main&gt;</code></strong>: envuelve el contenido principal de la página, el que la distingue de cualquier otra página del sitio. Debe haber exactamente uno por documento y no debe estar dentro de un <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code> o <code>&lt;nav&gt;</code>. Es también el destino habitual de un enlace "saltar al contenido" para personas que navegan con teclado.</li>
+<li><strong><code>&lt;article&gt;</code></strong>: contenido que tiene sentido por sí solo, independiente del resto de la página, y que podrías extraer y publicar en otro sitio (un feed RSS, un agregador) sin que perdiera sentido. Una entrada de blog, una noticia, un comentario de usuario o una tarjeta de producto en un catálogo son buenos ejemplos.</li>
+<li><strong><code>&lt;section&gt;</code></strong>: un bloque temático con entidad propia dentro de un <code>&lt;article&gt;</code> o de la página, normalmente encabezado por un <code>&lt;h2&gt;</code>-<code>&lt;h6&gt;</code> que lo identifica. A diferencia de <code>&lt;article&gt;</code>, una <code>&lt;section&gt;</code> no tiene por qué tener sentido fuera de su contexto: el bloque "Servicios" de una landing page es una <code>&lt;section&gt;</code>, no un <code>&lt;article&gt;</code>, porque no lo vas a sindicar por separado.</li>
+<li><strong><code>&lt;aside&gt;</code></strong>: contenido relacionado con lo que le rodea pero no imprescindible para entenderlo: una barra lateral, una cita destacada extraída del texto principal, publicidad o una nota al margen.</li>
+<li><strong><code>&lt;footer&gt;</code></strong>: el pie de una página o de una sección. El de la página suele llevar el copyright y enlaces legales; el de un <code>&lt;article&gt;</code> puede llevar la biografía de quien lo escribió o la fecha de publicación.</li>
+</ul>
+<p>La confusión más habitual es <code>&lt;article&gt;</code> frente a <code>&lt;section&gt;</code>. La pregunta que resuelve la duda es: <em>¿este bloque tendría sentido si lo sacara de aquí y lo pusiera en otra página?</em> Si la respuesta es sí, es un <code>&lt;article&gt;</code>. Si solo tiene sentido como una parte de un todo mayor, es una <code>&lt;section&gt;</code>. Un <code>&lt;article&gt;</code> puede contener varias <code>&lt;section&gt;</code> (por ejemplo, un artículo largo dividido en apartados con su propio <code>&lt;h2&gt;</code> cada uno), y una <code>&lt;section&gt;</code> puede contener varios <code>&lt;article&gt;</code> (por ejemplo, la sección "Últimas noticias" de una portada, que agrupa varias noticias independientes). Los dos anidamientos son válidos porque <code>&lt;section&gt;</code> forma parte del contenido que <code>&lt;article&gt;</code> admite, y viceversa; de hecho pueden combinarse en la misma estructura, como en esta reseña de película con sus comentarios:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"resena-pelicula"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Jurassic Park<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">"resena-principal"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Crítica<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Los dinosaurios estaban geniales.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>  <span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">"comentarios"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Comentarios de usuarios<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">"comentario"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>      <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>¡Demasiado terror!<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Me pareció excesivamente terrorífica.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Aquí el <code>&lt;article&gt;</code> principal (la reseña) contiene dos <code>&lt;section&gt;</code> (la crítica y el bloque de comentarios), y esa segunda <code>&lt;section&gt;</code> a su vez contiene un <code>&lt;article&gt;</code> (el comentario), porque un comentario de usuario tiene sentido por sí solo y podrías moverlo a otro sitio sin que perdiera significado.</p>
+<p><code>&lt;div&gt;</code> no ha desaparecido: sigue siendo el contenedor genérico que usas cuando necesitas agrupar elementos solo por motivos de estilo o de JavaScript, sin que ese grupo tenga un significado propio. La regla práctica es sencilla: si existe una etiqueta semántica que describe lo que estás agrupando, úsala; si el agrupamiento no significa nada por sí mismo (es puro layout), usa <code>&lt;div&gt;</code>. Abusar de <code>&lt;div&gt;</code> cuando existe una etiqueta más precisa se conoce como <em>div soup</em>, y es uno de los errores de HTML más comunes en código de principiante.</p>
+<p>Esto no es un capricho estético. Un lector de pantalla anuncia "navegación" al llegar a un <code>&lt;nav&gt;</code> y permite saltárselo, cosa que no puede hacer con un <code>&lt;div class="nav"&gt;</code>. Un buscador entiende mejor de qué trata tu página cuando el contenido relevante está dentro de un <code>&lt;article&gt;</code> en lugar de perdido entre <code>&lt;div&gt;</code> sin etiquetar. Y una persona que navega solo con teclado puede saltar de landmark en landmark (header, nav, main, footer) sin tener que recorrer todo el documento.</p>
+<h2 id="etiquetas-semanticas-de-texto-casos-de-uso-concretos">Etiquetas semánticas de texto: casos de uso concretos<a class="headerlink" href="#etiquetas-semanticas-de-texto-casos-de-uso-concretos" title="Permanent link">&para;</a></h2>
+<p>Además de las etiquetas de estructura, HTML5 tiene etiquetas semánticas más pequeñas, a nivel de frase o de bloque de contenido, cada una pensada para una situación muy concreta:</p>
+<ul>
+<li><strong><code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></strong>: agrupan una imagen, un diagrama, un fragmento de código o un vídeo junto con su leyenda. Úsalas cuando el contenido y su descripción forman una unidad que podría desplazarse de sitio sin romper el flujo del texto (a diferencia de una <code>&lt;img&gt;</code> suelta dentro de un párrafo).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"grafico-ventas.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Gráfico de ventas del último trimestre"</span><span class="p">&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Ventas del tercer trimestre, por región.<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li><strong><code>&lt;blockquote&gt;</code> y <code>&lt;cite&gt;</code></strong>: <code>&lt;blockquote&gt;</code> marca una cita textual larga de otra fuente (con el atributo <code>cite</code> opcional apuntando a la URL de origen), y <code>&lt;cite&gt;</code> marca el título de la obra o el nombre de quien se cita. No los uses para sangrar texto por motivos puramente visuales: eso es trabajo de CSS.</li>
+<li><strong><code>&lt;time&gt;</code></strong>: marca fechas y horas de forma que una máquina pueda interpretarlas, gracias al atributo <code>datetime</code> en formato ISO. Es lo que usan los navegadores y los buscadores para entender "hace 3 días" o para mostrar un evento en el huso horario correcto.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Publicado el <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">"2026-09-29"</span><span class="p">&gt;</span>29 de septiembre<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li><strong><code>&lt;address&gt;</code></strong>: información de contacto de quien es responsable del documento o del <code>&lt;article&gt;</code> que lo contiene (autor, empresa, dirección de correo). No es para cualquier dirección postal que aparezca en el texto, solo para la del propio autor del contenido.</li>
+<li><strong><code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code></strong>: contenido colapsable de serie, sin una sola línea de JavaScript. <code>&lt;summary&gt;</code> es la parte siempre visible (lo que se pulsa para abrir o cerrar) y todo lo demás dentro de <code>&lt;details&gt;</code> se muestra u oculta. Ideal para una sección de preguntas frecuentes.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">details</span><span class="p">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="p">&lt;</span><span class="nt">summary</span><span class="p">&gt;</span>¿Qué navegadores son compatibles?<span class="p">&lt;/</span><span class="nt">summary</span><span class="p">&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Todos los navegadores modernos: Chrome, Firefox, Safari y Edge.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">&lt;/</span><span class="nt">details</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li><strong><code>&lt;mark&gt;</code></strong>: resalta texto por su relevancia en el contexto actual, como los términos que coinciden con una búsqueda. No es un subrayador de conveniencia para llamar la atención visualmente: eso, otra vez, es CSS.</li>
+<li><strong><code>&lt;abbr&gt;</code></strong>: marca una abreviatura o sigla, con el significado completo en el atributo <code>title</code>, que el navegador muestra como tooltip al pasar el cursor: <code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code>.</li>
+</ul>
+<p>Para el texto normal usas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> para títulos (en orden de importancia, sin saltarte niveles: no pongas un <code>&lt;h4&gt;</code> directamente después de un <code>&lt;h1&gt;</code>) y <code>&lt;p&gt;</code> para párrafos. Dentro de un párrafo, <code>&lt;strong&gt;</code> marca importancia real y <code>&lt;em&gt;</code> marca énfasis real; ambas cambian también el aspecto (negrita y cursiva) pero ese no es su propósito, es una consecuencia. Si solo quieres cambiar el aspecto sin dar significado, están <code>&lt;b&gt;</code> e <code>&lt;i&gt;</code>, pero son la excepción, no la norma: en la inmensa mayoría de los casos, si estás tentado a usar <code>&lt;b&gt;</code>, lo que en realidad quieres decir es <code>&lt;strong&gt;</code>.</p>
+<p>Los enlaces se construyen con <code>&lt;a href="..."&gt;</code>, y las imágenes con <code>&lt;img src="..." alt="..."&gt;</code>. El atributo <code>alt</code> no es opcional: es lo que lee un lector de pantalla y lo que se muestra si la imagen no carga. Si la imagen es puramente decorativa y no aporta información, se usa <code>alt=""</code> (vacío, pero presente) para que se ignore explícitamente, nunca se omite el atributo.</p>
+<p>HTML5 trajo también soporte nativo para audio y vídeo, sin depender de ningún plugin:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span><span class="p">&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">"video.mp4"</span> <span class="na">type</span><span class="o">=</span><span class="s">"video/mp4"</span><span class="p">&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  Tu navegador no soporta la etiqueta video.
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="tablas-organizar-datos-no-maquetar">Tablas: organizar datos, no maquetar<a class="headerlink" href="#tablas-organizar-datos-no-maquetar" title="Permanent link">&para;</a></h2>
+<p>Antes de que existiera CSS, era habitual usar tablas para maquetar páginas enteras. Hoy eso está desaconsejado: una tabla se reserva para datos tabulares reales, filas y columnas con una relación entre sí.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Edad<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>      <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Ciudad<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Juan<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>25<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Madrid<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ana<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>30<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Barcelona<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><code>&lt;thead&gt;</code> agrupa la cabecera y <code>&lt;tbody&gt;</code> el cuerpo; dentro de cada fila (<code>&lt;tr&gt;</code>), <code>&lt;th&gt;</code> marca una celda de encabezado y <code>&lt;td&gt;</code> una celda de datos. Cuando una celda necesita ocupar varias columnas o varias filas, se usan los atributos <code>colspan</code> y <code>rowspan</code>.</p>
+<h2 id="formularios-la-puerta-de-entrada-de-datos">Formularios: la puerta de entrada de datos<a class="headerlink" href="#formularios-la-puerta-de-entrada-de-datos" title="Permanent link">&para;</a></h2>
+<p>Un formulario es la forma que tiene una página de recibir información de la persona usuaria. <code>&lt;form&gt;</code> es el contenedor; dentro van los campos, cada uno con su <code>&lt;label&gt;</code> asociado para que quede claro qué se está pidiendo. La asociación entre <code>&lt;label&gt;</code> y campo no es cosmética: el atributo <code>for</code> del <code>&lt;label&gt;</code> debe coincidir con el <code>id</code> del campo, porque eso es lo que permite que al pulsar la etiqueta se active el campo, y lo que un lector de pantalla anuncia al entrar en él.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"/enviar"</span> <span class="na">method</span><span class="o">=</span><span class="s">"POST"</span><span class="p">&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"nombre"</span><span class="p">&gt;</span>Nombre:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">id</span><span class="o">=</span><span class="s">"nombre"</span> <span class="na">name</span><span class="o">=</span><span class="s">"nombre"</span> <span class="na">required</span><span class="p">&gt;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Correo:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">required</span><span class="p">&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>El atributo <code>type</code> de <code>&lt;input&gt;</code> cambia por completo el comportamiento del campo: <code>email</code> valida que el texto tenga forma de correo, <code>number</code> restringe a valores numéricos, <code>date</code> abre un selector de fecha. Esa validación básica (<code>required</code>, <code>type</code>, <code>pattern</code>) la hace el propio navegador, sin una sola línea de JavaScript, aunque en la UT3 verás cómo reforzarla con CSS y más adelante con JavaScript.</p>
+<h2 id="el-arbol-dom-como-ve-el-navegador-tu-html">El árbol DOM: cómo ve el navegador tu HTML<a class="headerlink" href="#el-arbol-dom-como-ve-el-navegador-tu-html" title="Permanent link">&para;</a></h2>
+<p>En la UT1 viste que los documentos marcados se organizan como árboles. Cuando el navegador carga un documento HTML, hace exactamente eso: lee las etiquetas y construye una estructura en memoria llamada <strong>DOM</strong> (<em>Document Object Model</em>), donde cada etiqueta se convierte en un nodo y las relaciones de anidamiento se convierten en relaciones de padre e hijo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>html
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├── head
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>│   ├── meta
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>│   └── title
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>└── body
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    ├── header
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    │   └── nav
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    ├── main
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    │   └── article
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    └── footer
+</code></pre></div>
+<p>Ese árbol no es solo una representación interna: es lo que ves renderizado en la pantalla, y es también la estructura que CSS recorre para decidir cómo pintar cada elemento y que JavaScript recorrerá y modificará a partir de la UT4, con métodos como <code>document.querySelector()</code>. Cuando en el futuro selecciones un elemento por su etiqueta, su clase o su id, en realidad le estarás pidiendo al navegador que busque un nodo concreto dentro de este mismo árbol.</p>
+<p>Por eso escribir HTML bien anidado, bien estructurado y con la etiqueta semántica correcta en cada nodo no es solo una cuestión de estilo: cuanto más claro y significativo sea el árbol que generas, más fácil será seleccionar, dar estilo y manipular cada parte de tu página más adelante, y más accesible será para quien no la vea con los ojos.</p>
+<h2 id="buenas-practicas-errores-que-conviene-evitar-desde-el-principio">Buenas prácticas: errores que conviene evitar desde el principio<a class="headerlink" href="#buenas-practicas-errores-que-conviene-evitar-desde-el-principio" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>No abuses de <code>&lt;div&gt;</code> cuando existe una etiqueta semántica equivalente.</strong> Antes de escribir <code>&lt;div class="header"&gt;</code>, pregúntate si eso no es directamente un <code>&lt;header&gt;</code>.</li>
+<li><strong>No saltes niveles de encabezado.</strong> La jerarquía <code>&lt;h1&gt;</code> → <code>&lt;h2&gt;</code> → <code>&lt;h3&gt;</code> debe ser continua; no es una herramienta de tamaño de letra, así que no elijas un nivel u otro porque "queda mejor" visualmente (eso lo resuelve CSS).</li>
+<li><strong>Un único <code>&lt;h1&gt;</code> y un único <code>&lt;main&gt;</code> por página.</strong> Son las dos anclas que identifican, respectivamente, el tema central y el contenido principal del documento.</li>
+<li><strong>No confundas <code>&lt;b&gt;</code>/<code>&lt;i&gt;</code> con <code>&lt;strong&gt;</code>/<code>&lt;em&gt;</code>.</strong> Los primeros cambian el aspecto; los segundos cambian el significado (y de paso, el aspecto).</li>
+<li><strong>El <code>alt</code> de una imagen se piensa, no se rellena por rellenar.</strong> Describe lo que la imagen aporta al contenido, no repitas "imagen de..." ni dejes el nombre del fichero.</li>
+<li><strong>Un <code>&lt;article&gt;</code> que solo tiene sentido dentro de su página no es un <code>&lt;article&gt;</code>, es una <code>&lt;section&gt;</code>.</strong> Aplica el criterio de "¿tendría sentido si lo sindicara aparte?" antes de elegir.</li>
+<li><strong>Valida siempre.</strong> Un documento con errores de sintaxis puede renderizarse igualmente (los navegadores son muy tolerantes), lo que hace que el error pase desapercibido hasta que causa un problema real en CSS o JavaScript.</li>
+</ul>
+<h2 id="validar-tu-html">Validar tu HTML<a class="headerlink" href="#validar-tu-html" title="Permanent link">&para;</a></h2>
+<p>Un documento HTML puede tener errores de sintaxis (una etiqueta sin cerrar, un atributo mal escrito) y aun así el navegador lo va a mostrar, porque los navegadores son muy tolerantes con el código mal formado. Eso no significa que el documento esté bien: significa que el error está oculto. El <a href="https://validator.w3.org/">validador del W3C</a> comprueba tu HTML contra la especificación oficial y señala exactamente dónde está el problema. Acostumbra a pasar tu código por él antes de darlo por terminado: en este módulo, la validación es un criterio que se evalúa, no un paso opcional.</p>
+<h2 id="recursos-complementarios">Recursos complementarios<a class="headerlink" href="#recursos-complementarios" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://lenguajehtml.com/html/">HTML5 by Manz</a></li>
+<li><a href="https://lenguajejs.com/dom/">DOM by Manz</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTML">Documentación de HTML (MDN Web Docs)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/article"><code>&lt;article&gt;</code>: The Article Contents element (MDN)</a></li>
+<li><a href="https://validator.w3.org/">Validador HTML del W3C</a></li>
+</ul>
+<h2 id="material-de-refuerzo-y-ampliacion">Material de refuerzo y ampliación<a class="headerlink" href="#material-de-refuerzo-y-ampliacion" title="Permanent link">&para;</a></h2>
+<p>Se recomienda completar el curso <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1">Learn HTML by Building a Cat Photo App</a> de freeCodeCamp.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Contenido generado por Alejandro Carmona Martos — IES Rafael Alberti · CC BY-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/envasador/lenguajes-de-marcas" target="_blank" rel="noopener" title="Repositorio del módulo" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "header.autohide", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
