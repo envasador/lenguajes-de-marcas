@@ -9,15 +9,17 @@ Esta sesión la trabajas de forma autónoma. Tienes tres horas para validar el w
 | 0:00 – 0:30 | Validar y corregir el wireframe de la semana pasada |
 | 0:30 – 1:10 | Leer los apuntes y anotar tus dudas |
 | 1:10 – 2:40 | Práctica del festival |
-| 2:40 – 3:00 | Validar, hacer las capturas y entregar |
+| 2:40 – 3:00 | Validar la página y guardar tu trabajo |
 
 Crea al empezar un fichero `notas.txt` con cuatro apartados: *Validación del wireframe*, *Dudas*, *Árbol DOM* y *Retos*. Lo irás completando durante la sesión.
+
+Esta práctica no se entrega. La corregiremos entre todos en la próxima sesión, así que lo importante es que llegues con tu código y tus notas listos para compartirlos y comentarlos.
 
 ## 1. Valida tu wireframe
 
 Pasa el HTML del wireframe por el [validador del W3C](https://validator.w3.org/#validate_by_upload) (pestaña *Validate by File Upload*, elige el fichero y pulsa *Check*). Cada mensaje indica si es un *Error* o un *Warning* y en qué línea está. Los errores hay que corregirlos todos; los avisos, léelos y decide.
 
-Corrige siempre empezando por el **primer** error: una etiqueta sin cerrar suele provocar varios errores en cadena, y al arreglarla desaparecen todos. Vuelve a validar después de cada cambio hasta ver *Document checking completed. No errors or warnings to show.*, y haz una captura.
+Corrige siempre empezando por el **primer** error: una etiqueta sin cerrar suele provocar varios errores en cadena, y al arreglarla desaparecen todos. Vuelve a validar después de cada cambio hasta ver *Document checking completed. No errors or warnings to show.*
 
 | Mensaje del validador | Qué suele significar |
 |---|---|
@@ -77,7 +79,7 @@ Organización del FCB · Asociación Cultural Bahía Audiovisual · Calle Ancha 
 © 2026 Festival de Cortometrajes de la Bahía · Aviso legal · Política de privacidad
 ```
 
-Para la imagen usa una de marcador de posición, por ejemplo `https://picsum.photos/800/450`.
+Para la imagen, busca en [Pexels](https://www.pexels.com/es-es/) una foto de público en una sala de cine (prueba con *cinema audience* o *sala de cine*). Sus fotos son gratuitas y se pueden usar sin pedir permiso. Descárgala en tamaño mediano, guárdala en una carpeta `img` junto a tu `index.html` y enlázala con una ruta relativa.
 
 ### Lo que tiene que cumplir tu página
 
@@ -97,25 +99,15 @@ Para la imagen usa una de marcador de posición, por ejemplo `https://picsum.pho
 
 En el apartado *Árbol DOM* de `notas.txt`, dibuja el árbol del `<body>` hasta el tercer nivel, como en los apuntes, leyendo tu código. Después compáralo con el de las herramientas del navegador (F12, pestaña *Elementos*) y anota si hay alguna diferencia y por qué crees que ocurre.
 
-## 4. Valida y entrega
+## 4. Valida y guarda tu trabajo
 
-Pasa el `index.html` por el validador igual que el wireframe, corrige todos los errores y haz una captura del resultado limpio en la que se vea el nombre del fichero.
+Pasa el `index.html` por el validador igual que el wireframe y corrige todos los errores.
 
-Entrega en Moodle un ZIP llamado `apellido_nombre_ut2_festival.zip` con estos cinco ficheros:
-
-| Fichero | Qué es |
-|---|---|
-| `wireframe.html` | El wireframe ya corregido |
-| `validacion-wireframe.png` | Captura del validador con el wireframe |
-| `index.html` | La página del festival |
-| `validacion.png` | Captura del validador con la página del festival |
-| `notas.txt` | Validación del wireframe, dudas, árbol DOM y retos |
-
-La entrega se cierra al terminar la sesión. Si no has terminado, entrega lo que tengas: una página incompleta pero bien razonada vale más que nada.
+Al terminar, guarda en una carpeta `ut2-festival` el wireframe corregido, el `index.html` del festival con su carpeta `img` y tu `notas.txt`, y tráela a la próxima sesión: los corregiremos en común, comparando soluciones y resolviendo las dudas que hayas anotado. Si no has terminado, no pasa nada: trae lo que tengas, porque una página incompleta pero bien razonada da tanto que hablar como una terminada.
 
 ## Retos para quien termine antes
 
 1. Añade al principio de la página un enlace "Saltar al contenido" que lleve al contenido principal, pensado para quien navega con teclado.
 2. Haz que las preguntas frecuentes funcionen como un acordeón: al abrir una, se cierra la que estuviera abierta.
 
-Si haces alguno, indícalo en el apartado *Retos* de `notas.txt`.
+Si haces alguno, anótalo en el apartado *Retos* de `notas.txt` para comentarlo en clase.
