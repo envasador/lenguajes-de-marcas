@@ -2,13 +2,45 @@
 
 Esta sesión la trabajas de forma autónoma. Tienes tres horas, los apuntes de la UT2 y un objetivo claro: convertir un texto plano, sin una sola etiqueta, en una página HTML5 bien estructurada, semánticamente correcta y validada. La semana pasada levantaste el esqueleto de una página a partir de un wireframe; hoy vas a rellenar un esqueleto parecido con contenido real, y eso te obliga a decidir qué etiqueta describe cada trozo de información.
 
-Antes de escribir código, lee en los apuntes desde [Encabezados: el índice de tu documento](https://envasador.github.io/lenguajes-de-marcas/apuntes/html5/#encabezados-el-indice-de-tu-documento) hasta el final de la unidad. Es mucho contenido y no lo vas a necesitar todo hoy: los apartados de multimedia, elementos interactivos y cabecera puedes leerlos por encima. Céntrate en encabezados, listas, etiquetas semánticas de texto, enlaces, tablas, formularios y buenas prácticas. No hace falta que lo memorices, pero sí que sepas qué hay en cada apartado, porque vas a volver a él constantemente. Si algo no lo encuentras en los apuntes, tienes [lenguajehtml.com](https://lenguajehtml.com/html/) y [MDN](https://developer.mozilla.org/es/docs/Web/HTML) a tu disposición.
+Antes de escribir código, lee en los apuntes desde [Encabezados: el índice de tu documento](../apuntes/html5.md#encabezados-el-indice-de-tu-documento) hasta el final de la unidad. Es mucho contenido y no lo vas a necesitar todo hoy: los apartados de multimedia, elementos interactivos y cabecera puedes leerlos por encima. Céntrate en encabezados, listas, etiquetas semánticas de texto, enlaces, tablas, formularios y buenas prácticas. No hace falta que lo memorices, pero sí que sepas qué hay en cada apartado, porque vas a volver a él constantemente. Si algo no lo encuentras en los apuntes, tienes [lenguajehtml.com](https://lenguajehtml.com/html/) y [MDN](https://developer.mozilla.org/es/docs/Web/HTML) a tu disposición.
 
 ## Organización de la sesión
 
-Dedica los primeros 45 minutos a la lectura. Mientras lees, apunta en un fichero `notas.txt` cualquier duda que te surja: lo que no entiendas, lo que te parezca contradictorio o lo que quieras que se explique en clase. Esas dudas son parte de la entrega y se resolverán en la próxima sesión, así que no te las guardes.
+| Tiempo | Qué haces |
+|---|---|
+| 0:00 – 0:30 | Validar y corregir el código del wireframe de la semana pasada |
+| 0:30 – 1:15 | Leer la UT2 y anotar tus dudas |
+| 1:15 – 2:45 | Práctica del festival |
+| 2:45 – 3:00 | Validar, hacer las capturas y entregar |
 
-Después, unas dos horas para la práctica. Reserva los últimos 15 minutos para validar, hacer la captura y entregar. Si te sobra tiempo, tienes un apartado de retos al final.
+Durante toda la sesión vas a ir rellenando un fichero `notas.txt` con cuatro apartados: *Validación del wireframe*, *Dudas*, *Árbol DOM* y *Retos*. Créalo al empezar y ve completándolo a medida que avances.
+
+Mientras lees, apunta en *Dudas* cualquier cosa que te surja: lo que no entiendas, lo que te parezca contradictorio o lo que quieras que se explique en clase. Esas dudas son parte de la entrega y se resolverán en la próxima sesión, así que no te las guardes.
+
+## Primera parte: valida tu wireframe
+
+La semana pasada recreaste en HTML la estructura de un wireframe. Antes de empezar con lo nuevo, vas a comprobar si ese código cumple el estándar. Si no conservas el fichero, vuelve a montar el esqueleto a partir del wireframe: con lo que ya sabes no te llevará más de diez minutos.
+
+1. Abre el [validador del W3C](https://validator.w3.org/#validate_by_upload) en la pestaña *Validate by File Upload*.
+2. Pulsa el botón para elegir archivo, selecciona el HTML del wireframe y pulsa *Check*.
+3. Lee el resultado. Cada mensaje indica si es un *Error* o un *Warning*, la línea y la columna donde está el problema y un fragmento del código afectado. Los errores son incumplimientos del estándar y hay que corregirlos todos; los avisos son recomendaciones que tienes que leer y valorar.
+4. Corrige empezando siempre por el **primer** error de la lista. Un solo fallo, como una etiqueta sin cerrar, suele provocar varios errores en cadena más abajo, y al arreglarlo desaparecen todos de golpe. Después de cada corrección, vuelve a validar.
+5. Repite hasta que el validador muestre *Document checking completed. No errors or warnings to show.* Cuando lo consigas, haz una captura de pantalla completa del resultado.
+
+Los mensajes están en inglés. Estos son algunos de los más habituales y lo que suelen significar:
+
+| Mensaje del validador | Qué suele significar |
+|---|---|
+| *End tag for `body` seen, but there were open elements.* | Has dejado alguna etiqueta sin cerrar. |
+| *Stray end tag `div`.* | Sobra una etiqueta de cierre: cierras algo que no estaba abierto. |
+| *Element `li` not allowed as child of element `nav` in this context.* | Una etiqueta está donde no puede ir. Aquí, a los `<li>` les falta la `<ul>` que los envuelve. |
+| *Element `head` is missing a required instance of child element `title`.* | Falta una etiqueta obligatoria, en este caso el `<title>`. |
+| *Consider adding a `lang` attribute to the `html` start tag.* | Aviso: no has indicado el idioma del documento. |
+| *Duplicate ID `menu`.* | Has repetido un `id`. Cada `id` tiene que ser único en todo el documento; si necesitas repetirlo, usa `class`. |
+
+Si te aparece un mensaje que no entiendes, búscalo tal cual en Internet: casi siempre encontrarás la explicación.
+
+En el apartado *Validación del wireframe* de tu `notas.txt`, apunta cada error que tuviste: qué decía el validador, qué estaba mal en tu código y cómo lo has corregido. No hace falta que copies los avisos, salvo que te hayan hecho cambiar algo.
 
 ## El encargo
 
@@ -98,16 +130,26 @@ Por último, no uses `<div>` salvo que no exista ninguna etiqueta que describa l
 
 ### El árbol DOM
 
-Cuando termines el HTML, añade a tu `notas.txt`, debajo de las dudas, el árbol DOM del `<body>` de tu página dibujado como en los apuntes, hasta el tercer nivel de profundidad. Dibújalo tú leyendo tu código, no lo copies de las herramientas del navegador. Después ábrelo en las herramientas de desarrollo (F12, pestaña *Elementos*) y comprueba si coincide. Si no coincide, anota qué diferencia has encontrado y por qué crees que ocurre.
+Cuando termines el HTML, añade al apartado *Árbol DOM* de tu `notas.txt` el árbol DOM del `<body>` de tu página dibujado como en los apuntes, hasta el tercer nivel de profundidad. Dibújalo tú leyendo tu código, no lo copies de las herramientas del navegador. Después ábrelo en las herramientas de desarrollo (F12, pestaña *Elementos*) y comprueba si coincide. Si no coincide, anota qué diferencia has encontrado y por qué crees que ocurre.
 
 ## Validación y entrega
 
-Pasa tu `index.html` por el [validador del W3C](https://validator.w3.org/#validate_by_upload) usando la opción de subir el fichero. Corrige todos los errores. Los avisos (*warnings*) léelos y decide si tienen sentido en tu caso. Cuando el resultado sea limpio, haz una captura de pantalla completa del resultado en la que se vea el nombre del fichero validado.
+Pasa el `index.html` del festival por el [validador del W3C](https://validator.w3.org/#validate_by_upload) igual que hiciste con el wireframe. Corrige todos los errores. Los avisos (*warnings*) léelos y decide si tienen sentido en tu caso. Cuando el resultado sea limpio, haz una captura de pantalla completa del resultado en la que se vea el nombre del fichero validado.
 
-Entrega en la tarea de Moodle un ZIP con el nombre `apellido_nombre_ut2_festival.zip` que contenga tres ficheros: `index.html`, `validacion.png` con la captura y `notas.txt` con tus dudas y el árbol DOM. La entrega se cierra al terminar la sesión. Si no has terminado, entrega lo que tengas: una página incompleta pero bien razonada vale más que nada.
+Entrega en la tarea de Moodle un ZIP con el nombre `apellido_nombre_ut2_festival.zip` que contenga estos cinco ficheros:
+
+| Fichero | Qué es |
+|---|---|
+| `wireframe.html` | El HTML del wireframe, ya corregido |
+| `validacion-wireframe.png` | La captura del validador con el wireframe sin errores |
+| `index.html` | La página del festival |
+| `validacion.png` | La captura del validador con la página del festival |
+| `notas.txt` | Validación del wireframe, dudas, árbol DOM y retos |
+
+La entrega se cierra al terminar la sesión. Si no has terminado, entrega lo que tengas: una página incompleta pero bien razonada vale más que nada.
 
 ## Retos para quien termine antes
 
 Si te sobra tiempo, hay tres mejoras opcionales. Todas están explicadas en los apuntes, pero ninguna se pide en el enunciado principal. La primera: en el programa, el día se repite en varias filas seguidas; haz que cada día aparezca una sola vez ocupando todas las filas que le corresponden. La segunda: añade al formulario un campo para elegir la categoría del corto entre ficción, documental y animación, de forma que solo se pueda elegir una. La tercera: añade al principio de la página un enlace "Saltar al contenido" que lleve directamente al contenido principal, pensado para quien navega con teclado.
 
-Si haces alguno, indícalo al final de `notas.txt` para que se tenga en cuenta.
+Si haces alguno, indícalo en el apartado *Retos* de `notas.txt` para que se tenga en cuenta.
