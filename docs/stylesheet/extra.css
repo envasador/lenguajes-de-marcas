@@ -365,6 +365,102 @@ body,
   color: #D9C8E6 !important;
 }
 
+/* ===== PESTAÑAS CÓDIGO / RESULTADO (javascripts/vista-previa.js) ===== */
+.md-typeset .lm-preview {
+  margin: 1em 0 1.5em;
+}
+
+.md-typeset .lm-preview__tabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.md-typeset .lm-preview__tab {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.45em 1.1em;
+  margin-bottom: -3px;               /* la pestaña activa se funde con el bloque */
+  border: 3px solid #1F0318;
+  background-color: #FFB8DE;
+  color: #1F0318;
+  cursor: pointer;
+  position: relative;
+}
+
+.md-typeset .lm-preview__tab[aria-selected="true"] {
+  background-color: #382A40;
+  color: #FBFBF8;
+  border-bottom-color: #382A40;
+  z-index: 1;
+}
+
+.md-typeset .lm-preview__tab:hover {
+  background-color: #FFD3EA;
+}
+
+.md-typeset .lm-preview__tab[aria-selected="true"]:hover {
+  background-color: #382A40;
+}
+
+.md-typeset .lm-preview__tab:focus-visible {
+  outline: 3px solid #FFB8DE;
+  outline-offset: 2px;
+}
+
+/* El bloque de código ya no necesita margen arriba: va pegado a las pestañas. */
+.md-typeset .lm-preview .highlight pre {
+  margin-top: 0 !important;
+}
+
+/* Panel del resultado: lienzo blanco con el mismo marco que el código. */
+.md-typeset .lm-preview__panel--resultado {
+  background-color: #ffffff;
+  border: 3px solid #1F0318;
+  box-shadow: 5px 5px 0 #1F0318;
+}
+
+.md-typeset .lm-preview__panel--resultado[hidden] {
+  display: none;
+}
+
+.md-typeset .lm-preview__iframe {
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  background-color: #ffffff;
+  color-scheme: light;
+}
+
+.md-typeset .lm-preview__nota {
+  margin: 0 !important;
+  padding: 0.4em 0.8em;
+  font-size: 0.62rem;
+  color: #5A4766;
+  background-color: #FFF1F8;
+  border-top: 2px solid #1F0318;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__tab {
+  border-color: #0a0a0a;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__tab[aria-selected="true"] {
+  border-bottom-color: #382A40;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__panel--resultado {
+  border-color: #0a0a0a;
+  box-shadow: 5px 5px 0 #000000;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__nota {
+  border-top-color: #0a0a0a;
+}
+
 /* ===== ADMONITIONS ===== */
 .md-typeset .admonition,
 .md-typeset details {

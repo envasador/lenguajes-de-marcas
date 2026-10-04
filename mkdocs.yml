@@ -41,6 +41,9 @@ theme:
 extra_css:
   - stylesheet/extra.css
 
+extra_javascript:
+  - javascripts/vista-previa.js
+
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -50,6 +53,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
+      pygments_lang_class: true   # añade language-html, etc. (lo usa vista-previa.js)
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - tables
