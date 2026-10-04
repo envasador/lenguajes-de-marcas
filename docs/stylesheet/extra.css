@@ -271,14 +271,20 @@ body,
 }
 
 /* ===== CÓDIGO ===== */
-/* Código en línea (dentro de un párrafo, lista, tabla...): lavanda muy
-   suave sacado del morado del tema y letra morada, para que se distinga
-   del texto sin teñir la página de rosa. */
+/* Código en línea (dentro de un párrafo, lista, tabla...): sin fondo,
+   en negrita y con el morado del tema. */
 .md-typeset :not(pre) > code {
-  background-color: #F3EEF6 !important;
+  background-color: transparent !important;
   color: #382A40 !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
   border-radius: 0 !important;
-  padding: 0.1em 0.35em !important;
+  box-shadow: none !important;
+}
+
+/* Las cabeceras de tabla tienen fondo oscuro: ahí el morado no se vería. */
+.md-typeset table:not([class]) th code {
+  color: #FFB8DE !important;
 }
 
 /* Bloques de código: fondo casi blanco (para no pelearse con el resaltado
@@ -294,8 +300,8 @@ body,
   border-radius: 0 !important;
 }
 
+/* En modo oscuro el morado no se leería: lavanda claro, también sin fondo. */
 [data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
-  background-color: rgba(217,200,230,0.12) !important;
   color: #D9C8E6 !important;
 }
 
