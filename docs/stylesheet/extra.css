@@ -271,10 +271,11 @@ body,
 }
 
 /* ===== CÓDIGO ===== */
-/* Código en línea (dentro de un párrafo, lista, tabla...): rosa claro y
-   letra morada, para que se distinga del texto. */
+/* Código en línea (dentro de un párrafo, lista, tabla...): lavanda muy
+   suave sacado del morado del tema y letra morada, para que se distinga
+   del texto sin teñir la página de rosa. */
 .md-typeset :not(pre) > code {
-  background-color: #FFE3F2 !important;
+  background-color: #F3EEF6 !important;
   color: #382A40 !important;
   border-radius: 0 !important;
   padding: 0.1em 0.35em !important;
@@ -294,8 +295,8 @@ body,
 }
 
 [data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
-  background-color: rgba(255,184,222,0.15) !important;
-  color: #FFB8DE !important;
+  background-color: rgba(217,200,230,0.12) !important;
+  color: #D9C8E6 !important;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .highlight pre {
