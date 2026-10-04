@@ -58,6 +58,10 @@ body,
   color: #e0e0e0 !important;
 }
 
+.md-typeset h2 {
+  color: #382B40 !important;
+}
+
 .md-typeset h1 {
   border-bottom: 3px solid #382A40 !important;
   padding-bottom: 0.4rem !important;
