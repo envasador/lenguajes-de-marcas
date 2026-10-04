@@ -436,7 +436,7 @@ body,
 }
 
 .md-typeset .lm-preview__nota {
-  margin: 0 !important;
+  margin: 10px 0 0 0 !important;
   padding: 0.4em 0.8em;
   font-size: 0.62rem;
   color: #5A4766;
