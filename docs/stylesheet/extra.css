@@ -58,8 +58,18 @@ body,
   color: #e0e0e0 !important;
 }
 
+/* H2 como hito de sección: aire arriba, barra lateral y acento rosa */
 .md-typeset h2 {
   color: #382B40 !important;
+  margin-top: 3.5rem !important;
+  padding: 0.3rem 0 0.3rem 0.8rem !important;
+  border-left: 6px solid #382B40 !important;
+  background: linear-gradient(90deg, #FFB8DE33, transparent 60%) !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-left-color: #FFB8DE !important;
+  background: linear-gradient(90deg, #FFB8DE1A, transparent 60%) !important;
 }
 
 .md-typeset h1 {

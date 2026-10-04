@@ -33,6 +33,7 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.indexes
+    - toc.follow
     - header.autohide
     - content.code.copy
     - content.action.edit
