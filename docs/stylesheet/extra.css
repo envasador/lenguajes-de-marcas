@@ -287,31 +287,82 @@ body,
   color: #FFB8DE !important;
 }
 
-/* Bloques de código: fondo casi blanco (para no pelearse con el resaltado
-   de sintaxis) y el marco con sombra desplazada del resto del tema. */
+/* Bloques de código: mismo lenguaje visual que el recuadro de
+   "Diapositivas de la unidad" (fondo #382A40, borde #1F0318 y sombra
+   desplazada) y colores de sintaxis estilo IDE oscuro sacados de la paleta.
+   Las variables se definen solo dentro de .highlight para no afectar al
+   código en línea. */
+.md-typeset .highlight {
+  --md-code-bg-color: #382A40 !important;
+  --md-code-fg-color: #FBFBF8 !important;
+  --md-code-hl-keyword-color: #FFB8DE !important;    /* etiquetas HTML, palabras clave */
+  --md-code-hl-variable-color: #D4BFFF !important;   /* atributos, variables */
+  --md-code-hl-string-color: #FFE8A3 !important;     /* valores entre comillas */
+  --md-code-hl-number-color: #FFC799 !important;
+  --md-code-hl-constant-color: #FFC799 !important;
+  --md-code-hl-function-color: #9EE7E0 !important;   /* funciones y clases (JS) */
+  --md-code-hl-name-color: #FBFBF8 !important;
+  --md-code-hl-operator-color: #D9C8E6 !important;
+  --md-code-hl-punctuation-color: #D9C8E6 !important;
+  --md-code-hl-comment-color: #A99BB3 !important;
+  --md-code-hl-generic-color: #D9C8E6 !important;
+  --md-code-hl-special-color: #FFB8DE !important;    /* entidades &lt; &amp;... */
+  --md-code-hl-color: rgba(255,184,222,0.25) !important;
+  --md-code-hl-color--light: rgba(255,184,222,0.12) !important;
+}
+
 .md-typeset .highlight pre {
-  border: 2px solid #1F0318 !important;
+  border: 3px solid #1F0318 !important;
   border-radius: 0 !important;
-  box-shadow: 2px 2px 0 #1F0318 !important;
+  box-shadow: 5px 5px 0 #1F0318 !important;
 }
 
 .md-typeset .highlight pre > code {
-  background-color: #FAF7FB !important;
+  background-color: #382A40 !important;
+  color: #FBFBF8 !important;
   border-radius: 0 !important;
+}
+
+.md-typeset .highlight .c,
+.md-typeset .highlight .c1,
+.md-typeset .highlight .cm {
+  font-style: italic !important;
+}
+
+.md-typeset .highlight ::selection {
+  background-color: rgba(255,184,222,0.35) !important;
+}
+
+/* Botón de copiar: visible sobre el fondo oscuro. */
+.md-typeset .highlight .md-clipboard {
+  color: #A99BB3 !important;
+}
+
+.md-typeset .highlight .md-clipboard:hover,
+.md-typeset .highlight .md-clipboard:focus {
+  color: #FFB8DE !important;
+}
+
+/* Barra de scroll de los bloques: al pasar el ratón, rosa (el morado no
+   se vería sobre el fondo morado). */
+.md-typeset .highlight pre > code,
+[data-md-color-scheme="slate"] .md-typeset .highlight pre > code {
+  scrollbar-color: #6B5A78 transparent !important;
+}
+
+.md-typeset .highlight pre > code:hover,
+[data-md-color-scheme="slate"] .md-typeset .highlight pre > code:hover {
+  scrollbar-color: #FFB8DE transparent !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight pre {
+  border-color: #0a0a0a !important;
+  box-shadow: 5px 5px 0 #000000 !important;
 }
 
 /* En modo oscuro el morado no se leería: lavanda claro, también sin fondo. */
 [data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
   color: #D9C8E6 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlight pre {
-  border-color: #444 !important;
-  box-shadow: 2px 2px 0 #333 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset .highlight pre > code {
-  background-color: #1a1a1a !important;
 }
 
 /* ===== ADMONITIONS ===== */
