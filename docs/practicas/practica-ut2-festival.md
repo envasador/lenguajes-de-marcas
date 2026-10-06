@@ -4,12 +4,14 @@ Esta sesión la trabajas de forma autónoma. Tienes tres horas para validar el w
 
 ## Organización de la sesión
 
-| Tiempo | Qué haces |
+| Hora | Actividad |
 |---|---|
-| 0:00 – 0:30 | Validar y corregir el wireframe de la semana pasada |
-| 0:30 – 1:10 | Leer los apuntes y anotar tus dudas |
-| 1:10 – 2:40 | Práctica del festival |
-| 2:40 – 3:00 | Validar la página y guardar tu trabajo |
+| 9:00 – 9:30 | Validar y corregir el wireframe de la semana pasada |
+| 9:30 – 10:10 | Leer los apuntes y anotar tus dudas |
+| 10:10 – 11:00 | Práctica del festival |
+| *11:00 – 11:30* | *Recreo* |
+| 11:30 – 12:10 | Práctica del festival (continuación) |
+| 12:10 – 12:30 | Validar la página y guardar tu trabajo |
 
 Crea al empezar un fichero `notas.txt` con cuatro apartados: *Validación del wireframe*, *Dudas*, *Árbol DOM* y *Retos*. Lo irás completando durante la sesión.
 
