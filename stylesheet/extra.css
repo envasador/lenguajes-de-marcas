@@ -1,0 +1,647 @@
+/* ===========================================
+   OVERRIDE TOTAL - MkDocs Material
+   Paleta: #382A40 | #1F0318 | #FFB8DE
+   =========================================== */
+
+/* Material aplica su paleta por defecto (indigo, azul) en <body> mediante
+   [data-md-color-primary] y [data-md-color-accent]. Por eso las variables
+   se definen también sobre [data-md-color-scheme], que está en el mismo
+   <body>; si solo estuvieran en :root, ganaría el azul. */
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color--light: #5A4766 !important;
+  --md-primary-fg-color--dark: #1F0318 !important;
+  --md-primary-bg-color--light: rgba(255,255,255,0.7) !important;
+  --md-accent-fg-color--transparent: rgba(56,42,64,0.1) !important;
+  --md-accent-bg-color: #ffffff !important;
+  --md-accent-bg-color--light: rgba(255,255,255,0.7) !important;
+  --md-primary-fg-color: #382A40 !important;
+  --md-primary-bg-color: #ffffff !important;
+  --md-accent-fg-color: #382A40 !important;
+  --md-default-fg-color: #1F0318 !important;
+  --md-default-bg-color: #ffffff !important;
+  --md-code-bg-color: #FAF7FB !important;
+  --md-code-fg-color: #1F0318 !important;
+  --md-typeset-a-color: #382A40 !important;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color--light: #333333 !important;
+  --md-primary-fg-color--dark: #0a0a0a !important;
+  --md-primary-bg-color--light: rgba(224,224,224,0.7) !important;
+  --md-accent-fg-color--transparent: rgba(136,136,136,0.1) !important;
+  --md-accent-bg-color: #121212 !important;
+  --md-accent-bg-color--light: rgba(18,18,18,0.7) !important;
+  --md-primary-fg-color: #1a1a1a !important;
+  --md-primary-bg-color: #121212 !important;
+  --md-accent-fg-color: #888888 !important;
+  --md-default-fg-color: #e0e0e0 !important;
+  --md-default-bg-color: #121212 !important;
+  --md-code-bg-color: #262626 !important;
+  --md-code-fg-color: #e0e0e0 !important;
+  --md-typeset-a-color: #a0a0a0 !important;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+body,
+.md-typeset {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif !important;
+  color: #1F0318 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset,
+[data-md-color-scheme="slate"] body {
+  color: #e0e0e0 !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif !important;
+  font-weight: 600 !important;
+  color: #1F0318 !important;
+
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5,
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  color: #e0e0e0 !important;
+}
+
+/* H2 como hito de sección: aire arriba, barra lateral y acento rosa */
+.md-typeset h2 {
+  color: #382B40 !important;
+  margin-top: 3.5rem !important;
+  padding: 0.3rem 0 0.3rem 0.8rem !important;
+  border-left: 6px solid #382B40 !important;
+  background: #FFF1F8 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-left-color: #FFB8DE !important;
+  background: #FFB8DE1A !important;
+}
+
+.md-typeset h1 {
+  border-bottom: 3px solid #382A40 !important;
+  padding-bottom: 0.4rem !important;
+  display: inline-block !important;
+    margin: 0 0 0.7rem 0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  border-bottom-color: #555 !important;
+}
+
+/* ===== ENLACES ===== */
+.md-typeset a,
+.md-typeset a:link{
+  color: #382A40 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #FFB8DE !important;
+}
+
+.md-typeset a:hover {
+  color: #1F0318 !important;
+  border-bottom-color: #382A40 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a,
+[data-md-color-scheme="slate"] .md-typeset a:link{
+  color: #a0a0a0 !important;
+  border-bottom-color: #444 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #ffffff !important;
+  border-bottom-color: #888 !important;
+}
+
+/* ===== HEADER ===== */
+.md-header {
+  background-color: #382A40 !important;
+  box-shadow: none !important;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg{
+    height: 2rem;
+}
+
+.md-header__title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #1a1a1a !important;
+}
+
+[data-md-color-scheme="slate"] .md-header__title {
+  color: #e0e0e0 !important;
+}
+
+/* ===== TABS ===== */
+.md-tabs {
+  background-color: #1F0318 !important;
+}
+
+.md-tabs__link {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.md-tabs__link:hover {
+  color: #ffffff !important;
+}
+
+.md-tabs__link--active {
+  color: #ffffff !important;
+  background-color: #382A40 !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #0a0a0a !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #888 !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link:hover,
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #e0e0e0 !important;
+  background-color: #333 !important;
+}
+
+/* ===== SIDEBAR ===== */
+.md-sidebar {
+  background-color: #ffffff !important;
+}
+
+.md-nav__link {
+  color: #525252 !important;
+}
+
+.md-nav__link:hover {
+  color: #382A40 !important;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: #382A40 !important;
+  font-weight: 600 !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: #121212 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #888 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: #c0c0c0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link {
+  color: #e0e0e0 !important;
+}
+
+/* ===== CONTENT ===== */
+.md-main,
+.md-content {
+  background-color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-main,
+[data-md-color-scheme="slate"] .md-content {
+  background-color: #121212 !important;
+}
+
+/* ===== BOTONES ===== */
+.md-typeset .md-button {
+  background-color: #382A40 !important;
+  color: #ffffff !important;
+  border: 2px solid #1F0318 !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 #1F0318 !important;
+  font-weight: 500 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  padding: 0.5em 1em !important;
+}
+
+.md-typeset .md-button:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0 #1F0318 !important;
+}
+
+.md-typeset .md-button--primary {
+  background-color: #1F0318 !important;
+}
+.md-typeset .md-button--primary:hover {
+    background-color: white !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button {
+  background-color: #333 !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+  box-shadow: 2px 2px 0 #444 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:hover {
+  background-color: #444 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+  background-color: #e0e0e0 !important;
+  color: #121212 !important;
+}
+
+/* ===== CÓDIGO ===== */
+/* Código en línea (dentro de un párrafo, lista, tabla...): sin fondo,
+   en negrita y con el morado del tema. */
+.md-typeset :not(pre) > code {
+  background-color: transparent !important;
+  color: #382A40 !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Las cabeceras de tabla tienen fondo oscuro: ahí el morado no se vería. */
+.md-typeset table:not([class]) th code {
+  color: #FFB8DE !important;
+}
+
+/* Bloques de código: mismo lenguaje visual que el recuadro de
+   "Diapositivas de la unidad" (fondo #382A40, borde #1F0318 y sombra
+   desplazada) y colores de sintaxis estilo IDE oscuro sacados de la paleta.
+   Las variables se definen solo dentro de .highlight para no afectar al
+   código en línea. */
+.md-typeset .highlight {
+  --md-code-bg-color: #382A40 !important;
+  --md-code-fg-color: #FBFBF8 !important;
+  --md-code-hl-keyword-color: #FFB8DE !important;    /* etiquetas HTML, palabras clave */
+  --md-code-hl-variable-color: #D4BFFF !important;   /* atributos, variables */
+  --md-code-hl-string-color: #FFE8A3 !important;     /* valores entre comillas */
+  --md-code-hl-number-color: #FFC799 !important;
+  --md-code-hl-constant-color: #FFC799 !important;
+  --md-code-hl-function-color: #9EE7E0 !important;   /* funciones y clases (JS) */
+  --md-code-hl-name-color: #FBFBF8 !important;
+  --md-code-hl-operator-color: #D9C8E6 !important;
+  --md-code-hl-punctuation-color: #D9C8E6 !important;
+  --md-code-hl-comment-color: #A99BB3 !important;
+  --md-code-hl-generic-color: #D9C8E6 !important;
+  --md-code-hl-special-color: #FFB8DE !important;    /* entidades &lt; &amp;... */
+  --md-code-hl-color: rgba(255,184,222,0.25) !important;
+  --md-code-hl-color--light: rgba(255,184,222,0.12) !important;
+}
+
+.md-typeset .highlight pre {
+  border: 3px solid #1F0318 !important;
+  border-radius: 0 !important;
+  box-shadow: 5px 5px 0 #1F0318 !important;
+}
+
+.md-typeset .highlight pre > code {
+  background-color: #382A40 !important;
+  color: #FBFBF8 !important;
+  border-radius: 0 !important;
+}
+
+.md-typeset .highlight .c,
+.md-typeset .highlight .c1,
+.md-typeset .highlight .cm {
+  font-style: italic !important;
+}
+
+.md-typeset .highlight ::selection {
+  background-color: rgba(255,184,222,0.35) !important;
+}
+
+/* Botón de copiar: visible sobre el fondo oscuro. */
+.md-typeset .highlight .md-clipboard {
+  color: #A99BB3 !important;
+}
+
+.md-typeset .highlight .md-clipboard:hover,
+.md-typeset .highlight .md-clipboard:focus {
+  color: #FFB8DE !important;
+}
+
+/* Barra de scroll de los bloques: al pasar el ratón, rosa (el morado no
+   se vería sobre el fondo morado). */
+.md-typeset .highlight pre > code,
+[data-md-color-scheme="slate"] .md-typeset .highlight pre > code {
+  scrollbar-color: #6B5A78 transparent !important;
+}
+
+.md-typeset .highlight pre > code:hover,
+[data-md-color-scheme="slate"] .md-typeset .highlight pre > code:hover {
+  scrollbar-color: #FFB8DE transparent !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .highlight pre {
+  border-color: #0a0a0a !important;
+  box-shadow: 5px 5px 0 #000000 !important;
+}
+
+/* En modo oscuro el morado no se leería: lavanda claro, también sin fondo. */
+[data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
+  color: #D9C8E6 !important;
+}
+
+/* ===== PESTAÑAS CÓDIGO / RESULTADO (javascripts/vista-previa.js) ===== */
+.md-typeset .lm-preview {
+  margin: 1em 0 1.5em;
+}
+
+.md-typeset .lm-preview__tabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.md-typeset .lm-preview__tab {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.45em 1.1em;
+  margin-bottom: -3px;               /* la pestaña activa se funde con el bloque */
+  border: 3px solid #1F0318;
+  background-color: #FFB8DE;
+  color: #1F0318;
+  cursor: pointer;
+  position: relative;
+}
+
+.md-typeset .lm-preview__tab[aria-selected="true"] {
+  background-color: #382A40;
+  color: #FBFBF8;
+  border-bottom-color: #382A40;
+  z-index: 1;
+}
+
+.md-typeset .lm-preview__tab:hover {
+  background-color: #FFD3EA;
+}
+
+.md-typeset .lm-preview__tab[aria-selected="true"]:hover {
+  background-color: #382A40;
+}
+
+.md-typeset .lm-preview__tab:focus-visible {
+  outline: 3px solid #FFB8DE;
+  outline-offset: 2px;
+}
+
+/* El bloque de código ya no necesita margen arriba: va pegado a las pestañas. */
+.md-typeset .lm-preview .highlight pre {
+  margin-top: 0 !important;
+}
+
+/* Panel del resultado: lienzo blanco con el mismo marco que el código. */
+.md-typeset .lm-preview__panel--resultado {
+  background-color: #ffffff;
+  border: 3px solid #1F0318;
+  box-shadow: 5px 5px 0 #1F0318;
+}
+
+.md-typeset .lm-preview__panel--resultado[hidden] {
+  display: none;
+}
+
+.md-typeset .lm-preview__iframe {
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  background-color: #ffffff;
+  color-scheme: light;
+}
+
+.md-typeset .lm-preview__nota {
+  margin: 10px 0 0 0 !important;
+  padding: 0.4em 0.8em;
+  font-size: 0.62rem;
+  color: #5A4766;
+  background-color: #FFF1F8;
+  border-top: 2px solid #1F0318;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__tab {
+  border-color: #0a0a0a;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__tab[aria-selected="true"] {
+  border-bottom-color: #382A40;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__panel--resultado {
+  border-color: #0a0a0a;
+  box-shadow: 5px 5px 0 #000000;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lm-preview__nota {
+  border-top-color: #0a0a0a;
+}
+
+/* ===== ADMONITIONS ===== */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 2px solid #1F0318 !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 #1F0318 !important;
+  background-color: #ffffff !important;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details summary {
+  background-color: #FFB8DE !important;
+  border-bottom: 1px solid #1F0318 !important;
+  color: #1F0318 !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset details summary::before {
+  background-color: #1F0318 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+  background-color: #1a1a1a !important;
+  border-color: #444 !important;
+  box-shadow: 2px 2px 0 #333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset details summary {
+  background-color: #262626 !important;
+  border-bottom-color: #444 !important;
+  color: #e0e0e0 !important;
+}
+
+/* ===== TABLAS ===== */
+.md-typeset table:not([class]) {
+  border: 2px solid #1F0318 !important;
+  border-collapse: collapse !important;
+  box-shadow: 2px 2px 0 #1F0318 !important;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #1F0318 !important;
+  color: #ffffff !important;
+  border: 1px solid #1F0318 !important;
+  font-weight: 600 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+}
+
+.md-typeset table:not([class]) td {
+  border: 1px solid #1F0318 !important;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: #f7f7f7 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border-color: #444 !important;
+  box-shadow: 2px 2px 0 #333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #262626 !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-color: #333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: #1a1a1a !important;
+}
+
+/* ===== SEARCH ===== */
+.md-search__form {
+  border: 2px solid #1F0318 !important;
+  border-radius: 0 !important;
+  background-color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__form {
+  border-color: #444 !important;
+  background-color: #1a1a1a !important;
+}
+
+/* ===== FOOTER ===== */
+.md-footer {
+  background-color: #1F0318 !important;
+}
+
+.md-footer a {
+  color: rgba(255,255,255,0.7) !important;
+  border-bottom: none !important;
+}
+
+.md-footer a:hover {
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: #0a0a0a !important;
+}
+
+/* ===== SCROLLBAR ===== */
+/* Propiedad estándar: la usan Firefox y Chrome/Edge modernos, y cuando
+   está definida tiene prioridad sobre ::-webkit-scrollbar. Material la
+   usa en la barra lateral, el índice y los bloques de código, y al pasar
+   el ratón pinta la barra con el color de acento. */
+html,
+.md-sidebar__scrollwrap,
+.md-search__scrollwrap,
+.md-typeset pre > code,
+.md-typeset__scrollwrap {
+  scrollbar-color: #a3a3a3 transparent !important;
+}
+
+html {
+  scrollbar-color: #a3a3a3 #f7f7f7 !important;
+}
+
+.md-sidebar__scrollwrap:hover,
+.md-search__scrollwrap:hover,
+.md-typeset pre > code:hover,
+.md-typeset__scrollwrap:hover {
+  scrollbar-color: #382A40 transparent !important;
+}
+
+[data-md-color-scheme="slate"],
+[data-md-color-scheme="slate"] .md-sidebar__scrollwrap,
+[data-md-color-scheme="slate"] .md-search__scrollwrap,
+[data-md-color-scheme="slate"] .md-typeset pre > code,
+[data-md-color-scheme="slate"] .md-typeset__scrollwrap {
+  scrollbar-color: #444 transparent !important;
+}
+
+/* La barra de la página es la de <html>, que está por encima del <body>
+   donde Material marca el modo oscuro: por eso hace falta :has(). */
+html:has(body[data-md-color-scheme="slate"]) {
+  scrollbar-color: #444 #1a1a1a !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar__scrollwrap:hover,
+[data-md-color-scheme="slate"] .md-search__scrollwrap:hover,
+[data-md-color-scheme="slate"] .md-typeset pre > code:hover,
+[data-md-color-scheme="slate"] .md-typeset__scrollwrap:hover {
+  scrollbar-color: #666 transparent !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a3a3a3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #382A40;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
