@@ -3,403 +3,270 @@ hide:
   - navigation
 ---
 
-# **Proyecto 1: "Desarrollo con Estándares Web"**
+# Proyecto 1 · De la API a la página
 
-## **Contexto del proyecto**
+**Resultado de aprendizaje:** RA2 (criterios a–j)  
+**Entrega:** repositorio público en GitHub, publicado con GitHub Pages  
+**Plazos:** Fase 1, _por fijar_ · Fase 2, _por fijar_
 
-Has recibido un encargo: desarrollar un sitio web que represente la identidad profesional o comercial de un cliente. Puede ser una empresa local, un profesional independiente, una ONG, una startup o cualquier proyecto que elijas, siempre que sea creíble y profesional.
+## El encargo
 
-No es un ejercicio académico sin sentido. Es un proyecto real que podrías entregar a un cliente de verdad. El cliente espera un trabajo que cumpla con los estándares actuales de desarrollo web (HTML5 y CSS3) y que sea accesible, navegable y válido.
+En internet hay miles de servicios que publican sus datos en abierto: las obras de un museo, recetas de cocina, países, libros, personajes de una serie, agentes de un videojuego, paradas de autobús… Casi todos los ofrecen a través de una **API**, una dirección a la que haces una petición y que te devuelve los datos en JSON. Son datos en bruto, sin diseño, pensados para que los lea un programa y no una persona.
 
----
+Tu encargo es elegir una de esas API y construir el sitio web que convierte esos datos en algo que una persona quiera leer y pueda consultar desde cualquier dispositivo.
 
-## **El encargo**
+No vas a programar nada: lees el JSON, decides qué es cada dato para quien lo va a leer y lo marcas con HTML5. Después le das presentación con CSS3. Todo el trabajo está en esas dos decisiones: qué significa cada dato y cómo se presenta.
 
-**Necesidad**: Sitio web completo de 6 páginas
+El proyecto tiene dos fases, y la segunda se apoya en la primera:
 
-**Requisitos del cliente**:
-- Compatible con estándares web actuales.
-- Accesible para todos los usuarios (principalmente las cosas vistas en clase).
-- Funcional en móviles, tablets y ordenadores.
-- Código limpio y mantenible.
-- Que tengas todas las buenas prácticas vistas en clase.
+| Fase | Qué haces | Criterios que pesan más |
+|---|---|---|
+| 1 · Estructura | Eliges la API y construyes el sitio completo en HTML5, sin nada de CSS | a, b, c, d, g, h, i |
+| 2 · Presentación | Diseñas el sitio con una única hoja de estilos, adaptada a móvil, y lo publicas | b, e, f, g, h, i, j |
 
-**Metodología**: El proyecto se desarrollará en dos fases diferenciadas para garantizar calidad en cada etapa.
+## Elige tu API
 
----
+Tu API tiene que salir del repositorio [Public APIs](https://github.com/public-apis/public-apis), que reúne cientos de API gratuitas agrupadas por temas. Elegir una entre tantas, leer su documentación (casi siempre en inglés) y decidir si te sirve forma parte del trabajo.
 
-## **FASE 1: Estructura y Semántica HTML5**
+Cada API de la lista aparece en una tabla con cinco columnas: nombre, descripción, *Auth* (si necesita clave), *HTTPS* y *CORS*. La API que elijas tiene que cumplir esto:
 
-### **¿De qué va esta fase?**
+- Está en la lista y en la columna *Auth* pone `No`. Si pone `apiKey`, solo vale si la clave se consigue gratis y sin tarjeta.
+- En la columna *HTTPS* pone `Yes`.
+- Responde en JSON y tiene documentación en la que se explican sus *endpoints*.
+- Ofrece una colección de al menos unos veinte elementos con datos variados: textos, números, imágenes y, si puede ser, fechas. Por eso sirven las categorías de contenido (*Animals*, *Anime*, *Art & Design*, *Books*, *Food & Drink*, *Games & Comics*, *Music*, *Science & Math*, *Sports & Fitness*, *Video*…) y no las de utilidades técnicas, como acortadores de URL, validación de datos o autenticación.
+- Te interesa de verdad, porque vas a pasar con ella varias semanas.
+- No es ninguna de las de Pokémon, que son las que uso en los ejemplos de clase, ni ninguna de *The Legend of Zelda*, que usaremos en otro proyecto.
 
-En esta primera fase te centrarás exclusivamente en la **estructura y el contenido** de tu sitio web. Nada de colores, diseños bonitos ni efectos visuales todavía. Aquí lo importante es construir una base sólida con HTML5 semántico, accesible y bien organizado.
+Para que te hagas una idea de lo que sirve, todas estas están en la lista: Art Institute of Chicago, TheMealDB, REST Countries, Open Library y Rick and Morty. La lista no siempre está al día y algunas API dejan de funcionar sin avisar, así que comprueba que la tuya responde antes de decidirte. Pon en el README la categoría de la lista en la que la encontraste.
 
-Piénsalo como construir los cimientos y las paredes de una casa antes de pintarla.
+Para explorarla basta con pegar la URL de una petición en el navegador (Firefox muestra el JSON ordenado y plegable) o usar [Hoppscotch](https://hoppscotch.io). Las respuestas que uses como contenido guárdalas como ficheros `.json` en una carpeta `datos/` del repositorio. De ahí sale todo el texto de tu sitio, y es lo que voy a consultar para comprobar que el contenido es el real.
 
----
+### Antes de escribir HTML: la ficha de la API
 
-### **Tu objetivo en esta fase**
+Abre el `README.md` con una sección *La API* en la que expliques cómo se llama, quién la mantiene, dónde está su documentación, qué licencia o condiciones de uso tiene y qué *endpoints* has consultado.
 
-Crear un sitio web de **seis páginas** con estructura HTML5 correcta, contenido bien organizado y un formulario funcional. Todo debe ser válido, semántico y accesible.
+Debajo, coge un elemento de la colección y haz una tabla con sus campos: el nombre del campo en el JSON, su tipo de dato y **qué es ese dato para quien lee tu web**. Esta tabla es el puente entre los datos y el marcado, y es la que vas a consultar cada vez que dudes qué etiqueta usar. Así quedaría con la PokéAPI:
 
----
+| Campo del JSON | Tipo | Qué es para el lector |
+|---|---|---|
+| `name` | texto | El título de la ficha y el texto del enlace en el catálogo |
+| `sprites.other.official-artwork.front_default` | URL | La imagen principal, acompañada de su pie |
+| `types[].type.name` | lista de textos | Las categorías del elemento; también sirven para agrupar el catálogo |
+| `height`, `weight` | números | Pares nombre–valor en la ficha y columnas en la comparativa (con su unidad) |
+| `stats[]` | lista de objetos | Una tabla de estadísticas dentro de la ficha |
 
-### **Requisitos de la Fase 1**
+Fíjate en que la última columna no habla de etiquetas, sino de lo que *significa* cada dato. Decidir la etiqueta es trabajo tuyo.
 
-#### **1. Estructura HTML5 semántica**
+## Fase 1 · Estructura con HTML5
 
-- **Seis páginas HTML** con estructura clara y diferenciada:
-    1. **index.html** - Página principal (Home)
-    2. **servicios.html** - Servicios o productos
-    3. **about.html** - Sobre nosotros
-    4. **blog.html** - Blog o noticias
-    5. **contacto.html** - Página de contacto con formulario
-    6. **[tu-elección].html** - Página adicional (galería, FAQ, testimonios, portfolio, etc.)
+En esta fase solo te importan la estructura y el significado. No hay CSS de ningún tipo: ni en línea, ni interno, ni externo. Tu sitio se verá con los estilos por defecto del navegador, y está bien así. Si con esos estilos se entiende y se puede usar, la estructura es buena.
 
-- **Cada página debe tener**:
-    - Al menos **tres secciones de contenido** con significado propio (elementos estructurales principales no cuentan)
-    - Estructura diferenciada: cada página debe ser única estructuralmente, no una plantilla repetida
+### Las páginas
 
-#### **2. Principios estructurales obligatorios**
+| Página | Qué contiene |
+|---|---|
+| `index.html` | La portada: qué es el sitio, de dónde salen los datos y una selección de al menos tres elementos destacados que enlazan a sus fichas. |
+| `catalogo.html` | Al menos doce elementos de la API, cada uno con su imagen, su nombre, dos o tres datos clave y un enlace a su ficha si la tiene. Agrúpalos según alguna categoría que te den los propios datos. |
+| `fichas/*.html` | Al menos tres fichas, una por elemento, con toda la información útil que ofrece la API. Las tres comparten estructura: son la misma plantilla con datos distintos. |
+| `comparativa.html` | Una tabla que compara al menos ocho elementos en al menos cuatro campos. Tiene título, las cabeceras de columna y de fila están bien identificadas y, si los datos lo permiten, hay un resumen final (totales, medias, máximos…). |
+| `sobre-los-datos.html` | Qué API usas, quién la mantiene, su licencia y atribución, qué *endpoints* consultas y un fragmento real de JSON mostrado como código junto al HTML en que lo has convertido. |
+| `propuesta.html` | Un formulario para proponer un elemento nuevo al catálogo. Sus campos salen de los campos del JSON. Lo explicamos más abajo. |
 
-- **Semántica correcta**: usa el elemento HTML más apropiado según el significado del contenido, no por su apariencia visual
-- **Jerarquía lógica**: organiza la información de forma que refleje su importancia y relación
-- **Accesibilidad desde el marcado**: estructura que funcione con tecnologías asistivas
-- **Metadatos completos**: información necesaria en el encabezado del documento
-- **Navegación coherente**: sistema de enlaces que conecte todas las páginas de forma intuitiva
+Además, en alguna página del sitio tiene que haber al menos un vídeo o un audio que tenga sentido con tu temática (un tráiler, una entrevista, un sonido…). Puede ser un fichero propio o estar insertado desde otra plataforma.
 
-#### **3. Contenido multimedia**
+### Lo que tiene que cumplir tu sitio
 
-- **Imágenes**: con alternativas textuales descriptivas y dimensiones especificadas
-- **Figuras con contexto**: cuando uses contenido visual relevante, proporciona contexto y descripción
+- Cada página es un documento HTML5 completo, en español, con la codificación correcta, preparado para móvil, con un título de pestaña propio y una descripción para buscadores.
+- En todas las páginas se distinguen, sin leer ninguna clase, la cabecera, la navegación principal, el contenido principal y el pie. La navegación es la misma en todo el sitio e indica de forma accesible en qué página estás.
+- Cada página tiene un único título principal y una jerarquía de encabezados continua, sin saltos.
+- Cada elemento del catálogo y cada ficha tendrían sentido publicados fuera de tu sitio.
+- Los datos de cada ficha que son pares nombre–valor están marcados como tales, no como párrafos sueltos.
+- Las imágenes tienen un texto alternativo que dice lo que aportan y declaran sus dimensiones. Las que llevan pie forman una unidad con él. Guárdalas en `assets/img`, con nombres en minúsculas y sin espacios.
+- Las fechas se pueden interpretar por una máquina, y las cifras llevan su unidad.
+- Todos los enlaces internos funcionan con rutas relativas, también desde las fichas, que están en una subcarpeta.
+- Al principio de cada página hay un enlace para saltar al contenido principal, y todo el sitio se puede recorrer solo con el teclado.
+- No hay ningún elemento ni atributo obsoleto. Usa `<div>` solo cuando no exista una etiqueta que describa lo que agrupas.
+- El código está bien sangrado y lleva comentarios donde ayudan a orientarse, no en cada línea.
+- El contenido es el real de la API, nunca *lorem ipsum*. Si los datos vienen en inglés puedes dejarlos así, pero la navegación, los títulos y los textos que escribes tú van en español.
 
-#### **4. Formulario completo (en contacto.html)**
+### El formulario de propuesta
 
-Debe incluir **al menos 6 campos diferentes** que demuestren:
-- Tipos de entrada variados y apropiados al dato solicitado
-- Validación del lado del cliente
-- Asociación correcta entre etiquetas y controles
-- Campos obligatorios y opcionales bien diferenciados
-- Organización lógica de la información solicitada
+El formulario es la otra cara del JSON: si alguien quisiera añadir un elemento nuevo a tu catálogo, ¿qué datos tendría que darte y de qué tipo? Vuelve a tu tabla de campos y diseña el formulario a partir de ella. Cada control tiene que corresponder al tipo de dato del campo: un número con su rango razonable, una fecha, una URL de imagen, un valor que solo puede ser uno de una lista cerrada, un texto largo para la descripción…
 
-#### **5. Representación de datos**
+Debe tener al menos ocho campos, agrupados por temas, con cada etiqueta asociada a su control, los obligatorios bien diferenciados de los opcionales y validación nativa del navegador allí donde tenga sentido (longitudes, rangos, formatos). De momento no tiene que enviarse a ningún servidor.
 
-Incluye al menos una **estructura tabular de datos** donde sea semánticamente apropiado (comparativas, horarios, precios, estadísticas, etc.)
+### Valida antes de cerrar la fase
 
----
+Pasa todas las páginas por el [validador del W3C](https://validator.w3.org/) y corrige todos los errores, como hiciste con el wireframe. Los avisos que decidas no corregir, justifícalos en el README.
 
-### **Entregable Fase 1**
+### Entregable de la Fase 1
 
-Repositorio en GitHub con esta estructura:
-
-```
+```text
 tu-repositorio/
 ├── index.html
-├── servicios.html
-├── about.html
-├── blog.html
-├── contacto.html
-├── [tu-pagina-adicional].html
+├── catalogo.html
+├── comparativa.html
+├── sobre-los-datos.html
+├── propuesta.html
+├── fichas/
+│   ├── elemento-1.html
+│   ├── elemento-2.html
+│   └── elemento-3.html
 ├── assets/
-│   └── images/
+│   ├── img/
+│   └── media/
+├── datos/
+│   └── *.json
 └── README.md
 ```
 
-El **README.md** debe incluir:
-- Descripción del proyecto y temática elegida
-- Estructura del sitio (qué contiene cada página)
-- Decisiones de diseño estructural tomadas
+El README de esta fase recoge la ficha de la API con su tabla de campos, la estructura del sitio (qué hay en cada página), dos o tres decisiones de marcado en las que dudaste entre varias opciones y explicas por qué elegiste la que elegiste, y el resultado de la validación.
 
----
+Haz al menos seis commits con mensajes descriptivos durante la fase. Cuando la des por cerrada, marca ese commit con la etiqueta `fase-1` y súbela a GitHub. Lo que corrijo de esta fase es lo que hay en esa etiqueta.
 
-### **A tener en cuenta en la Fase 1**
+## Fase 2 · Presentación con CSS3
 
-- **NO uses CSS** en esta fase (ni inline, ni interno, ni externo)
-- **NO te preocupes por el diseño visual** todavía
-- **Céntrate en la estructura y la semántica**
-- **Asegúrate de que todo valida en el W3C Validator**
-- Empieza por el contenido real o realista, no uses "Lorem ipsum" genérico
-- Piensa en la jerarquía de información antes de escribir código
-- Valida cada página con el [W3C Validator](https://validator.w3.org/) antes de continuar
-- Haz commits frecuentes en Git con mensajes descriptivos
-- Revisa la accesibilidad: ¿tiene sentido tu estructura si alguien usa un lector de pantalla?
+Ahora le das al sitio su aspecto. El HTML de la Fase 1 debería cambiar muy poco: si para conseguir un diseño tienes que rehacer la estructura, probablemente la estructura no era buena.
 
----
+### Lo que tiene que cumplir tu hoja de estilos
 
-## **FASE 2: Estilos CSS3 y Validación Final**
+- Hay un único archivo CSS externo, enlazado desde todas las páginas, y no queda ni un estilo en línea ni interno.
+- Los colores, las tipografías y los espaciados se definen una sola vez como variables. Cambiar el color principal del sitio tiene que ser cuestión de tocar una línea.
+- Las clases siguen la nomenclatura BEM de forma coherente, y el archivo está organizado en secciones comentadas.
+- El diseño parte del móvil (360 px de ancho) y se adapta a tablet y escritorio con al menos dos puntos de ruptura. En ninguna página aparece *scroll* horizontal a 360 px.
+- El catálogo cambia el número de columnas según el ancho disponible, y las fichas tienen una disposición distinta en móvil y en escritorio.
+- La tabla comparativa se sigue pudiendo leer en el móvil. Cómo lo consigues lo decides tú, y lo justificas en el README.
+- Las imágenes se adaptan a su contenedor sin deformarse.
+- El sitio tiene modo oscuro, que se activa según la preferencia del sistema.
+- Los elementos interactivos tienen transiciones, y hay al menos una animación que aporta algo a la experiencia. Si el usuario ha pedido movimiento reducido, se respeta.
+- Todos los elementos interactivos muestran un foco visible, y el contraste entre texto y fondo cumple el nivel AA en los dos modos.
+- El formulario está diseñado entero, incluidos los estados de campo válido e inválido.
+- La tipografía crea una jerarquía clara y el texto se lee con comodidad.
 
-### **¿De qué va esta fase?**
+### Valida, revisa la accesibilidad y publica
 
-Ahora sí, es momento de darle vida visual a tu proyecto. En esta fase aplicarás CSS3 moderno, diseño responsive, y pulirás todo hasta que sea un producto profesional.
+Pasa la hoja de estilos por el [validador de CSS del W3C](https://jigsaw.w3.org/css-validator/) y vuelve a validar el HTML. Después analiza la accesibilidad de al menos tres páginas con Lighthouse (en las herramientas del navegador) o con [WAVE](https://wave.webaim.org/), y corrige lo que te señalen. Por último, publica el sitio con GitHub Pages y pon la URL en el README y en la descripción del repositorio.
 
----
+### Entregable de la Fase 2
 
-### **Tu objetivo en esta fase**
+Añade al repositorio la carpeta `css/` con tu `styles.css` y amplía el README con la paleta de colores y las tipografías, las decisiones de diseño responsive (incluida la de la tabla), capturas del sitio en móvil y en escritorio y en los dos modos de color, los enlaces a los resultados de validación, lo que encontró el análisis de accesibilidad y cómo lo corregiste, y la URL publicada.
 
-Aplicar una hoja de estilos única y bien organizada que haga tu sitio visualmente atractivo, accesible y funcional en cualquier dispositivo.
+Cierra el README con un párrafo breve sobre qué te ha aportado separar el contenido de la presentación, con un ejemplo concreto de tu proyecto: un cambio que hiciste una sola vez y se aplicó en todas las páginas.
 
----
-
-### **Requisitos de la Fase 2**
-
-#### **1. Hoja de estilos única y organizada**
-
-- **Un solo archivo CSS** para todo el sitio
-- Organización con **metodología BEM** (Block Element Modifier)
-- Código comentado y estructurado por secciones
-- **Variables CSS** para:
-    - Paleta de colores
-    - Tipografías
-    - Espaciados y tamaños comunes
-    - Otros valores reutilizables
-
-#### **2. Diseño responsive**
-
-- **Resposive Design**
-- **Media queries** para diferentes rangos de dispositivos
-- Sistema de layout flexible y adaptable
-- Contenido multimedia que se adapte al viewport
-
-#### **3. Dark Mode**
-
-- Soporte básico para modo oscuro
-- Uso de características de detección de preferencias del sistema
-- Variables CSS que faciliten el cambio de tema
-
-#### **4. Transiciones y animaciones**
-
-- **Transiciones suaves** en elementos interactivos
-- Al menos **una animación** que aporte valor a la experiencia de usuario
-- Respeto por las preferencias de movimiento reducido del usuario
-
-#### **5. Tipografía y jerarquía visual**
-
-- Uso de fuentes web apropiadas
-- Jerarquía visual clara y consistente
-- Legibilidad optimizada (espaciado, contraste, tamaño)
-
----
-
-### **Entregable Fase 2**
-
-Actualiza tu repositorio con:
-
-```
-tu-repositorio/
-├── index.html
-├── servicios.html
-├── about.html
-├── blog.html
-├── contacto.html
-├── [tu-pagina-adicional].html
-├── css/
-│   └── styles.css        ← NUEVO
-├── assets/
-│   ├── images/
-│   └── videos/
-└── README.md             ← ACTUALIZADO
-```
-
-**Actualiza el README.md** añadiendo:
-- Decisiones de diseño visual
-- Paleta de colores usada
-- Tipografías elegidas
-- Capturas de pantalla del sitio
-- Resultados de validación (enlaces a W3C Validator)
-
----
-
-## Fase 3: Presentación del Proyecto (Videotutorial)
-
-### Objetivo
-
-En esta fase final vais a presentar vuestro trabajo explicando las decisiones de diseño y desarrollo que habéis tomado, además de demostrar que habéis seguido las buenas prácticas de validación del código.
-
-### Puntos a tener en cuenta
-
-**1. Presentación del proyecto**
-
-Debéis preparar una presentación oral de vuestro proyecto en la que expliquéis las decisiones de diseño tomadas, como el wireframe inicial, la estructura HTML que habéis implementado y los estilos CSS aplicados. También es importante que comentéis las soluciones técnicas que habéis desarrollado para resolver los diferentes retos del proyecto.
-
-**Producto**: Una presentación clara y bien estructurada que resuma el trabajo realizado y justifique las decisiones tomadas.
-
-**2. Demostración de la validación y mejoras**
-
-Durante el videotutorial debéis mostrar cómo habéis validado vuestro código HTML y CSS. Es importante que expliquéis qué errores encontrasteis (si los hubo) y cómo los solucionasteis para mejorar la calidad del código.
-
-**Producto**: Evidencia de la validación realizada y las mejoras aplicadas, todo ello explicado durante la presentación.
-
-### Entrega
-
-Para la entrega del videotutorial, cada estudiante debe realizar una presentación clara y detallada de todo el proceso de desarrollo del proyecto. El vídeo debe incluir desde la fase inicial de análisis y planificación hasta la implementación final de la interfaz web. Es fundamental que expliquéis las decisiones de diseño tomadas, las herramientas utilizadas, la maquetación con HTML5 y CSS3, así como los aspectos destacables del proyecto como puede ser la arquitectura del mismo.
-
-El videotutorial debe tener una duración máxima de 7 minutos y seguir un orden lógico que permita entender fácilmente cada paso del proyecto, destacando los problemas encontrados y las soluciones aplicadas. Además, se recomienda incluir una breve conclusión sobre el resultado final y posibles mejoras futuras.
-
-**Muy importante**: tened en cuenta los criterios de evaluación en vuestra explicación, debe quedar claro que habéis cumplido con cada uno de ellos.
+Otra vez, al menos seis commits descriptivos durante la fase, y la etiqueta `fase-2` al cerrarla.
 
 ## Evaluación
 
-# Rúbrica de Evaluación - Proyecto 1: "Desarrollo con Estándares Web"
+Este proyecto evalúa los diez criterios del RA2. Cada criterio se califica de 0 a 10 con la rúbrica de abajo, y esa nota cuenta la mitad de su calificación. La otra mitad sale de la prueba práctica de la unidad. Se valora el razonamiento, no solo el resultado: una solución que no funciona del todo pero muestra que entiendes lo que hacías puntúa.
 
-## Evaluación (RA2)
+Hay dos condiciones que afectan a todo el proyecto. Si el sitio no se puede abrir desde GitHub Pages, o las rutas a imágenes, páginas u hoja de estilos están rotas, los criterios afectados no pueden pasar de 5. Y lo que no esté en las etiquetas `fase-1` y `fase-2` del repositorio no se evalúa.
 
----
+### 2.a · Identificar etiquetas y atributos de HTML
 
-### **Criterio de evaluación 2.b**
-**b) Se ha analizado la estructura de un documento HTML e identificado las secciones que lo componen.**
+Se mira en el marcado de todas las páginas de la Fase 1.
 
-| **Nivel de Logro** | **Descripción**                                                                                          | **Indicador**                                                                                       |
-|---------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Ha analizado y estructurado correctamente un documento HTML, identificando de forma clara y detallada las secciones principales (header, main, footer, aside, section, article, etc.) y justificando su uso. Ha aplicado todas las buenas prácticas vistas en clase, incluyendo semántica, indentación y comentarios útiles. | Documento HTML impecable con uso adecuado de etiquetas semánticas y una estructura clara, organizada y justificada. |
-| **8 (Notable)**     | Ha analizado y estructurado correctamente un documento HTML, identificando las secciones principales con un buen uso de etiquetas semánticas. Algunas justificaciones o aspectos de las buenas prácticas podrían mejorarse. | Estructura lógica y funcional, con pequeñas inconsistencias en la aplicación de semántica o en el cumplimiento de las buenas prácticas. |
-| **6 (Aprobado)**    | Ha identificado las secciones principales y las ha estructurado de manera básica, aunque algunas etiquetas están mal empleadas o faltan elementos semánticos importantes. Se han aplicado algunas buenas prácticas, pero no de forma consistente. | Uso básico de semántica y organización, pero con errores que dificultan la claridad o eficacia de la estructura. |
-| **4 (Insuficiente)**| Ha intentado identificar y estructurar las secciones, pero con errores graves en la semántica o con estructuras desorganizadas y poco claras. Las buenas prácticas vistas en clase no se han seguido correctamente. | Estructura confusa o incorrecta, con etiquetas mal utilizadas y sin cumplir con estándares básicos. |
-| **2 (Deficiente)**  | Ha presentado un trabajo con errores críticos en la estructura del documento HTML, sin diferenciar las secciones principales ni emplear semántica. No hay evidencia de buenas prácticas ni de comprensión del contenido. | Documento HTML incompleto o incoherente, con una estructura desorganizada y sin valor práctico. |
-| **0 (No realizado)**| No ha realizado ninguna estructura de documento HTML o el uso es inapropiado y sin relación con el criterio evaluado. Tampoco ha seguido ninguna de las buenas prácticas vistas en clase. | No hay evidencia de comprensión ni de trabajo realizado. |
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Cada contenido usa la etiqueta que describe su significado, y cada decisión dudosa está razonada en el README. Los atributos están completos y son los adecuados (idioma, metadatos, textos alternativos, fechas para máquinas, tipos y restricciones del formulario). Las tres fichas comparten exactamente la misma estructura. |
+| Notable (7–8) | Marcado semántico correcto en casi todo el sitio, con algún elemento genérico donde existía uno más preciso o algún atributo útil que falta. |
+| Suficiente (5–6) | La estructura general es correcta, pero hay varios contenidos marcados por su aspecto y no por su significado, o atributos que faltan en imágenes, fechas o formulario. |
+| Insuficiente (0–4) | Hay un uso generalizado de elementos genéricos, la jerarquía de encabezados está rota o los atributos básicos no aparecen. |
 
-#### **Buenas prácticas a evaluar**
+### 2.b · Utilizar herramientas en línea para crear contenido web
 
-1. **Indentación y legibilidad:** Código correctamente indentado para facilitar la lectura.
-2. **Uso de etiquetas semánticas:** Uso adecuado de etiquetas.
-3. **Comentarios:** Uso de comentarios útiles para explicar la estructura del documento.
-4. **Organización lógica:** Estructura jerárquica y lógica que refleje la intención del contenido del documento.
-5. **Validación:** Código que pase las validaciones del W3C sin errores.
+Se mira en el repositorio, el historial de Git, la publicación en GitHub Pages y la exploración de la API.
 
----
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Hay al menos seis commits descriptivos por fase que cuentan cómo avanzó el proyecto, y las etiquetas `fase-1` y `fase-2` están en su sitio. El sitio está publicado y funciona. Las respuestas JSON están guardadas en `datos/`, y la exploración de la API queda documentada con los *endpoints* reales. |
+| Notable (7–8) | Todo está presente, pero los commits son algo genéricos o se concentran en pocos días. |
+| Suficiente (5–6) | El repositorio y la publicación funcionan, pero el historial es pobre (menos commits de los pedidos o con mensajes poco útiles), o falta la carpeta `datos/`. |
+| Insuficiente (0–4) | El sitio no está publicado, el trabajo está subido en uno o dos commits o no hay rastro de la exploración de la API. |
 
-### **Criterio de evaluación 2.c**
-**c) Se ha reconocido la funcionalidad de las principales etiquetas y los atributos del lenguaje HTML.**
+### 2.c · Identificar etiquetas para incluir elementos multimedia
 
-| **Nivel de Logro** | **Descripción**                                                                                          | **Indicador**                                                                                       |
-|---------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Ha demostrado un conocimiento exhaustivo de las etiquetas HTML5, utilizando de forma correcta y justificada las etiquetas más apropiadas para cada tipo de contenido. Ha empleado atributos de manera óptima (alt, title, aria-*, data-*, etc.) y ha demostrado comprensión de sus funciones específicas. El formulario incluye validación completa con atributos apropiados. | Uso experto de etiquetas y atributos HTML5, con selección precisa según el contenido y funcionalidad requerida. Formulario con validación completa y accesible. |
-| **8 (Notable)**     | Ha utilizado correctamente las principales etiquetas HTML5 y sus atributos más comunes. El formulario incluye al menos 6 tipos de campos diferentes con validación básica. Algunas etiquetas o atributos podrían estar mejor optimizados o ser más específicos. | Buen dominio de etiquetas y atributos, con uso funcional y correcto en la mayoría de casos. Formulario completo y validado. |
-| **6 (Aprobado)**    | Ha empleado las etiquetas HTML básicas de forma aceptable, aunque con algunas confusiones o usos inadecuados. El formulario cumple con el mínimo de 6 campos, pero la validación es incompleta o básica. Los atributos están presentes pero no siempre son los más apropiados. | Uso básico de etiquetas y atributos, suficiente para una funcionalidad mínima pero mejorable. Formulario funcional pero sin validación completa. |
-| **4 (Insuficiente)**| Ha utilizado etiquetas HTML con errores significativos en su funcionalidad o propósito. El formulario no cumple con los requisitos mínimos o carece de validación adecuada. Los atributos están ausentes o mal empleados en varios casos importantes. | Comprensión limitada de las etiquetas y atributos, con errores que afectan a la funcionalidad del sitio. Formulario incompleto. |
-| **2 (Deficiente)**  | Ha empleado etiquetas HTML de forma incorrecta o inapropiada en la mayoría de casos. El formulario es deficiente o inexistente. No se evidencia comprensión de la funcionalidad de etiquetas y atributos. | Uso inadecuado generalizado de etiquetas y atributos. No cumple con requisitos básicos del proyecto. |
-| **0 (No realizado)**| No ha utilizado etiquetas HTML de forma apropiada o el trabajo no demuestra ningún conocimiento de su funcionalidad. No hay formulario o es completamente disfuncional. | No hay evidencia de comprensión ni de trabajo realizado. |
+Se mira en las imágenes del catálogo, las fichas y la portada, y en el vídeo o audio.
 
-#### **Buenas prácticas a evaluar**
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Todas las imágenes tienen un texto alternativo útil y declaran sus dimensiones, y las que llevan pie forman una unidad con él. El vídeo o audio tiene controles, sentido dentro del sitio y una alternativa para quien no puede reproducirlo. Los ficheros están ordenados en `assets/`. |
+| Notable (7–8) | El multimedia está bien integrado, con algún texto alternativo genérico («imagen de…») o alguna dimensión sin declarar. |
+| Suficiente (5–6) | Las imágenes y el vídeo o audio están, pero hay textos alternativos vacíos o repetidos, o el multimedia está colocado sin relación con el contenido. |
+| Insuficiente (0–4) | Faltan imágenes, no hay vídeo ni audio, o se cargan con rutas rotas. |
 
-1. **Selección semántica:** Uso de la etiqueta más apropiada según el contenido (nav, article, aside, figure, etc.).
-2. **Atributos de accesibilidad:** Uso correcto de alt, title, label, y demás campos para la mejora de la accesibilidad.
-3. **Formulario robusto:** Uso de tipos de input apropiados (email, tel, number, date, url, etc.) con validación mediante atributos (required, pattern, min, max, minlength, maxlength).
-4. **Metadatos completos:** Inclusión de charset, viewport, description, author, etc.
-5. **Atributos multimedia:** Dimensiones especificadas en imágenes, controles en video/audio, fuentes alternativas.
+### 2.d · Emplear lenguajes de marcas para transmitir información
 
----
+Este es el criterio central del proyecto. Se mira en la tabla de campos del README y en cómo los datos del JSON se convierten en HTML: catálogo, fichas, comparativa y `sobre-los-datos.html`.
 
-### **Criterio de evaluación 2.d**
-**d) Se han establecido las semejanzas y diferencias entre las diferentes versiones de HTML.**
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | La tabla de campos es completa y razonada, y el marcado la respeta de forma coherente en todo el sitio. Los datos están en su forma más significativa (pares nombre–valor, tabla con cabeceras de fila y columna, elementos autónomos). El fragmento de JSON y su versión en HTML muestran con claridad la transformación. |
+| Notable (7–8) | La transformación es correcta y coherente, con algún dato presentado de forma más pobre de lo que permitía (por ejemplo, como texto suelto cuando era un par nombre–valor). |
+| Suficiente (5–6) | Los datos de la API están en el sitio, pero con un marcado irregular entre páginas o una tabla comparativa que no identifica bien sus cabeceras. |
+| Insuficiente (0–4) | El contenido no sale de la API, es de relleno o no está estructurado. |
 
-| **Nivel de Logro** | **Descripción**                                                                                          | **Indicador**                                                                                       |
-|---------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Ha demostrado un conocimiento profundo de la evolución de HTML, utilizando exclusivamente características de HTML5 de forma correcta y justificada. Ha evitado elementos obsoletos y ha documentado en el README las decisiones tomadas basándose en las capacidades modernas de HTML5 frente a versiones anteriores. | Proyecto que refleja comprensión total de HTML5, sin elementos obsoletos, con justificación clara de las decisiones basadas en las capacidades del estándar moderno. |
-| **8 (Notable)**     | Ha empleado características modernas de HTML5 correctamente y ha evitado la mayoría de elementos obsoletos. Demuestra comprensión de las diferencias principales entre HTML5 y versiones anteriores, aunque la documentación podría ser más detallada. | Uso correcto de HTML5 moderno con mínima presencia de prácticas obsoletas. Buena comprensión de la evolución del estándar. |
-| **6 (Aprobado)**    | Ha utilizado principalmente HTML5, aunque aparecen algunos elementos o prácticas de versiones anteriores. Demuestra conocimiento básico de las diferencias entre versiones, pero sin profundizar en las ventajas del estándar moderno. | Uso aceptable de HTML5 con algunas prácticas obsoletas. Comprensión básica de las diferencias entre versiones. |
-| **4 (Insuficiente)**| Ha mezclado características de diferentes versiones de HTML sin criterio claro. Usa elementos obsoletos o desaconsejados de forma frecuente. No demuestra comprensión clara de las diferencias entre versiones. | Uso inconsistente de HTML5 con presencia significativa de elementos obsoletos. Confusión sobre estándares modernos. |
-| **2 (Deficiente)**  | Ha utilizado principalmente elementos obsoletos o no ha diferenciado entre versiones de HTML. No demuestra conocimiento de HTML5 ni de sus ventajas sobre versiones anteriores. | Código que no refleja conocimiento de HTML5 ni de estándares modernos. Uso extensivo de elementos obsoletos. |
-| **0 (No realizado)**| No ha aplicado conocimientos sobre versiones de HTML o el trabajo no permite evaluar este criterio. | No hay evidencia de comprensión ni de trabajo realizado. |
+### 2.e · Describir y aplicar las propiedades básicas de CSS
 
-#### **Buenas prácticas a evaluar**
+Se mira en la hoja de estilos y en el aspecto final del sitio.
 
-1. **Uso de HTML5 puro:** Ausencia de elementos y atributos obsoletos, atributos.
-2. **Elementos semánticos modernos:** Uso de etiquetas semánticas en lugar de `<div>` genéricos.
-3. **DOCTYPE correcto:** Uso del DOCTYPE simplificado de HTML5.
-4. **Atributos modernos:** Uso de atributos HTML5 para la mejora de tipos de input modernos.
----
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | El catálogo y las fichas están maquetados con técnicas modernas de disposición, y la tipografía, el color y el espaciado crean una jerarquía clara. El modo oscuro es completo, las transiciones y la animación aportan algo y el formulario está diseñado entero, incluidos sus estados. |
+| Notable (7–8) | El diseño es sólido y está completo, con algún detalle descuidado (un estado sin diseñar, un modo oscuro con zonas sin adaptar). |
+| Suficiente (5–6) | El sitio tiene un diseño propio, pero falta alguno de los requisitos (modo oscuro, animación, estados del formulario) o la maquetación se apoya en trucos frágiles. |
+| Insuficiente (0–4) | El diseño es mínimo o rompe el contenido, y faltan varios requisitos. |
 
-### **Criterio de evaluación 2.e**
-**e) Se han utilizado herramientas en la creación de documentos web.**
+### 2.f · Crear y enlazar hojas de estilo
 
-| **Nivel de Logro** | **Descripción**                                                                                          | **Indicador**                                                                                       |
-|---------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Ha utilizado de forma experta todas las herramientas requeridas: Git con commits frecuentes y descriptivos, GitHub con repositorio bien estructurado, validadores W3C sin errores, editor de código con configuración profesional. El README está completo y profesional. Ha demostrado dominio del flujo de trabajo con estas herramientas. | Dominio completo de las herramientas de desarrollo web. Repositorio impecable, commits profesionales, validación perfecta y documentación excelente. |
-| **8 (Notable)**     | Ha utilizado correctamente las herramientas principales: Git con buen historial de commits, repositorio GitHub organizado, validación W3C aplicada. El README incluye la información requerida. El flujo de trabajo es adecuado aunque podría optimizarse. | Buen uso de herramientas con flujo de trabajo correcto. Pequeñas mejoras posibles en organización o documentación. |
-| **6 (Aprobado)**    | Ha empleado las herramientas básicas de forma aceptable: repositorio GitHub funcional, algunos commits realizados, validación realizada aunque con algunos errores menores. El README cumple mínimos pero es mejorable. | Uso básico de herramientas suficiente para cumplir requisitos mínimos. Flujo de trabajo funcional pero básico. |
-| **4 (Insuficiente)**| Ha utilizado las herramientas de forma deficiente: pocos commits o poco descriptivos, repositorio desorganizado, validación incompleta o con errores sin resolver, README insuficiente o ausente. | Uso inadecuado de herramientas que dificulta la evaluación y mantenimiento del proyecto. |
-| **2 (Deficiente)**  | Ha hecho uso mínimo o incorrecto de las herramientas: repositorio mal estructurado o incompleto, ausencia de control de versiones adecuado, sin validación o con errores críticos, documentación ausente o inútil. | Las herramientas no se han empleado de forma efectiva. Proyecto difícil de evaluar o usar. |
-| **0 (No realizado)**| No ha utilizado las herramientas requeridas o su uso es completamente inadecuado. No hay repositorio, control de versiones, validación ni documentación. | No hay evidencia de uso de herramientas ni de trabajo realizado. |
+Se mira en la organización de la hoja de estilos, en la separación entre contenido y presentación y en el párrafo final del README.
 
-#### **Buenas prácticas a evaluar**
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Hay un único archivo externo enlazado en todas las páginas (también en las fichas, con su ruta relativa) y no queda un solo estilo en el HTML. Las variables cubren todos los valores repetidos, BEM es coherente y el archivo está ordenado por secciones. El README explica con un ejemplo real la ventaja de separar contenido y presentación. |
+| Notable (7–8) | La separación es correcta y la organización buena, con algún valor repetido que debería ser una variable o alguna clase fuera de la nomenclatura. |
+| Suficiente (5–6) | La hoja de estilos es externa, pero desordenada o con poca reutilización, o la reflexión del README es genérica. |
+| Insuficiente (0–4) | Hay CSS en la Fase 1, estilos en línea o internos en la Fase 2, o páginas que no cargan la hoja de estilos. |
 
-1. **Control de versiones Git:** Commits frecuentes (uno por funcionalidad o cambio significativo) con mensajes descriptivos y en español.
-2. **Estructura del repositorio:** Organización clara de carpetas (css/, assets/images/, assets/videos/) según especificaciones del proyecto.
-3. **Validación W3C:** Todo el HTML y CSS pasa la validación sin errores. Enlaces a los resultados de validación en el README.
-4. **README completo:** Incluye descripción del proyecto, estructura del sitio, decisiones de diseño, paleta de colores, tipografías y capturas de pantalla.
-5. **Herramientas de desarrollo:** Uso efectivo del navegador y sus herramientas de desarrollo para depuración y testing responsive.
+### 2.g · Validar documentos HTML y CSS
 
----
+Se mira volviendo a pasar el validador al HTML de las dos etiquetas y al CSS, y en las evidencias del README.
 
-### **Criterio de evaluación 2.f**
-**f) Se han identificado las ventajas que aporta la utilización de hojas de estilo.**
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Todas las páginas y la hoja de estilos validan sin errores y los avisos están corregidos o justificados. El README enlaza los resultados, y el historial muestra que se validó durante el desarrollo, no solo al final. |
+| Notable (7–8) | No hay errores, pero quedan avisos sin justificar o faltan algunas evidencias en el README. |
+| Suficiente (5–6) | Hay algún error menor en alguna página que no afecta a la estructura. |
+| Insuficiente (0–4) | Hay errores de validación que afectan a la estructura (etiquetas sin cerrar, elementos mal anidados) o no hay evidencia de haber validado. |
 
-| **Nivel de Logro** | **Descripción**                                                                                          | **Indicador**                                                                                       |
-|---------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Ha demostrado comprensión completa de las ventajas de CSS mediante la separación total de contenido y presentación. Ha documentado en el README las ventajas conseguidas (mantenibilidad, consistencia, eficiencia). La Fase 1 no contiene CSS y la Fase 2 implementa un archivo CSS único y eficiente con variables y reutilización óptima. | Separación perfecta HTML/CSS. Documentación excelente de ventajas. Código CSS altamente mantenible y eficiente que demuestra todas las ventajas de las hojas de estilo. |
-| **8 (Notable)**     | Ha mantenido correctamente la separación entre HTML y CSS. Ha identificado y documentado las principales ventajas de usar hojas de estilo. El CSS está bien organizado y demuestra buena comprensión de reutilización y mantenibilidad. | Buena separación y documentación de ventajas. CSS organizado que refleja comprensión de los beneficios de las hojas de estilo. |
-| **6 (Aprobado)**    | Ha mantenido la separación básica entre HTML y CSS. Menciona algunas ventajas de las hojas de estilo aunque sin profundizar. El CSS cumple su función pero podría aprovecharse mejor la reutilización y organización. | Separación adecuada con comprensión básica de las ventajas. CSS funcional pero con oportunidades de mejora en eficiencia. |
-| **4 (Insuficiente)**| La separación entre HTML y CSS es inconsistente o presenta problemas. No ha identificado claramente las ventajas o la documentación es insuficiente. El CSS no demuestra comprensión de reutilización ni eficiencia. | Separación deficiente con poca evidencia de comprensión de las ventajas de las hojas de estilo. |
-| **2 (Deficiente)**  | Ha mezclado estilos inline o internos sin justificación, rompiendo la separación. No identifica ventajas de CSS o las menciona de forma incorrecta. El CSS está desorganizado y sin aprovechar sus capacidades. | No se evidencia comprensión de las ventajas de CSS. Implementación que contradice los principios de las hojas de estilo. |
-| **0 (No realizado)**| No ha utilizado hojas de estilo externas o su implementación no permite evaluar este criterio. No hay documentación ni evidencia de comprensión. | No hay evidencia de comprensión ni de trabajo realizado. |
+### 2.h · Documentar el código empleado
 
-#### **Buenas prácticas a evaluar**
+Se mira en el README de las dos fases y en los comentarios del HTML y del CSS.
 
-1. **Separación completa:** Fase 1 sin CSS (ni inline, ni interno, ni externo). Fase 2 con un único archivo CSS externo.
-2. **Reutilización mediante variables:** Uso de variables CSS para colores, tipografías, espaciados y otros valores repetidos.
-3. **Organización modular:** CSS estructurado con comentarios por secciones, siguiendo metodología BEM.
-4. **Mantenibilidad:** Código CSS fácil de mantener y modificar gracias a la buena organización y nomenclatura.
-5. **Documentación de ventajas:** README que explica las ventajas conseguidas (separación de responsabilidades, consistencia visual, facilidad de cambios globales, etc.).
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | El README está completo y bien organizado, y otra persona podría entender el proyecto y continuarlo sin preguntarte nada. La tabla de campos y las decisiones de marcado y de diseño están razonadas, no solo enumeradas. Los comentarios del código orientan sin estorbar. |
+| Notable (7–8) | La documentación está completa, con algún apartado escueto o decisiones que se describen pero no se justifican. |
+| Suficiente (5–6) | El README cubre lo mínimo o el código apenas tiene comentarios. |
+| Insuficiente (0–4) | Falta el README o la documentación no explica nada del proyecto. |
 
----
+### 2.i · Valorar la importancia de la accesibilidad web
 
-### **Criterio de evaluación 2.g**
-**g) Se han aplicado hojas de estilo.**
+Se mira navegando el sitio con el teclado, en el contraste, en el formulario y en el análisis de accesibilidad del README.
 
-| **Nivel de Logro** | **Descripción**                                                                                                                                                                                                                                                                                                                        | **Indicador**                                                                                       |
-|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Ha aplicado CSS3 de forma excepcional: diseño responsive impecable 100% adaptable, dark mode completamente funcional, animaciones y transiciones suaves y profesionales, tipografía excelente, metodología BEM aplicada correctamente. El sitio es visualmente atractivo, accesible y funciona perfectamente en cualquier dispositivo. | CSS profesional y moderno. Diseño responsive perfecto, dark mode funcional, animaciones apropiadas. Excelente experiencia de usuario en todos los dispositivos. |
-| **8 (Notable)**     | Ha aplicado CSS3 correctamente: diseño responsive funcional, dark mode implementado, transiciones y al menos una animación presente, buena tipografía y jerarquía visual. Metodología BEM aplicada en su mayoría. El sitio es atractivo y funcional con pequeñas oportunidades de mejora.                                              | CSS bien aplicado con diseño responsive y dark mode funcionales. Buena experiencia de usuario con margen de mejora. |
-| **6 (Aprobado)**    | Ha aplicado CSS básico: diseño que se adapta a diferentes tamaños de pantalla aunque no de forma óptima, dark mode presente pero básico, algunas transiciones, tipografía aceptable. BEM parcialmente aplicado. El sitio cumple requisitos mínimos pero es mejorable.                                                                  | CSS funcional con diseño responsive básico. Cumple requisitos mínimos pero con oportunidades claras de mejora. |
-| **4 (Insuficiente)**| Ha aplicado CSS con deficiencias: diseño responsive incompleto o con problemas, dark mode ausente o disfuncional, transiciones/animaciones ausentes o inapropiadas, tipografía sin jerarquía clara, sin metodología BEM.                                                                                                               | CSS insuficiente que no cumple requisitos del proyecto. Problemas de usabilidad o visualización. |
-| **2 (Deficiente)**  | Ha aplicado CSS de forma inadecuada: sin responsive, sin dark mode, sin transiciones, tipografía problemática, CSS desorganizado. El sitio no es funcional en diferentes dispositivos.                                                                                                                                                 | CSS deficiente que hace el sitio poco funcional o no utilizable en dispositivos móviles. |
-| **0 (No realizado)**| No ha aplicado CSS o la aplicación es completamente inadecuada e impide el uso del sitio.                                                                                                                                                                                                                                              | No hay evidencia de trabajo realizado en CSS. |
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Todo el sitio se recorre con el teclado, con el foco siempre visible y el enlace para saltar al contenido. El contraste cumple AA en los dos modos y se respeta el movimiento reducido. El análisis con Lighthouse o WAVE está documentado junto con lo que se corrigió a raíz de él. |
+| Notable (7–8) | El sitio es accesible en lo esencial, con algún fallo puntual (un foco poco visible, un contraste justo en un modo). |
+| Suficiente (5–6) | Se cumplen las bases (textos alternativos, etiquetas del formulario, idioma), pero hay problemas de foco o contraste o falta el análisis. |
+| Insuficiente (0–4) | Hay partes del sitio que no se pueden usar con el teclado, el formulario no tiene etiquetas o el contraste es claramente insuficiente. |
 
-#### **Buenas prácticas a evaluar**
+### 2.j · Diseñar páginas web adaptadas a dispositivos móviles
 
-1. **Mobile-first y responsive:** Diseño que comienza para un viewport y se adapta progresivamente mediante media queries bien planificadas.
-2. **Dark mode funcional:** Implementación con variables CSS que cambian según el tema.
-3. **Transiciones profesionales:** Transiciones suaves en elementos interactivos (hover, focus) con respeto a `prefers-reduced-motion`.
-4. **Metodología BEM:** Nomenclatura consistente siguiendo Block__Element--Modifier en las clases CSS.
-5. **Variables CSS:** Paleta de colores, tipografías y espaciados definidos como variables CSS reutilizables.
-6. **Jerarquía tipográfica:** Fuentes web apropiadas con jerarquía visual clara, contraste adecuado y legibilidad optimizada.
+Se mira en el sitio publicado, a 360 px, en tablet y en escritorio.
 
----
-
-### **Criterio de evaluación 2.h**
-**h) Se han validado documentos HTML y CSS.**
-
-| **Nivel de Logro** | **Descripción**                                                                                          | **Indicador**                                                                                       |
-|---------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **10 (Excelente)**  | Todos los documentos HTML y CSS pasan la validación del W3C sin ningún error ni advertencia. Ha incluido en el README enlaces directos a los resultados de validación de cada página. Ha validado frecuentemente durante el desarrollo y ha corregido todos los problemas encontrados. El código cumple completamente con los estándares web. | Validación W3C perfecta en todo el HTML y CSS. Documentación completa de resultados. Código que cumple estándares web profesionales. |
-| **8 (Notable)**     | Todos los documentos HTML y CSS pasan la validación del W3C sin errores. Puede haber alguna advertencia menor justificada. Ha incluido enlaces a los resultados de validación en el README. El código cumple con los estándares web actuales. | Validación W3C correcta con posibles advertencias menores. Código que cumple estándares profesionales. |
-| **6 (Aprobado)**    | La mayoría de documentos HTML y CSS pasan la validación, aunque algunos presentan errores menores que han sido identificados. Los enlaces de validación están presentes en el README. El código cumple requisitos mínimos de estándares. | Validación mayormente correcta con algunos errores menores. Cumple estándares básicos. |
-| **4 (Insuficiente)**| Los documentos HTML y CSS presentan errores de validación significativos que no han sido corregidos. La documentación de validación es incompleta. El código no cumple adecuadamente con los estándares. | Errores de validación significativos sin corregir. No cumple estándares profesionales. |
-| **2 (Deficiente)**  | Los documentos HTML y CSS presentan múltiples errores graves de validación. No hay evidencia de haber intentado validar el código o corregir los errores. El código no cumple con estándares básicos. | Múltiples errores graves de validación. Código que no cumple estándares web básicos. |
-| **0 (No realizado)**| No se ha realizado validación o el código presenta errores críticos que impiden su validación. No hay documentación de validación. | No hay evidencia de validación ni de trabajo realizado correctamente. |
-
-#### **Buenas prácticas a evaluar**
-
-1. **Validación HTML:** Todas las páginas HTML validadas con [W3C Markup Validator](https://validator.w3.org/) sin errores.
-2. **Validación CSS:** Archivo CSS validado con [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) sin errores.
-3. **Documentación de validación:** README incluye enlaces directos a los resultados de validación de cada página HTML y del archivo CSS.
-4. **Validación durante desarrollo:** Evidencia en commits de validación frecuente y corrección de errores encontrados.
-5. **Corrección de advertencias:** Advertencias justificadas o corregidas cuando sea posible sin comprometer funcionalidad.
-
----
-
-## Notas finales
-
-- La evaluación de cada criterio es **independiente** pero debe considerarse en el **contexto global del proyecto**.
-- La **profesionalidad** y **atención al detalle** son factores transversales que influyen en todos los criterios.
-- Se valorará especialmente la **coherencia** entre todas las páginas del sitio y la aplicación consistente de las buenas prácticas.
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | El diseño parte del móvil y se adapta de forma natural en cada punto de ruptura. No hay *scroll* horizontal en ninguna página, el catálogo y las fichas reorganizan su contenido y la tabla comparativa tiene una solución razonada y cómoda en el móvil. |
+| Notable (7–8) | El sitio se adapta bien, con algún desajuste puntual en un ancho intermedio. |
+| Suficiente (5–6) | El sitio se ve en el móvil, pero se nota que está pensado para escritorio y simplemente encogido, o la tabla obliga a desplazarse sin control. |
+| Insuficiente (0–4) | Hay *scroll* horizontal, contenido cortado o el sitio no es usable a 360 px. |
