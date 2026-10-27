@@ -1,0 +1,1856 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y proyectos del módulo Lenguajes de Marcas y Sistemas de Gestión de la Información (DAW)">
+      
+      
+        <meta name="author" content="Alejandro Carmona Martos — IES Rafael Alberti">
+      
+      
+      
+        <link rel="prev" href="../../practicas/practica-ut2-festival/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/sello-rafael-alberti-imago-blanco.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Proyecto 1 · De la API a la página - Lenguajes de Marcas — Apuntes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheet/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proyecto-1-de-la-api-a-la-pagina" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Lenguajes de Marcas — Apuntes" class="md-header__button md-logo" aria-label="Lenguajes de Marcas — Apuntes" data-md-component="logo">
+      
+  <img src="../../assets/sello-rafael-alberti-imago-blanco.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lenguajes de Marcas — Apuntes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Proyecto 1 · De la API a la página
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/envasador/lenguajes-de-marcas" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    envasador/lenguajes-de-marcas
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../apuntes/introduccion-lenguajes-marcas/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Unidades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../practicas/practica-ut2-festival/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Prácticas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Proyectos
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lenguajes de Marcas — Apuntes" class="md-nav__button md-logo" aria-label="Lenguajes de Marcas — Apuntes" data-md-component="logo">
+      
+  <img src="../../assets/sello-rafael-alberti-imago-blanco.svg" alt="logo">
+
+    </a>
+    Lenguajes de Marcas — Apuntes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/envasador/lenguajes-de-marcas" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    envasador/lenguajes-de-marcas
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apuntes/introduccion-lenguajes-marcas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT1 · Introducción a los lenguajes de marcas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apuntes/html5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2 · Introducción a HTML5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apuntes/css3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT3 · Introducción a CSS3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prácticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prácticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practicas/practica-ut2-festival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT2 · Festival de Cortometrajes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyectos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proyectos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto 1 · De la API a la página
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto 1 · De la API a la página
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elegir-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elegir la API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elegir la API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explorar-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explorar los datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antes-de-escribir-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de escribir HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-1-la-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 1 · La estructura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 1 · La estructura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#las-paginas-del-sitio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Las páginas del sitio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-tiene-que-ser-el-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo tiene que ser el HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-formulario-de-propuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El formulario de propuesta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validar-y-cerrar-la-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar y cerrar la fase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-2-la-presentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 2 · La presentación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 2 · La presentación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-tiene-que-ser-el-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo tiene que ser el CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validar-revisar-la-accesibilidad-y-publicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar, revisar la accesibilidad y publicar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-evalua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se evalúa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rúbrica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rúbrica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a-identificar-etiquetas-y-atributos-de-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.a · Identificar etiquetas y atributos de HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2b-utilizar-herramientas-en-linea-para-crear-contenido-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.b · Utilizar herramientas en línea para crear contenido web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c-identificar-etiquetas-para-incluir-elementos-multimedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.c · Identificar etiquetas para incluir elementos multimedia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-emplear-lenguajes-de-marcas-para-transmitir-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.d · Emplear lenguajes de marcas para transmitir información
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2e-describir-y-aplicar-las-propiedades-basicas-de-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.e · Describir y aplicar las propiedades básicas de CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2f-crear-y-enlazar-hojas-de-estilo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.f · Crear y enlazar hojas de estilo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2g-validar-documentos-html-y-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.g · Validar documentos HTML y CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2h-documentar-el-codigo-empleado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.h · Documentar el código empleado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2i-valorar-la-importancia-de-la-accesibilidad-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.i · Valorar la importancia de la accesibilidad web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2j-disenar-paginas-web-adaptadas-a-dispositivos-moviles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.j · Diseñar páginas web adaptadas a dispositivos móviles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elegir-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elegir la API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Elegir la API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explorar-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explorar los datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antes-de-escribir-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de escribir HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-1-la-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 1 · La estructura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 1 · La estructura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#las-paginas-del-sitio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Las páginas del sitio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-tiene-que-ser-el-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo tiene que ser el HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-formulario-de-propuesta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El formulario de propuesta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validar-y-cerrar-la-fase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar y cerrar la fase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-2-la-presentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 2 · La presentación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 2 · La presentación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-tiene-que-ser-el-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo tiene que ser el CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validar-revisar-la-accesibilidad-y-publicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar, revisar la accesibilidad y publicar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-evalua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se evalúa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rúbrica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rúbrica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a-identificar-etiquetas-y-atributos-de-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.a · Identificar etiquetas y atributos de HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2b-utilizar-herramientas-en-linea-para-crear-contenido-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.b · Utilizar herramientas en línea para crear contenido web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c-identificar-etiquetas-para-incluir-elementos-multimedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.c · Identificar etiquetas para incluir elementos multimedia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-emplear-lenguajes-de-marcas-para-transmitir-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.d · Emplear lenguajes de marcas para transmitir información
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2e-describir-y-aplicar-las-propiedades-basicas-de-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.e · Describir y aplicar las propiedades básicas de CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2f-crear-y-enlazar-hojas-de-estilo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.f · Crear y enlazar hojas de estilo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2g-validar-documentos-html-y-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.g · Validar documentos HTML y CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2h-documentar-el-codigo-empleado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.h · Documentar el código empleado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2i-valorar-la-importancia-de-la-accesibilidad-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.i · Valorar la importancia de la accesibilidad web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2j-disenar-paginas-web-adaptadas-a-dispositivos-moviles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.j · Diseñar páginas web adaptadas a dispositivos móviles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+    <a href="https://github.com/envasador/lenguajes-de-marcas/edit/main/docs/proyectos/aplicacion-web.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="proyecto-1-de-la-api-a-la-pagina">Proyecto 1 · De la API a la página<a class="headerlink" href="#proyecto-1-de-la-api-a-la-pagina" title="Permanent link">&para;</a></h1>
+<p>Ahora mismo, mientras lees esto, hay miles de servicios en internet publicando sus datos para que cualquiera los use: las obras de un museo, recetas de cocina, países, libros, personajes de una serie, partidas de un videojuego… La forma habitual de ofrecerlos es una <strong>API</strong>, una dirección a la que haces una petición y que te responde con los datos en formato JSON. Si alguna vez abres una de esas respuestas en el navegador, verás que no tienen nada de página web: son datos en bruto, sin diseño ni orden pensado para leerse, porque están hechos para que los consuma un programa y no una persona.</p>
+<p>En este proyecto vas a hacer el camino que va de una cosa a la otra. Elegirás una API, leerás sus datos y construirás con ellos un sitio web que alguien quiera visitar y pueda consultar igual de bien en el móvil que en el ordenador. No vas a programar nada: el trabajo consiste en mirar cada dato del JSON, decidir qué significa para quien lo va a leer y marcarlo con la etiqueta HTML que mejor lo describe. Cuando la estructura esté terminada, le darás aspecto con CSS.</p>
+<p>Por eso el proyecto tiene dos fases, igual que se construye una casa: primero la estructura y después los acabados. En la primera fase solo escribes HTML, y en la segunda añades la hoja de estilos sin apenas tocar lo que ya tenías.</p>
+<h2 id="elegir-la-api">Elegir la API<a class="headerlink" href="#elegir-la-api" title="Permanent link">&para;</a></h2>
+<p>Tu API tiene que salir del repositorio <a href="https://github.com/public-apis/public-apis">Public APIs</a>, una lista que reúne cientos de API gratuitas ordenadas por temas. Elegir una entre tantas, leer su documentación (que casi siempre está en inglés) y decidir si te sirve forma parte del trabajo, así que tómatelo con calma.</p>
+<p>Cada API de la lista aparece en una tabla con cinco columnas: el nombre, una descripción, <em>Auth</em>, <em>HTTPS</em> y <em>CORS</em>. Las dos que te interesan ahora son <em>Auth</em>, que indica si necesitas una clave para usarla, y <em>HTTPS</em>, que indica si la conexión es segura. Busca una que tenga <code>No</code> en <em>Auth</em> (o <code>apiKey</code>, siempre que la clave se consiga gratis y sin tarjeta) y <code>Yes</code> en <em>HTTPS</em>.</p>
+<p>Además, la API tiene que darte material suficiente para construir un sitio. Necesitas una colección de al menos unos veinte elementos con datos variados: textos, números, imágenes y, si puede ser, fechas. Eso descarta las categorías de utilidades técnicas, como los acortadores de URL o los validadores de datos, y te lleva a las de contenido: <em>Animals</em>, <em>Anime</em>, <em>Art &amp; Design</em>, <em>Books</em>, <em>Food &amp; Drink</em>, <em>Games &amp; Comics</em>, <em>Music</em>, <em>Science &amp; Math</em>, <em>Sports &amp; Fitness</em>, <em>Video</em>… Para que te hagas una idea, todas estas cumplen y están en la lista: Art Institute of Chicago, TheMealDB, REST Countries, Open Library o Rick and Morty.</p>
+<p>Hay dos excepciones: no puedes usar ninguna de las de Pokémon, porque es la que uso yo en los ejemplos de clase, ni ninguna de <em>The Legend of Zelda</em>, porque la usaremos en otro proyecto. Y un consejo: elige algo que te interese de verdad, porque vas a pasar varias semanas con esos datos.</p>
+<p>La lista no siempre está al día y algunas API dejan de funcionar sin avisar. Antes de decidirte, comprueba que la tuya responde.</p>
+<h3 id="explorar-los-datos">Explorar los datos<a class="headerlink" href="#explorar-los-datos" title="Permanent link">&para;</a></h3>
+<p>Para ver qué devuelve una API no necesitas ninguna herramienta especial. Pega la URL de una petición en la barra del navegador y verás la respuesta; Firefox, además, muestra el JSON ordenado y te deja plegar y desplegar cada parte. Si quieres algo más cómodo, <a href="https://hoppscotch.io">Hoppscotch</a> te permite probar peticiones y guardarlas.</p>
+<p>Las respuestas que vayas a usar como contenido, guárdalas como ficheros <code>.json</code> en una carpeta <code>datos/</code> de tu repositorio. De ahí sale todo el texto de tu sitio, y es lo que voy a mirar para comprobar que el contenido es el real.</p>
+<h3 id="antes-de-escribir-html">Antes de escribir HTML<a class="headerlink" href="#antes-de-escribir-html" title="Permanent link">&para;</a></h3>
+<p>Abre el <code>README.md</code> de tu repositorio con un apartado sobre la API: cómo se llama, en qué categoría de la lista la encontraste, quién la mantiene, dónde está su documentación, qué condiciones de uso tiene y qué peticiones has hecho.</p>
+<p>Después viene el paso más importante de todo el proyecto. Coge un elemento de la colección y haz una tabla con sus campos: el nombre que tiene en el JSON, el tipo de dato y, sobre todo, <strong>qué es ese dato para la persona que lee tu web</strong>. Con la PokéAPI quedaría algo así:</p>
+<table>
+<thead>
+<tr>
+<th>Campo del JSON</th>
+<th>Tipo</th>
+<th>Qué es para el lector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>texto</td>
+<td>El título de la ficha y el texto del enlace en el catálogo</td>
+</tr>
+<tr>
+<td><code>sprites.other.official-artwork.front_default</code></td>
+<td>URL</td>
+<td>La imagen principal, acompañada de su pie</td>
+</tr>
+<tr>
+<td><code>types[].type.name</code></td>
+<td>lista de textos</td>
+<td>Las categorías del elemento; también sirven para agrupar el catálogo</td>
+</tr>
+<tr>
+<td><code>height</code>, <code>weight</code></td>
+<td>números</td>
+<td>Datos de la ficha que se leen como «nombre: valor», y columnas en la comparativa (con su unidad)</td>
+</tr>
+<tr>
+<td><code>stats[]</code></td>
+<td>lista de objetos</td>
+<td>Una tabla de estadísticas dentro de la ficha</td>
+</tr>
+</tbody>
+</table>
+<p>Fíjate en que la última columna no habla de etiquetas, sino de lo que <em>significa</em> cada dato. Esa tabla es el puente entre el JSON y tu HTML: cada vez que dudes qué etiqueta usar para algo, vuelve a ella y pregúntate qué es ese dato para quien lo lee. La etiqueta sale de ahí.</p>
+<h2 id="fase-1-la-estructura">Fase 1 · La estructura<a class="headerlink" href="#fase-1-la-estructura" title="Permanent link">&para;</a></h2>
+<p>En esta fase solo importan la estructura y el significado, así que no hay CSS de ningún tipo: ni en atributos, ni en la cabecera, ni en un fichero aparte. Tu sitio se verá con los estilos que el navegador aplica por defecto, y está bien así. De hecho, es una buena prueba: si con esos estilos tan pobres el sitio se entiende y se puede usar, la estructura es buena.</p>
+<h3 id="las-paginas-del-sitio">Las páginas del sitio<a class="headerlink" href="#las-paginas-del-sitio" title="Permanent link">&para;</a></h3>
+<p>El sitio tiene, como mínimo, estas páginas:</p>
+<ul>
+<li><strong><code>index.html</code></strong>, la portada. Explica qué es el sitio y de dónde salen sus datos, y presenta una selección de al menos tres elementos destacados que llevan a sus fichas.</li>
+<li><strong><code>catalogo.html</code></strong>, con al menos doce elementos de la API. De cada uno se ve la imagen, el nombre, dos o tres datos clave y el enlace a su ficha, si la tiene. Agrúpalos según alguna categoría que te den los propios datos.</li>
+<li><strong>Una carpeta <code>fichas/</code></strong> con al menos tres páginas, una por elemento, que recogen toda la información útil que ofrece la API sobre él. Las tres son la misma plantilla con datos distintos, así que deben tener exactamente la misma estructura.</li>
+<li><strong><code>comparativa.html</code></strong>, con una tabla que compara al menos ocho elementos en al menos cuatro de sus datos. La tabla tiene un título, sus cabeceras de fila y de columna están bien identificadas y, si los datos lo permiten, termina con una fila de resumen: totales, medias, máximos…</li>
+<li><strong><code>sobre-los-datos.html</code></strong>, que cuenta qué API usas, quién la mantiene, su licencia y a quién hay que atribuirle los datos, y qué peticiones haces. Incluye un fragmento real del JSON, mostrado como código, junto al HTML en que lo has convertido, para que se vea la transformación.</li>
+<li><strong><code>propuesta.html</code></strong>, con un formulario para proponer un elemento nuevo al catálogo, del que hablamos más abajo.</li>
+</ul>
+<p>Además, en alguna página tiene que haber un vídeo o un audio que tenga sentido con tu temática: un tráiler, una entrevista, un sonido… Puede ser un fichero tuyo o estar insertado desde otra plataforma.</p>
+<h3 id="como-tiene-que-ser-el-html">Cómo tiene que ser el HTML<a class="headerlink" href="#como-tiene-que-ser-el-html" title="Permanent link">&para;</a></h3>
+<p>Cada página es un documento HTML5 completo: en español, con la codificación correcta, preparado para verse en el móvil, con su propio título de pestaña y una descripción para los buscadores.</p>
+<p>Alguien que lea tu código, sin fijarse en ninguna clase, tiene que reconocer en todas las páginas dónde están la cabecera, la navegación principal, el contenido principal y el pie. La navegación es la misma en todo el sitio, y además indica de forma accesible en qué página te encuentras. Dentro de cada página hay un único título principal, y los encabezados forman una jerarquía continua, sin saltar niveles.</p>
+<p>Piensa en cada elemento del catálogo y en cada ficha como en algo que podría publicarse por separado en otro sitio y seguiría teniendo sentido; eso te dice cómo marcarlo. En las fichas vas a encontrarte muchos datos que se leen como «nombre: valor» (la altura, el país, el año…): márcalos como lo que son, no como párrafos sueltos. Las fechas tienen que poder interpretarse por una máquina, y las cifras llevan siempre su unidad.</p>
+<p>Las imágenes tienen un texto alternativo que dice lo que aportan, no lo que se ve, y declaran sus dimensiones. Las que van acompañadas de un pie forman una unidad con él. Guárdalas en <code>assets/img</code>, con nombres en minúsculas y sin espacios.</p>
+<p>Todos los enlaces internos usan rutas relativas, y funcionan también desde las fichas, que están en una subcarpeta. Al principio de cada página hay un enlace para saltar directamente al contenido principal, y todo el sitio se puede recorrer solo con el teclado.</p>
+<p>No uses ningún elemento ni atributo obsoleto, y recurre a <code>&lt;div&gt;</code> solo cuando no haya ninguna etiqueta que describa lo que estás agrupando. Sangra bien el código y pon comentarios donde ayuden a orientarse, no en cada línea.</p>
+<p>Por último, el contenido es el real de la API, nunca <em>lorem ipsum</em>. Si los datos vienen en inglés, puedes dejarlos así, pero la navegación, los títulos y los textos que escribes tú van en español.</p>
+<h3 id="el-formulario-de-propuesta">El formulario de propuesta<a class="headerlink" href="#el-formulario-de-propuesta" title="Permanent link">&para;</a></h3>
+<p>El formulario es la otra cara del JSON. Si alguien quisiera añadir un elemento nuevo a tu catálogo, ¿qué datos tendría que darte y de qué tipo serían? Vuelve a tu tabla de campos y diseña el formulario a partir de ella, de forma que cada control corresponda al tipo de dato de su campo: un número con un rango razonable, una fecha, la URL de una imagen, un valor que solo puede elegirse de una lista cerrada, un texto largo para la descripción…</p>
+<p>El formulario tiene al menos ocho campos, agrupados por temas. Cada etiqueta está asociada a su control, se distinguen claramente los campos obligatorios de los opcionales y el navegador valida lo que tenga sentido validar: longitudes, rangos, formatos. Por ahora no tiene que enviarse a ningún servidor.</p>
+<h3 id="validar-y-cerrar-la-fase">Validar y cerrar la fase<a class="headerlink" href="#validar-y-cerrar-la-fase" title="Permanent link">&para;</a></h3>
+<p>Antes de dar la fase por terminada, pasa todas las páginas por el <a href="https://validator.w3.org/">validador del W3C</a> y corrige todos los errores, igual que hiciste con el wireframe. Los avisos que decidas no corregir, justifícalos en el README.</p>
+<p>Al final de esta fase, tu repositorio tendrá esta forma:</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tu-repositorio/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── index.html
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── catalogo.html
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── comparativa.html
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── sobre-los-datos.html
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── propuesta.html
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── fichas/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── elemento-1.html
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── elemento-2.html
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── elemento-3.html
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── assets/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   ├── img/
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   └── media/
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├── datos/
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   └── *.json
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>└── README.md
+</code></pre></div>
+<p>En el README, además del apartado sobre la API y la tabla de campos, explica qué hay en cada página, cuenta dos o tres decisiones de marcado en las que dudaste entre varias opciones (y por qué te quedaste con la que elegiste) y deja constancia de la validación.</p>
+<p>Ve guardando el trabajo con commits frecuentes, al menos seis en esta fase, con mensajes que expliquen qué has hecho. Cuando la termines, marca ese último commit con la etiqueta <code>fase-1</code> y súbela a GitHub: lo que corrijo de esta fase es lo que hay en esa etiqueta.</p>
+<h2 id="fase-2-la-presentacion">Fase 2 · La presentación<a class="headerlink" href="#fase-2-la-presentacion" title="Permanent link">&para;</a></h2>
+<p>Ahora sí, toca darle al sitio su aspecto. Si la estructura de la primera fase es buena, el HTML apenas debería cambiar; si para conseguir un diseño te ves obligado a rehacerla, probablemente la estructura no lo era.</p>
+<h3 id="como-tiene-que-ser-el-css">Cómo tiene que ser el CSS<a class="headerlink" href="#como-tiene-que-ser-el-css" title="Permanent link">&para;</a></h3>
+<p>Todo el estilo del sitio está en un único fichero CSS externo, enlazado desde todas las páginas, y en el HTML no queda ni un solo estilo. Los colores, las tipografías y los espaciados se definen una sola vez como variables, de forma que cambiar el color principal del sitio sea cuestión de tocar una línea. Las clases siguen la metodología BEM de forma coherente en todo el sitio, y sus nombres describen lo que es cada elemento, no cómo se ve. El fichero está organizado en secciones con comentarios.</p>
+<p>El diseño se piensa primero para un móvil de 360 px de ancho y después se adapta a tablet y a escritorio, con al menos dos puntos de ruptura. En ninguna página aparece desplazamiento horizontal a 360 px. El catálogo cambia el número de columnas según el ancho disponible, y las fichas se organizan de forma distinta en el móvil y en el escritorio. La tabla comparativa también se tiene que poder leer en el móvil; cómo lo consigues lo decides tú, y lo explicas en el README. Las imágenes se adaptan a su contenedor sin deformarse.</p>
+<p>El sitio tiene un modo oscuro que se activa solo, según la preferencia del sistema. Los elementos con los que se interactúa (enlaces, botones, tarjetas del catálogo) cambian de aspecto al pasar el ratón por encima, de forma que siempre queda claro qué se puede pulsar.</p>
+<p>Todo elemento interactivo muestra un foco visible, y el contraste entre el texto y el fondo cumple el nivel AA en los dos modos de color. El formulario está diseñado completo, incluidos los estados de un campo válido y uno inválido. Y la tipografía marca una jerarquía clara y se lee con comodidad.</p>
+<h3 id="validar-revisar-la-accesibilidad-y-publicar">Validar, revisar la accesibilidad y publicar<a class="headerlink" href="#validar-revisar-la-accesibilidad-y-publicar" title="Permanent link">&para;</a></h3>
+<p>Pasa la hoja de estilos por el <a href="https://jigsaw.w3.org/css-validator/">validador de CSS del W3C</a> y vuelve a validar el HTML. Después analiza la accesibilidad de al menos tres páginas con Lighthouse, que está en las herramientas de desarrollo del navegador, o con <a href="https://wave.webaim.org/">WAVE</a>, y corrige lo que te señalen. Por último, publica el sitio con GitHub Pages y pon la dirección en el README y en la descripción del repositorio.</p>
+<p>En esta fase añades la carpeta <code>css/</code> con tu <code>styles.css</code>, y el README crece con la paleta de colores y las tipografías que has elegido, tus decisiones de diseño adaptable (incluida la de la tabla), capturas del sitio en móvil y en escritorio y en los dos modos de color, los enlaces a los resultados de validación, lo que encontró el análisis de accesibilidad y cómo lo corregiste, y la dirección del sitio publicado.</p>
+<p>Cierra el README con un párrafo breve sobre qué te ha aportado separar el contenido de la presentación. Que no sea teoría: cuenta un cambio concreto que hiciste una sola vez en la hoja de estilos y que se aplicó en todas las páginas.</p>
+<p>Igual que antes, haz al menos seis commits durante la fase y marca el último con la etiqueta <code>fase-2</code>.</p>
+<h2 id="como-se-evalua">Cómo se evalúa<a class="headerlink" href="#como-se-evalua" title="Permanent link">&para;</a></h2>
+<p>Este proyecto evalúa los diez criterios del RA2. Cada criterio se califica de 0 a 10 con la rúbrica que tienes a continuación, y esa nota cuenta la mitad de la calificación del criterio; la otra mitad sale de la prueba práctica de la unidad. Se valora el razonamiento, no solo el resultado: algo que no funciona del todo pero demuestra que entiendes lo que estabas haciendo también puntúa.</p>
+<p>Hay dos cosas que afectan a todo el proyecto. Si el sitio no se puede abrir desde GitHub Pages, o hay rutas rotas a imágenes, páginas u hoja de estilos, los criterios afectados no pueden pasar de un 5. Y lo que no esté en las etiquetas <code>fase-1</code> y <code>fase-2</code> del repositorio no se evalúa.</p>
+<h2 id="rubrica">Rúbrica<a class="headerlink" href="#rubrica" title="Permanent link">&para;</a></h2>
+<h3 id="2a-identificar-etiquetas-y-atributos-de-html">2.a · Identificar etiquetas y atributos de HTML<a class="headerlink" href="#2a-identificar-etiquetas-y-atributos-de-html" title="Permanent link">&para;</a></h3>
+<p>Se mira en el marcado de todas las páginas de la primera fase.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>Cada contenido usa la etiqueta que describe su significado, y las decisiones dudosas están razonadas en el README. Los atributos están completos y son los adecuados: idioma, metadatos, textos alternativos, fechas para máquinas, tipos y restricciones del formulario. Las tres fichas comparten exactamente la misma estructura.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>El marcado es semántico en casi todo el sitio, con algún elemento genérico donde había uno más preciso o algún atributo útil que falta.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>La estructura general es correcta, pero hay varios contenidos marcados por su aspecto y no por su significado, o faltan atributos en imágenes, fechas o formulario.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Se abusa de los elementos genéricos, la jerarquía de encabezados está rota o faltan los atributos básicos.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2b-utilizar-herramientas-en-linea-para-crear-contenido-web">2.b · Utilizar herramientas en línea para crear contenido web<a class="headerlink" href="#2b-utilizar-herramientas-en-linea-para-crear-contenido-web" title="Permanent link">&para;</a></h3>
+<p>Se mira en el repositorio, el historial de Git, el sitio publicado en GitHub Pages y la exploración de la API.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>Hay al menos seis commits descriptivos por fase que cuentan cómo avanzó el proyecto, y las etiquetas <code>fase-1</code> y <code>fase-2</code> están en su sitio. El sitio está publicado y funciona. Las respuestas JSON están guardadas en <code>datos/</code> y las peticiones a la API están documentadas.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>Está todo, pero los mensajes de los commits son algo genéricos o el trabajo se concentra en pocos días.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>El repositorio y el sitio publicado funcionan, pero el historial es pobre (menos commits de los pedidos o con mensajes poco útiles), o falta la carpeta <code>datos/</code>.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>El sitio no está publicado, el trabajo se ha subido en uno o dos commits o no hay rastro de la exploración de la API.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2c-identificar-etiquetas-para-incluir-elementos-multimedia">2.c · Identificar etiquetas para incluir elementos multimedia<a class="headerlink" href="#2c-identificar-etiquetas-para-incluir-elementos-multimedia" title="Permanent link">&para;</a></h3>
+<p>Se mira en las imágenes de la portada, el catálogo y las fichas, y en el vídeo o audio.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>Todas las imágenes tienen un texto alternativo útil y declaran sus dimensiones, y las que llevan pie forman una unidad con él. El vídeo o audio tiene controles, encaja con el contenido y ofrece una alternativa a quien no pueda reproducirlo. Los ficheros están ordenados en <code>assets/</code>.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>El multimedia está bien integrado, con algún texto alternativo genérico («imagen de…») o alguna dimensión sin declarar.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>Las imágenes y el vídeo o audio están, pero hay textos alternativos vacíos o repetidos, o el multimedia no tiene relación con el contenido que lo rodea.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Faltan imágenes, no hay vídeo ni audio o se cargan con rutas rotas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2d-emplear-lenguajes-de-marcas-para-transmitir-informacion">2.d · Emplear lenguajes de marcas para transmitir información<a class="headerlink" href="#2d-emplear-lenguajes-de-marcas-para-transmitir-informacion" title="Permanent link">&para;</a></h3>
+<p>Es el criterio central del proyecto. Se mira en la tabla de campos del README y en cómo se convierten los datos del JSON en HTML en el catálogo, las fichas, la comparativa y la página sobre los datos.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>La tabla de campos es completa y está razonada, y el marcado la respeta con coherencia en todo el sitio. Cada dato está en su forma más significativa: pares nombre–valor, tablas con cabeceras de fila y de columna, elementos que se sostienen solos. El fragmento de JSON y su versión en HTML muestran con claridad la transformación.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>La transformación es correcta y coherente, con algún dato presentado de forma más pobre de lo que permitía, por ejemplo como texto suelto cuando era un par nombre–valor.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>Los datos de la API están en el sitio, pero el marcado cambia de una página a otra o la tabla comparativa no identifica bien sus cabeceras.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>El contenido no sale de la API, es de relleno o no tiene estructura.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2e-describir-y-aplicar-las-propiedades-basicas-de-css">2.e · Describir y aplicar las propiedades básicas de CSS<a class="headerlink" href="#2e-describir-y-aplicar-las-propiedades-basicas-de-css" title="Permanent link">&para;</a></h3>
+<p>Se mira en la hoja de estilos y en el aspecto final del sitio.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>El catálogo y las fichas están maquetados con Flexbox y Grid, y la tipografía, el color y el espaciado crean una jerarquía clara. El modo oscuro está completo, los elementos interactivos tienen diseñados sus estados al pasar el ratón y el formulario está diseñado entero, con sus estados de campo válido e inválido.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>El diseño es sólido y está completo, con algún detalle descuidado: un estado sin diseñar o zonas sin adaptar al modo oscuro.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>El sitio tiene un diseño propio, pero falta alguno de los requisitos (modo oscuro, estados de los elementos interactivos, estados del formulario) o la maquetación se apoya en trucos frágiles, como colocar bloques con posiciones absolutas.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>El diseño es mínimo o estropea el contenido, y faltan varios requisitos.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2f-crear-y-enlazar-hojas-de-estilo">2.f · Crear y enlazar hojas de estilo<a class="headerlink" href="#2f-crear-y-enlazar-hojas-de-estilo" title="Permanent link">&para;</a></h3>
+<p>Se mira en la organización de la hoja de estilos, en la separación entre contenido y presentación y en el párrafo final del README.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>Hay un único fichero externo enlazado en todas las páginas, también en las fichas con su ruta relativa, y no queda ningún estilo en el HTML. Las variables recogen todos los valores que se repiten, BEM es coherente en todo el sitio (bloques, elementos y modificadores bien identificados y nombrados por su función) y el fichero está ordenado por secciones. El README explica con un ejemplo real la ventaja de separar contenido y presentación.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>La separación es correcta y la organización buena, con algún valor repetido que debería ser una variable o alguna clase que se sale de la nomenclatura BEM.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>La hoja de estilos es externa, pero está desordenada o se reutiliza poco, BEM se aplica solo en parte del sitio, o la reflexión del README es genérica.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Hay CSS en la primera fase, estilos en atributos o en la cabecera en la segunda, o páginas que no cargan la hoja de estilos.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2g-validar-documentos-html-y-css">2.g · Validar documentos HTML y CSS<a class="headerlink" href="#2g-validar-documentos-html-y-css" title="Permanent link">&para;</a></h3>
+<p>Se mira volviendo a pasar por el validador el HTML de las dos etiquetas y el CSS, y en lo que recoge el README.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>Todas las páginas y la hoja de estilos validan sin errores, y los avisos están corregidos o justificados. El README enlaza los resultados, y el historial muestra que se ha validado durante el desarrollo y no solo al final.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>No hay errores, pero quedan avisos sin justificar o faltan resultados en el README.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>Hay algún error menor en alguna página que no afecta a la estructura.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Hay errores que afectan a la estructura, como etiquetas sin cerrar o elementos mal anidados, o no hay constancia de haber validado.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2h-documentar-el-codigo-empleado">2.h · Documentar el código empleado<a class="headerlink" href="#2h-documentar-el-codigo-empleado" title="Permanent link">&para;</a></h3>
+<p>Se mira en el README de las dos fases y en los comentarios del HTML y del CSS.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>El README está completo y bien organizado; otra persona podría entender el proyecto y continuarlo sin preguntarte nada. La tabla de campos y las decisiones de marcado y de diseño están razonadas, no solo enumeradas. Los comentarios del código orientan sin estorbar.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>La documentación está completa, con algún apartado escueto o decisiones que se cuentan pero no se justifican.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>El README cubre lo mínimo o el código apenas tiene comentarios.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Falta el README o no explica nada del proyecto.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2i-valorar-la-importancia-de-la-accesibilidad-web">2.i · Valorar la importancia de la accesibilidad web<a class="headerlink" href="#2i-valorar-la-importancia-de-la-accesibilidad-web" title="Permanent link">&para;</a></h3>
+<p>Se mira recorriendo el sitio con el teclado, comprobando el contraste y el formulario, y en el análisis de accesibilidad del README.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>Todo el sitio se recorre con el teclado, con el foco siempre visible y el enlace para saltar al contenido. El contraste cumple el nivel AA en los dos modos de color. El análisis con Lighthouse o WAVE está documentado, junto con lo que se corrigió a raíz de él.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>El sitio es accesible en lo esencial, con algún fallo puntual: un foco poco visible o un contraste justo en uno de los modos.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>Se cumple lo básico (textos alternativos, etiquetas del formulario, idioma), pero hay problemas de foco o de contraste, o falta el análisis.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Hay partes del sitio que no se pueden usar con el teclado, el formulario no tiene etiquetas o el contraste es claramente insuficiente.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2j-disenar-paginas-web-adaptadas-a-dispositivos-moviles">2.j · Diseñar páginas web adaptadas a dispositivos móviles<a class="headerlink" href="#2j-disenar-paginas-web-adaptadas-a-dispositivos-moviles" title="Permanent link">&para;</a></h3>
+<p>Se mira en el sitio publicado, a 360 px, en tablet y en escritorio.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excelente (9–10)</td>
+<td>El diseño parte del móvil y se adapta con naturalidad en cada punto de ruptura. No hay desplazamiento horizontal en ninguna página, el catálogo y las fichas reorganizan su contenido y la tabla comparativa tiene en el móvil una solución razonada y cómoda.</td>
+</tr>
+<tr>
+<td>Notable (7–8)</td>
+<td>El sitio se adapta bien, con algún desajuste puntual en algún ancho intermedio.</td>
+</tr>
+<tr>
+<td>Suficiente (5–6)</td>
+<td>El sitio se ve en el móvil, pero se nota que está pensado para escritorio y simplemente encogido, o la tabla obliga a desplazarse sin control.</td>
+</tr>
+<tr>
+<td>Insuficiente (0–4)</td>
+<td>Hay desplazamiento horizontal, contenido cortado o el sitio no se puede usar a 360 px.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Contenido generado por Alejandro Carmona Martos — IES Rafael Alberti · CC BY-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/envasador/lenguajes-de-marcas" target="_blank" rel="noopener" title="Repositorio del módulo" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "toc.follow", "header.autohide", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../javascripts/vista-previa.js"></script>
+      
+    
+  </body>
+</html>
