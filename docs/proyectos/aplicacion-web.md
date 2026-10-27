@@ -119,11 +119,11 @@ Ahora sí, toca darle al sitio su aspecto. Si la estructura de la primera fase e
 
 ### Cómo tiene que ser el CSS
 
-Todo el estilo del sitio está en un único fichero CSS externo, enlazado desde todas las páginas, y en el HTML no queda ni un solo estilo. Los colores, las tipografías y los espaciados se definen una sola vez como variables, de forma que cambiar el color principal del sitio sea cuestión de tocar una línea. Las clases siguen la nomenclatura BEM de forma coherente, y el fichero está organizado en secciones con comentarios.
+Todo el estilo del sitio está en un único fichero CSS externo, enlazado desde todas las páginas, y en el HTML no queda ni un solo estilo. Los colores, las tipografías y los espaciados se definen una sola vez como variables, de forma que cambiar el color principal del sitio sea cuestión de tocar una línea. Las clases siguen la metodología BEM de forma coherente en todo el sitio, y sus nombres describen lo que es cada elemento, no cómo se ve. El fichero está organizado en secciones con comentarios.
 
 El diseño se piensa primero para un móvil de 360 px de ancho y después se adapta a tablet y a escritorio, con al menos dos puntos de ruptura. En ninguna página aparece desplazamiento horizontal a 360 px. El catálogo cambia el número de columnas según el ancho disponible, y las fichas se organizan de forma distinta en el móvil y en el escritorio. La tabla comparativa también se tiene que poder leer en el móvil; cómo lo consigues lo decides tú, y lo explicas en el README. Las imágenes se adaptan a su contenedor sin deformarse.
 
-El sitio tiene un modo oscuro que se activa solo, según la preferencia del sistema. Los elementos con los que se interactúa tienen transiciones, y hay al menos una animación que aporte algo a la experiencia; si la persona usuaria ha pedido en su sistema reducir el movimiento, tu sitio lo respeta.
+El sitio tiene un modo oscuro que se activa solo, según la preferencia del sistema. Los elementos con los que se interactúa (enlaces, botones, tarjetas del catálogo) cambian de aspecto al pasar el ratón por encima, de forma que siempre queda claro qué se puede pulsar.
 
 Todo elemento interactivo muestra un foco visible, y el contraste entre el texto y el fondo cumple el nivel AA en los dos modos de color. El formulario está diseñado completo, incluidos los estados de un campo válido y uno inválido. Y la tipografía marca una jerarquía clara y se lee con comodidad.
 
@@ -195,9 +195,9 @@ Se mira en la hoja de estilos y en el aspecto final del sitio.
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | El catálogo y las fichas están maquetados con técnicas modernas de disposición, y la tipografía, el color y el espaciado crean una jerarquía clara. El modo oscuro está completo, las transiciones y la animación aportan algo y el formulario está diseñado entero, con sus estados. |
+| Excelente (9–10) | El catálogo y las fichas están maquetados con Flexbox y Grid, y la tipografía, el color y el espaciado crean una jerarquía clara. El modo oscuro está completo, los elementos interactivos tienen diseñados sus estados al pasar el ratón y el formulario está diseñado entero, con sus estados de campo válido e inválido. |
 | Notable (7–8) | El diseño es sólido y está completo, con algún detalle descuidado: un estado sin diseñar o zonas sin adaptar al modo oscuro. |
-| Suficiente (5–6) | El sitio tiene un diseño propio, pero falta alguno de los requisitos (modo oscuro, animación, estados del formulario) o la maquetación se apoya en trucos frágiles. |
+| Suficiente (5–6) | El sitio tiene un diseño propio, pero falta alguno de los requisitos (modo oscuro, estados de los elementos interactivos, estados del formulario) o la maquetación se apoya en trucos frágiles, como colocar bloques con posiciones absolutas. |
 | Insuficiente (0–4) | El diseño es mínimo o estropea el contenido, y faltan varios requisitos. |
 
 ### 2.f · Crear y enlazar hojas de estilo
@@ -206,9 +206,9 @@ Se mira en la organización de la hoja de estilos, en la separación entre conte
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | Hay un único fichero externo enlazado en todas las páginas, también en las fichas con su ruta relativa, y no queda ningún estilo en el HTML. Las variables recogen todos los valores que se repiten, BEM es coherente y el fichero está ordenado por secciones. El README explica con un ejemplo real la ventaja de separar contenido y presentación. |
-| Notable (7–8) | La separación es correcta y la organización buena, con algún valor repetido que debería ser una variable o alguna clase que se sale de la nomenclatura. |
-| Suficiente (5–6) | La hoja de estilos es externa, pero está desordenada o se reutiliza poco, o la reflexión del README es genérica. |
+| Excelente (9–10) | Hay un único fichero externo enlazado en todas las páginas, también en las fichas con su ruta relativa, y no queda ningún estilo en el HTML. Las variables recogen todos los valores que se repiten, BEM es coherente en todo el sitio (bloques, elementos y modificadores bien identificados y nombrados por su función) y el fichero está ordenado por secciones. El README explica con un ejemplo real la ventaja de separar contenido y presentación. |
+| Notable (7–8) | La separación es correcta y la organización buena, con algún valor repetido que debería ser una variable o alguna clase que se sale de la nomenclatura BEM. |
+| Suficiente (5–6) | La hoja de estilos es externa, pero está desordenada o se reutiliza poco, BEM se aplica solo en parte del sitio, o la reflexión del README es genérica. |
 | Insuficiente (0–4) | Hay CSS en la primera fase, estilos en atributos o en la cabecera en la segunda, o páginas que no cargan la hoja de estilos. |
 
 ### 2.g · Validar documentos HTML y CSS
@@ -239,7 +239,7 @@ Se mira recorriendo el sitio con el teclado, comprobando el contraste y el formu
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | Todo el sitio se recorre con el teclado, con el foco siempre visible y el enlace para saltar al contenido. El contraste cumple el nivel AA en los dos modos y se respeta la preferencia de movimiento reducido. El análisis con Lighthouse o WAVE está documentado, junto con lo que se corrigió a raíz de él. |
+| Excelente (9–10) | Todo el sitio se recorre con el teclado, con el foco siempre visible y el enlace para saltar al contenido. El contraste cumple el nivel AA en los dos modos de color. El análisis con Lighthouse o WAVE está documentado, junto con lo que se corrigió a raíz de él. |
 | Notable (7–8) | El sitio es accesible en lo esencial, con algún fallo puntual: un foco poco visible o un contraste justo en uno de los modos. |
 | Suficiente (5–6) | Se cumple lo básico (textos alternativos, etiquetas del formulario, idioma), pero hay problemas de foco o de contraste, o falta el análisis. |
 | Insuficiente (0–4) | Hay partes del sitio que no se pueden usar con el teclado, el formulario no tiene etiquetas o el contraste es claramente insuficiente. |
