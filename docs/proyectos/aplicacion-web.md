@@ -137,48 +137,42 @@ Cierra el README con un párrafo breve sobre qué te ha aportado separar el cont
 
 Igual que antes, haz al menos seis commits durante la fase y marca el último con la etiqueta `fase-2`.
 
+## Cierre · Sindicación
+
+Con la Fase 2 cerrada queda una última entrega corta. Sirve para trabajar sobre tu propio sitio la parte del RA2 que todavía no ha salido en el proyecto: la sindicación de contenidos y las versiones y estándares de los lenguajes que usas. La sindicación solo se evalúa aquí: no entra en la prueba práctica. No cambia nada de lo que ya has hecho; solo añade.
+
+Crea en la raíz del repositorio un canal de sindicación, en RSS 2.0 o en Atom, con los elementos de tu catálogo: de cada uno, su nombre, el enlace a su ficha o a su lugar en el catálogo, un resumen y una fecha. Haz que los lectores de feeds lo descubran solos desde la portada, valídalo con el [servicio de validación de feeds del W3C](https://validator.w3.org/feed/) y suscríbete a él desde un lector de feeds. Lo tienes explicado en los apuntes de sindicación.
+
+Añade al README un apartado «Cierre» con tres párrafos breves:
+
+- **Lenguajes y estándares.** Qué lenguajes hay en tu repositorio, contando también el de los datos de la API y el del canal, qué versión o estándar sigue cada uno y quién lo mantiene.
+- **HTML de antes y de ahora.** Una decisión de marcado de tu sitio, cómo se habría resuelto en HTML 4.01 o en XHTML 1.0 y qué gana la forma actual.
+- **Sindicación.** Por qué elegiste RSS o Atom, una captura del canal en el lector y para quién tendría sentido suscribirse a él.
+
+Haz al menos dos commits y marca el último con la etiqueta `cierre`.
+
 ## Cómo se evalúa
 
 Este proyecto evalúa los diez criterios del RA2. Cada criterio se califica de 0 a 10 con la rúbrica que tienes a continuación, y esa nota cuenta la mitad de la calificación del criterio; la otra mitad sale de la prueba práctica de la unidad. Se valora el razonamiento, no solo el resultado: algo que no funciona del todo pero demuestra que entiendes lo que estabas haciendo también puntúa.
 
-Hay dos cosas que afectan a todo el proyecto. Si el sitio no se puede abrir desde GitHub Pages, o hay rutas rotas a imágenes, páginas u hoja de estilos, los criterios afectados no pueden pasar de un 5. Y lo que no esté en las etiquetas `fase-1` y `fase-2` del repositorio no se evalúa.
+Hay dos cosas que afectan a todo el proyecto. Si el sitio no se puede abrir desde GitHub Pages, o hay rutas rotas a imágenes, páginas u hoja de estilos, los criterios afectados no pueden pasar de un 5. Y lo que no esté en las etiquetas `fase-1`, `fase-2` y `cierre` del repositorio no se evalúa.
+
+Los títulos de la rúbrica son los criterios del RA2 tal como los recoge el Real Decreto 405/2023. Cuando un criterio tiene varios bloques, su nota es la media de esos bloques. Los criterios 2.i y 2.j no entran en la prueba práctica, así que su calificación es la de este proyecto. La documentación no es un criterio propio: se tiene en cuenta en los criterios a los que se refiere cada apartado del README.
 
 ## Rúbrica
 
-### 2.a · Identificar etiquetas y atributos de HTML
+### 2.a · Se han identificado y clasificado los lenguajes de marcas relacionados con la web y sus diferentes versiones y estándares
 
-Se mira en el marcado de todas las páginas de la primera fase.
-
-| Nivel | Descripción |
-|---|---|
-| Excelente (9–10) | Cada contenido usa la etiqueta que describe su significado, y las decisiones dudosas están razonadas en el README. Los atributos están completos y son los adecuados: idioma, metadatos, textos alternativos, fechas para máquinas, tipos y restricciones del formulario. Las tres fichas comparten exactamente la misma estructura. |
-| Notable (7–8) | El marcado es semántico en casi todo el sitio, con algún elemento genérico donde había uno más preciso o algún atributo útil que falta. |
-| Suficiente (5–6) | La estructura general es correcta, pero hay varios contenidos marcados por su aspecto y no por su significado, o faltan atributos en imágenes, fechas o formulario. |
-| Insuficiente (0–4) | Se abusa de los elementos genéricos, la jerarquía de encabezados está rota o faltan los atributos básicos. |
-
-### 2.b · Utilizar herramientas en línea para crear contenido web
-
-Se mira en el repositorio, el historial de Git, el sitio publicado en GitHub Pages y la exploración de la API.
+Se mira en el apartado «Lenguajes y estándares» del README del cierre.
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | Hay al menos seis commits descriptivos por fase que cuentan cómo avanzó el proyecto, y las etiquetas `fase-1` y `fase-2` están en su sitio. El sitio está publicado y funciona. Las respuestas JSON están guardadas en `datos/` y las peticiones a la API están documentadas. |
-| Notable (7–8) | Está todo, pero los mensajes de los commits son algo genéricos o el trabajo se concentra en pocos días. |
-| Suficiente (5–6) | El repositorio y el sitio publicado funcionan, pero el historial es pobre (menos commits de los pedidos o con mensajes poco útiles), o falta la carpeta `datos/`. |
-| Insuficiente (0–4) | El sitio no está publicado, el trabajo se ha subido en uno o dos commits o no hay rastro de la exploración de la API. |
+| Excelente (9–10) | Identifica todos los lenguajes del repositorio, los clasifica según para qué sirven y, de cada uno, indica correctamente su versión o estándar y quién lo mantiene. |
+| Notable (7–8) | Identifica y clasifica todos los lenguajes, con alguna imprecisión en las versiones o en quién los mantiene. |
+| Suficiente (5–6) | Enumera los lenguajes, pero sin clasificarlos o sin precisar sus versiones y estándares. |
+| Insuficiente (0–4) | Falta el apartado o confunde los lenguajes entre sí. |
 
-### 2.c · Identificar etiquetas para incluir elementos multimedia
-
-Se mira en las imágenes de la portada, el catálogo y las fichas, y en el vídeo o audio.
-
-| Nivel | Descripción |
-|---|---|
-| Excelente (9–10) | Todas las imágenes tienen un texto alternativo útil y declaran sus dimensiones, y las que llevan pie forman una unidad con él. El vídeo o audio tiene controles, encaja con el contenido y ofrece una alternativa a quien no pueda reproducirlo. Los ficheros están ordenados en `assets/`. |
-| Notable (7–8) | El multimedia está bien integrado, con algún texto alternativo genérico («imagen de…») o alguna dimensión sin declarar. |
-| Suficiente (5–6) | Las imágenes y el vídeo o audio están, pero hay textos alternativos vacíos o repetidos, o el multimedia no tiene relación con el contenido que lo rodea. |
-| Insuficiente (0–4) | Faltan imágenes, no hay vídeo ni audio o se cargan con rutas rotas. |
-
-### 2.d · Emplear lenguajes de marcas para transmitir información
+### 2.b · Se ha analizado la estructura de un documento HTML e identificado las secciones que lo componen
 
 Es el criterio central del proyecto. Se mira en la tabla de campos del README y en cómo se convierten los datos del JSON en HTML en el catálogo, las fichas, la comparativa y la página sobre los datos.
 
@@ -189,18 +183,51 @@ Es el criterio central del proyecto. Se mira en la tabla de campos del README y 
 | Suficiente (5–6) | Los datos de la API están en el sitio, pero el marcado cambia de una página a otra o la tabla comparativa no identifica bien sus cabeceras. |
 | Insuficiente (0–4) | El contenido no sale de la API, es de relleno o no tiene estructura. |
 
-### 2.e · Describir y aplicar las propiedades básicas de CSS
+### 2.c · Se ha reconocido la funcionalidad de las principales etiquetas y los atributos del lenguaje HTML (etiquetas y atributos)
 
-Se mira en la hoja de estilos y en el aspecto final del sitio.
+Se mira en el marcado de todas las páginas de la primera fase.
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | El catálogo y las fichas están maquetados con Flexbox y Grid, y la tipografía, el color y el espaciado crean una jerarquía clara. El modo oscuro está completo, los elementos interactivos tienen diseñados sus estados al pasar el ratón y el formulario está diseñado entero, con sus estados de campo válido e inválido. |
-| Notable (7–8) | El diseño es sólido y está completo, con algún detalle descuidado: un estado sin diseñar o zonas sin adaptar al modo oscuro. |
-| Suficiente (5–6) | El sitio tiene un diseño propio, pero falta alguno de los requisitos (modo oscuro, estados de los elementos interactivos, estados del formulario) o la maquetación se apoya en trucos frágiles, como colocar bloques con posiciones absolutas. |
-| Insuficiente (0–4) | El diseño es mínimo o estropea el contenido, y faltan varios requisitos. |
+| Excelente (9–10) | Cada contenido usa la etiqueta que describe su significado, y las decisiones dudosas están razonadas en el README. Los atributos están completos y son los adecuados: idioma, metadatos, textos alternativos, fechas para máquinas, tipos y restricciones del formulario. Las tres fichas comparten exactamente la misma estructura. |
+| Notable (7–8) | El marcado es semántico en casi todo el sitio, con algún elemento genérico donde había uno más preciso o algún atributo útil que falta. |
+| Suficiente (5–6) | La estructura general es correcta, pero hay varios contenidos marcados por su aspecto y no por su significado, o faltan atributos en imágenes, fechas o formulario. |
+| Insuficiente (0–4) | Se abusa de los elementos genéricos, la jerarquía de encabezados está rota o faltan los atributos básicos. |
 
-### 2.f · Crear y enlazar hojas de estilo
+### 2.c · Se ha reconocido la funcionalidad de las principales etiquetas y los atributos del lenguaje HTML (multimedia)
+
+Se mira en las imágenes de la portada, el catálogo y las fichas, y en el vídeo o audio.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Todas las imágenes tienen un texto alternativo útil y declaran sus dimensiones, y las que llevan pie forman una unidad con él. El vídeo o audio tiene controles, encaja con el contenido y ofrece una alternativa a quien no pueda reproducirlo. Los ficheros están ordenados en `assets/`. |
+| Notable (7–8) | El multimedia está bien integrado, con algún texto alternativo genérico («imagen de…») o alguna dimensión sin declarar. |
+| Suficiente (5–6) | Las imágenes y el vídeo o audio están, pero hay textos alternativos vacíos o repetidos, o el multimedia no tiene relación con el contenido que lo rodea. |
+| Insuficiente (0–4) | Faltan imágenes, no hay vídeo ni audio o se cargan con rutas rotas. |
+
+### 2.d · Se han establecido las semejanzas y diferencias entre las diferentes versiones de HTML
+
+Se mira en el apartado «HTML de antes y de ahora» del README del cierre.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | La decisión elegida es significativa y la comparación es precisa: cómo se resolvía antes, qué tienen en común las dos versiones y qué aporta la forma actual. |
+| Notable (7–8) | La comparación es correcta, pero se queda en la diferencia de etiquetas sin explicar qué se gana. |
+| Suficiente (5–6) | El apartado es genérico: habla de HTML5 en abstracto y no de su sitio. |
+| Insuficiente (0–4) | Falta el apartado o la comparación es incorrecta. |
+
+### 2.e · Se han utilizado herramientas en la creación de documentos web
+
+Se mira en el repositorio, el historial de Git, el sitio publicado en GitHub Pages y la exploración de la API.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | Hay al menos seis commits descriptivos por fase que cuentan cómo avanzó el proyecto, y las etiquetas `fase-1` y `fase-2` están en su sitio. El sitio está publicado y funciona. Las respuestas JSON están guardadas en `datos/` y las peticiones a la API están documentadas. |
+| Notable (7–8) | Está todo, pero los mensajes de los commits son algo genéricos o el trabajo se concentra en pocos días. |
+| Suficiente (5–6) | El repositorio y el sitio publicado funcionan, pero el historial es pobre (menos commits de los pedidos o con mensajes poco útiles), o falta la carpeta `datos/`. |
+| Insuficiente (0–4) | El sitio no está publicado, el trabajo se ha subido en uno o dos commits o no hay rastro de la exploración de la API. |
+
+### 2.f · Se han identificado las ventajas que aporta la utilización de hojas de estilo
 
 Se mira en la organización de la hoja de estilos, en la separación entre contenido y presentación y en el párrafo final del README.
 
@@ -211,29 +238,29 @@ Se mira en la organización de la hoja de estilos, en la separación entre conte
 | Suficiente (5–6) | La hoja de estilos es externa, pero está desordenada o se reutiliza poco, BEM se aplica solo en parte del sitio, o la reflexión del README es genérica. |
 | Insuficiente (0–4) | Hay CSS en la primera fase, estilos en atributos o en la cabecera en la segunda, o páginas que no cargan la hoja de estilos. |
 
-### 2.g · Validar documentos HTML y CSS
+### 2.g · Se han aplicado hojas de estilo (propiedades de CSS)
 
-Se mira volviendo a pasar por el validador el HTML de las dos etiquetas y el CSS, y en lo que recoge el README.
-
-| Nivel | Descripción |
-|---|---|
-| Excelente (9–10) | Todas las páginas y la hoja de estilos validan sin errores, y los avisos están corregidos o justificados. El README enlaza los resultados, y el historial muestra que se ha validado durante el desarrollo y no solo al final. |
-| Notable (7–8) | No hay errores, pero quedan avisos sin justificar o faltan resultados en el README. |
-| Suficiente (5–6) | Hay algún error menor en alguna página que no afecta a la estructura. |
-| Insuficiente (0–4) | Hay errores que afectan a la estructura, como etiquetas sin cerrar o elementos mal anidados, o no hay constancia de haber validado. |
-
-### 2.h · Documentar el código empleado
-
-Se mira en el README de las dos fases y en los comentarios del HTML y del CSS.
+Se mira en la hoja de estilos y en el aspecto final del sitio.
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | El README está completo y bien organizado; otra persona podría entender el proyecto y continuarlo sin preguntarte nada. La tabla de campos y las decisiones de marcado y de diseño están razonadas, no solo enumeradas. Los comentarios del código orientan sin estorbar. |
-| Notable (7–8) | La documentación está completa, con algún apartado escueto o decisiones que se cuentan pero no se justifican. |
-| Suficiente (5–6) | El README cubre lo mínimo o el código apenas tiene comentarios. |
-| Insuficiente (0–4) | Falta el README o no explica nada del proyecto. |
+| Excelente (9–10) | El catálogo y las fichas están maquetados con Flexbox y Grid, y la tipografía, el color y el espaciado crean una jerarquía clara. El modo oscuro está completo, los elementos interactivos tienen diseñados sus estados al pasar el ratón y el formulario está diseñado entero, con sus estados de campo válido e inválido. |
+| Notable (7–8) | El diseño es sólido y está completo, con algún detalle descuidado: un estado sin diseñar o zonas sin adaptar al modo oscuro. |
+| Suficiente (5–6) | El sitio tiene un diseño propio, pero falta alguno de los requisitos (modo oscuro, estados de los elementos interactivos, estados del formulario) o la maquetación se apoya en trucos frágiles, como colocar bloques con posiciones absolutas. |
+| Insuficiente (0–4) | El diseño es mínimo o estropea el contenido, y faltan varios requisitos. |
 
-### 2.i · Valorar la importancia de la accesibilidad web
+### 2.g · Se han aplicado hojas de estilo (adaptación a móviles)
+
+Se mira en el sitio publicado, a 360 px, en tablet y en escritorio.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | El diseño parte del móvil y se adapta con naturalidad en cada punto de ruptura. No hay desplazamiento horizontal en ninguna página, el catálogo y las fichas reorganizan su contenido y la tabla comparativa tiene en el móvil una solución razonada y cómoda. |
+| Notable (7–8) | El sitio se adapta bien, con algún desajuste puntual en algún ancho intermedio. |
+| Suficiente (5–6) | El sitio se ve en el móvil, pero se nota que está pensado para escritorio y simplemente encogido, o la tabla obliga a desplazarse sin control. |
+| Insuficiente (0–4) | Hay desplazamiento horizontal, contenido cortado o el sitio no se puede usar a 360 px. |
+
+### 2.g · Se han aplicado hojas de estilo (accesibilidad)
 
 Se mira recorriendo el sitio con el teclado, comprobando el contraste y el formulario, y en el análisis de accesibilidad del README.
 
@@ -244,13 +271,46 @@ Se mira recorriendo el sitio con el teclado, comprobando el contraste y el formu
 | Suficiente (5–6) | Se cumple lo básico (textos alternativos, etiquetas del formulario, idioma), pero hay problemas de foco o de contraste, o falta el análisis. |
 | Insuficiente (0–4) | Hay partes del sitio que no se pueden usar con el teclado, el formulario no tiene etiquetas o el contraste es claramente insuficiente. |
 
-### 2.j · Diseñar páginas web adaptadas a dispositivos móviles
+### 2.h · Se han validado documentos HTML y CSS
 
-Se mira en el sitio publicado, a 360 px, en tablet y en escritorio.
+Se mira volviendo a pasar por el validador el HTML de las dos etiquetas y el CSS, y en lo que recoge el README.
 
 | Nivel | Descripción |
 |---|---|
-| Excelente (9–10) | El diseño parte del móvil y se adapta con naturalidad en cada punto de ruptura. No hay desplazamiento horizontal en ninguna página, el catálogo y las fichas reorganizan su contenido y la tabla comparativa tiene en el móvil una solución razonada y cómoda. |
-| Notable (7–8) | El sitio se adapta bien, con algún desajuste puntual en algún ancho intermedio. |
-| Suficiente (5–6) | El sitio se ve en el móvil, pero se nota que está pensado para escritorio y simplemente encogido, o la tabla obliga a desplazarse sin control. |
-| Insuficiente (0–4) | Hay desplazamiento horizontal, contenido cortado o el sitio no se puede usar a 360 px. |
+| Excelente (9–10) | Todas las páginas y la hoja de estilos validan sin errores, y los avisos están corregidos o justificados. El README enlaza los resultados, y el historial muestra que se ha validado durante el desarrollo y no solo al final. |
+| Notable (7–8) | No hay errores, pero quedan avisos sin justificar o faltan resultados en el README. |
+| Suficiente (5–6) | Hay algún error menor en alguna página que no afecta a la estructura. |
+| Insuficiente (0–4) | Hay errores que afectan a la estructura, como etiquetas sin cerrar o elementos mal anidados, o no hay constancia de haber validado. |
+
+### 2.i · Se han identificado las tecnologías en que se basa la sindicación de contenidos
+
+Se mira en el canal del catálogo y en cómo se anuncia desde la portada.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | El canal valida sin errores, recoge los elementos del catálogo con todos sus datos y la fecha en el formato que exige el estándar, y la portada lo anuncia para que los lectores lo descubran. |
+| Notable (7–8) | El canal es válido y completo, pero falta el anuncio en la portada o algún dato en algunas entradas. |
+| Suficiente (5–6) | El canal se reconoce, pero tiene errores de validación (fechas, enlaces relativos, caracteres sin escapar) o le faltan entradas. |
+| Insuficiente (0–4) | No hay canal o no sigue ningún formato de sindicación. |
+
+### 2.j · Se han reconocido los ámbitos de aplicación de la sindicación de contenidos
+
+Se mira en el apartado «Sindicación» del README del cierre.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | La captura muestra el canal funcionando en un lector, y el apartado explica con precisión para quién tiene sentido suscribirse y por qué, relacionándolo con cómo funciona la sindicación. |
+| Notable (7–8) | La explicación es correcta y concreta, pero poco razonada. |
+| Suficiente (5–6) | La explicación es genérica o falta la captura del lector. |
+| Insuficiente (0–4) | Falta el apartado o confunde la sindicación con otras formas de avisar, como el correo o las notificaciones. |
+
+### Documentación del proyecto (sin criterio propio)
+
+Se mira en el README de las dos fases y en los comentarios del HTML y del CSS.
+
+| Nivel | Descripción |
+|---|---|
+| Excelente (9–10) | El README está completo y bien organizado; otra persona podría entender el proyecto y continuarlo sin preguntarte nada. La tabla de campos y las decisiones de marcado y de diseño están razonadas, no solo enumeradas. Los comentarios del código orientan sin estorbar. |
+| Notable (7–8) | La documentación está completa, con algún apartado escueto o decisiones que se cuentan pero no se justifican. |
+| Suficiente (5–6) | El README cubre lo mínimo o el código apenas tiene comentarios. |
+| Insuficiente (0–4) | Falta el README o no explica nada del proyecto. |
